@@ -1,102 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-
-    <title>introduction to modelplotr/py</title>
-
-    <meta charset="utf-8" />
-    <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="introduction to modelplotr/py Full Atom Feed" />
-    <link href="/feeds/misc.atom.xml" type="application/atom+xml" rel="alternate" title="introduction to modelplotr/py Categories Atom Feed" />
-    <link rel="stylesheet" href="/theme/css/poole.css"/>
-    <link rel="stylesheet" href="/theme/css/syntax.css"/>
-    <link rel="stylesheet" href="/theme/css/lanyon.css"/>
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
-    <link rel="stylesheet" href="/theme/css/styles.css"/>
-
-
-
-    <meta name="tags" contents="["R"" />
-    <meta name="tags" contents=""predictive modeling"]" />
-
-  </head>
-
-  <body>
-<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
-styles, `#sidebar-checkbox` for behavior. -->
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
-<!-- Toggleable sidebar -->
-<div class="sidebar" id="sidebar">
-  <div class="sidebar-item">
-    <div class="profile">
-      <img src="/theme/img/profile.png"/>
-    </div>
-  </div>
-
-  <nav class="sidebar-nav">
-  <a class="sidebar-nav-item" href="/">All</a>
-
-      <a class="sidebar-nav-item" href="/category/misc.html">misc</a>
-      <a class="sidebar-nav-item" href="/category/posts.html">posts</a>
-
-  <a class="sidebar-nav-item" href="http://getpelican.com/">Pelican</a>
-  <a class="sidebar-nav-item" href="http://python.org/">Python.org</a>
-  <a class="sidebar-nav-item" href="http://jinja.pocoo.org/">Jinja2</a>
-  <a class="sidebar-nav-item" href="#">You can modify those links in your config file</a>
-  </nav>
-
-  <div class="sidebar-item">
-    <p>
-    <a href="https://twitter.com/">&copy; @</a> 2017
-    </p>
-    <p class="tiny-note">
-      <a class="muted" href="https://github.com/thomaswilley/pelicanyan">pelicanyan v0.1</a>
-    </p>
-  </div>
-</div>    <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <h3 class="masthead-title">
-            <a href="/" title="Home">introduction to modelplotr/py</a>
-            <small>sample blog</small>
-          </h3>
-        </div>
-      </div>
-
-      <div class="container content">
-<div class="posts">
-<div class="post">
-    <h1 class="post-title">
-      <span class="dquo">&#8220;</span>modelplotr to help explain your predictive&nbsp;model&#8221;
-    </h1>
-    <span class="post-date">juli 11, 2018</span>
-
-    <h1>Why <span class="caps">ROC</span> curves <span class="amp">&amp;</span> Hit Rates are unfit to assess the business value of your&nbsp;model</h1>
-<h2>4 visualisations to explain your predictive model to your fellow business colleagues who don’t understand shit about&nbsp;data</h2>
+<head>
+	<meta charset="utf-8">
+	<title>"modelplotr to help explain your predictive model" — introduction to modelplotr/py</title>
+	<meta name="description" content="Title: "modelplotr to help explain your predictive model"; Date: 2018-07-11; Author: "Jurriaan Nagelkerke and Pieter Marcus"">
+	<meta name="author" content="Jurriaan Nagelkerke and Pieter Marcus">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="/theme/html5.js"></script>
+		<![endif]-->
+	<link href="/theme/css/ipython.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
+	<link href="/theme/css/local.css" rel="stylesheet">
+	<link href="/theme/css/pygments.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<div class="page-header">
+		<h1><a href="/">introduction to modelplotr/py</a>
+			<br>	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="text-center article-header">
+		<h1 itemprop="name headline" class="article-title">"modelplotr to help explain your predictive model"</h1>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+			<h4 itemprop="name">"Jurriaan Nagelkerke and Pieter Marcus"</h4>
+		</span>
+		<time datetime="2018-07-11T11:55:00+00:00" itemprop="datePublished">wo 11 juli 2018</time>
+	</div>
+	<div>
+		Category:
+		<span itemprop="articleSection">
+			<a href="/category/misc.html" rel="category">misc</a>
+		</span>
+	</div>
+ 
+	<div>
+		Tags:
+		<span itemprop="keywords">
+			<a href="/tag/r.html" rel="tag">["R"</a>
+		</span>
+		<span itemprop="keywords">
+			<a href="/tag/predictive-modeling.html" rel="tag">"predictive modeling"]</a>
+		</span>
+	</div>
+	<div itemprop="articleBody" class="article-body"><h1>Why ROC curves &amp; Hit Rates are unfit to assess the business value of your model</h1>
+<h2>4 visualisations to explain your predictive model to your fellow business colleagues who don’t understand shit about data</h2>
 <h3>Summary</h3>
-<p>In this blog we explain four most valuable evaluation charts to assess the business value of a predictive model. Since these visualisations are not included in most popular model building packages or modules in R and Python, we show how you can easily create these plots for your own predictive models. This will help you to explain your model&#8217;s business value in laymans terms to&nbsp;non-techies. </p>
+<p>In this blog we explain four most valuable evaluation charts to assess the business value of a predictive model. Since these visualisations are not included in most popular model building packages or modules in R and Python, we show how you can easily create these plots for your own predictive models. This will help you to explain your model's business value in laymans terms to non-techies. </p>
 <h3>Intro</h3>
 <blockquote>
-<p>‘&#8230;And as we can see clearly on this <span class="caps">ROC</span> plot, the sensitivity of the model at the value of 0.2 on one minus the specificity is quite high!&nbsp;Right?…’. </p>
+<p>‘...And as we can see clearly on this ROC plot, the sensitivity of the model at the value of 0.2 on one minus the specificity is quite high! Right?…’. </p>
 </blockquote>
-<p>If your fellow business colleague didn’t already wander away during your presentation about your fantastic predictive model, they will definitely do so when you start talking like this. Why? Because the <span class="caps">ROC</span> curve is not easy to quickly explain and also difficult to translate into answers on business questions. While these business questions were the reason you’ve built a model in the first&nbsp;place!   </p>
-<p>What do we mean with business questions? In most use cases, we build a predictive model to select the best records to, say: your active customers with the highest probability to churn, prospects that are most likely to respond to an offer or transactions that have a high risk to be&nbsp;fraudulent. </p>
-<p>In order to verify how our model building endeavours are doing, we evaluate how the model performs on a selection or subset of records in a test or external validation set. We look at model performance measures like the <span class="caps">ROC</span> curve or hit rate. Those plots and statistics are very helpful to check during model building and optimization whether your model is under- or overfitting and what set of parameters performs best on test data. However, these statistics are not that valuable in assessing the business value the model you&nbsp;developed. </p>
-<p>This is not only because it’s quite hard to explain the interpretation of ‘area under the curve’, ‘specificity’ or ‘sensitivity’ to business people. The main reason that these statistics and plots are useless in your business meetings is that they don’t help in determining how to apply your predictive model: What percentage of records should we select based on the model? Should we select only the best 10% of cases? Or should we stop at 30%? Or go on until we have selected 70%?&#8230;  This is something you want to decide together with your business colleague, to best match the business plans and campaign targets they have in mind. The four plots we discuss next are in our view the best ones for that&nbsp;cause.</p>
-<h3>Example: Predictive models from <em>mlr</em> on the <em>Bank Marketing Data&nbsp;Set</em></h3>
-<p>When we introduce the plots, we&#8217;ll show you how to use them with some examples. These examples are based on a publicly available dataset, called the Bank Marketing Data Set. It is one of the most popular datasets which is made available on the <a href="https://archive.ics.uci.edu/ml/index.php"><span class="caps">UCI</span> Machine Learning Repository</a>. The data set comes from a Portugese bank and is about a frequently-posed marketing question: whether a customer did or did not acquire a term deposit, a financial product. There are 4 datasets available and the bank-additional-full.csv is the one we use. It contains the information of 41.188 customers and 21 columns of information. Since we want to show you how to build the plots, not how to build a perfect model, we&#8217;ll use six of these columns.  the Here’s a short description on the data we&nbsp;use:</p>
+<p>If your fellow business colleague didn’t already wander away during your presentation about your fantastic predictive model, they will definitely do so when you start talking like this. Why? Because the ROC curve is not easy to quickly explain and also difficult to translate into answers on business questions. While these business questions were the reason you’ve built a model in the first place!   </p>
+<p>What do we mean with business questions? In most use cases, we build a predictive model to select the best records to, say: your active customers with the highest probability to churn, prospects that are most likely to respond to an offer or transactions that have a high risk to be fraudulent. </p>
+<p>In order to verify how our model building endeavours are doing, we evaluate how the model performs on a selection or subset of records in a test or external validation set. We look at model performance measures like the ROC curve or hit rate. Those plots and statistics are very helpful to check during model building and optimization whether your model is under- or overfitting and what set of parameters performs best on test data. However, these statistics are not that valuable in assessing the business value the model you developed. </p>
+<p>This is not only because it’s quite hard to explain the interpretation of ‘area under the curve’, ‘specificity’ or ‘sensitivity’ to business people. The main reason that these statistics and plots are useless in your business meetings is that they don’t help in determining how to apply your predictive model: What percentage of records should we select based on the model? Should we select only the best 10% of cases? Or should we stop at 30%? Or go on until we have selected 70%?...  This is something you want to decide together with your business colleague, to best match the business plans and campaign targets they have in mind. The four plots we discuss next are in our view the best ones for that cause.</p>
+<h3>Example: Predictive models from <em>mlr</em> on the <em>Bank Marketing Data Set</em></h3>
+<p>When we introduce the plots, we'll show you how to use them with some examples. These examples are based on a publicly available dataset, called the Bank Marketing Data Set. It is one of the most popular datasets which is made available on the <a href="https://archive.ics.uci.edu/ml/index.php">UCI Machine Learning Repository</a>. The data set comes from a Portugese bank and is about a frequently-posed marketing question: whether a customer did or did not acquire a term deposit, a financial product. There are 4 datasets available and the bank-additional-full.csv is the one we use. It contains the information of 41.188 customers and 21 columns of information. Since we want to show you how to build the plots, not how to build a perfect model, we'll use six of these columns.  the Here’s a short description on the data we use:</p>
 <ol>
-<li>y: has the client subscribed a term&nbsp;deposit?</li>
-<li>duration: last contact duration, in seconds&nbsp;(numeric).</li>
-<li>campaign: number of contacts performed during this campaign and for this&nbsp;client</li>
-<li>pdays: number of days that passed by after the client was last contacted from a previous&nbsp;campaign</li>
-<li>previous: number of contacts performed before this campaign and for this client&nbsp;(numeric)</li>
-<li>euribor3m: euribor 3 month&nbsp;rate</li>
+<li>y: has the client subscribed a term deposit?</li>
+<li>duration: last contact duration, in seconds (numeric).</li>
+<li>campaign: number of contacts performed during this campaign and for this client</li>
+<li>pdays: number of days that passed by after the client was last contacted from a previous campaign</li>
+<li>previous: number of contacts performed before this campaign and for this client (numeric)</li>
+<li>euribor3m: euribor 3 month rate</li>
 </ol>
-<p>Let&#8217;s load the data and have a look at the&nbsp;summary:</p>
+<p>Let's load the data and have a look at the summary:</p>
 <div class="highlight"><pre><span></span><span class="c1"># download bank data, prepare and summarize</span>
 zipname <span class="o">=</span> <span class="s">&#39;https://archive.ics.uci.edu/ml/machine-learning-databases/00222/bank-additional.zip&#39;</span>
 csvname <span class="o">=</span> <span class="s">&#39;bank-additional/bank-additional.csv&#39;</span>
@@ -124,7 +98,7 @@ bank <span class="o">&lt;-</span> bank<span class="p">[,</span><span class="kt">
 </pre></div>
 
 
-<p>On this data, we&#8217;ve applied some predictive modeling techniques from the <a href="https://mlr-org.github.io/mlr/"><strong>mlr package</strong></a>. This popular package is a wrapper for many predictive modeling techniques, such as logistic regression, random forest, <span class="caps">XG</span> boost, svm, neural nets and many, many others. For instance, to predict the binary target <strong>y</strong>, mlr currently offers the following&nbsp;algorithms:</p>
+<p>On this data, we've applied some predictive modeling techniques from the <a href="https://mlr-org.github.io/mlr/"><strong>mlr package</strong></a>. This popular package is a wrapper for many predictive modeling techniques, such as logistic regression, random forest, XG boost, svm, neural nets and many, many others. For instance, to predict the binary target <strong>y</strong>, mlr currently offers the following algorithms:</p>
 <div class="highlight"><pre><span></span><span class="c1"># To check available algorithms, create classification task with binary target y </span>
 task <span class="o">=</span> mlr<span class="o">::</span>makeClassifTask<span class="p">(</span>data <span class="o">=</span> bank<span class="p">,</span> target <span class="o">=</span> <span class="s">&quot;y&quot;</span><span class="p">)</span>
 <span class="c1">## Error in loadNamespace(name): there is no package called &#39;mlr&#39;</span>
@@ -135,7 +109,7 @@ algos <span class="o">=</span> mlr<span class="o">::</span>listLearners<span cla
 </pre></div>
 
 
-<p>It should be noted, that to use the <strong>modelplotr</strong> package you don&#8217;t have to use mlr to build your models. More on this in the package documentation. To have a few models to evaluate with our plots, we do take full advantage of&nbsp;mlr.</p>
+<p>It should be noted, that to use the <strong>modelplotr</strong> package you don't have to use mlr to build your models. More on this in the package documentation. To have a few models to evaluate with our plots, we do take full advantage of mlr.</p>
 <div class="highlight"><pre><span></span><span class="c1"># prepare data for training and train models </span>
 test_size <span class="o">=</span> <span class="m">0.3</span>
 bank<span class="o">$</span>y <span class="o">=</span> <span class="kp">as.factor</span><span class="p">(</span>bank<span class="o">$</span>y<span class="p">)</span>
@@ -168,7 +142,7 @@ lda <span class="o">=</span> train<span class="p">(</span>lrn<span class="p">,</
 </pre></div>
 
 
-<p>Ok, we&#8217;ve generated some predictive models. Let&#8217;s prepare for&nbsp;plotting!</p>
+<p>Ok, we've generated some predictive models. Let's prepare for plotting!</p>
 <div class="highlight"><pre><span></span><span class="c1"># apply modelplotr</span>
 <span class="kn">library</span><span class="p">(</span>modelplotr<span class="p">)</span>
 <span class="c1">## Error in library(modelplotr): there is no package called &#39;modelplotr&#39;</span>
@@ -187,32 +161,32 @@ scope_modevalplots<span class="p">()</span>
 </pre></div>
 
 
-<p>As the output notes, you can use modelplotr to evaluate your model(s) from several&nbsp;perspectives: </p>
+<p>As the output notes, you can use modelplotr to evaluate your model(s) from several perspectives: </p>
 <ul>
-<li>Interpret just one model (the&nbsp;default)</li>
-<li>Compare the model performance across different&nbsp;datasets</li>
-<li>Compare the performance across different&nbsp;models</li>
-<li>Compare the performance across different target&nbsp;values</li>
+<li>Interpret just one model (the default)</li>
+<li>Compare the model performance across different datasets</li>
+<li>Compare the performance across different models</li>
+<li>Compare the performance across different target values</li>
 </ul>
-<p>Here, we will keep it simple and evaluate - from a business perspective - how well a selected model will perform in a selected dataset for one target value. The defaults or selected model, dataset and target value are printed&nbsp;above.</p>
-<h3>Let’s introduce the Gains, Lift and (cumulative) Response&nbsp;Charts.</h3>
-<p>Let’s get you familiar with the plots we so strongly advocate to use to assess a predictive model’s business value. Although each plot tells story with a different perspective, they all use the same data. To be more specific, they&nbsp;share: </p>
+<p>Here, we will keep it simple and evaluate - from a business perspective - how well a selected model will perform in a selected dataset for one target value. The defaults or selected model, dataset and target value are printed above.</p>
+<h3>Let’s introduce the Gains, Lift and (cumulative) Response Charts.</h3>
+<p>Let’s get you familiar with the plots we so strongly advocate to use to assess a predictive model’s business value. Although each plot tells story with a different perspective, they all use the same data. To be more specific, they share: </p>
 <ul>
-<li>Predicted probability for the target&nbsp;class, </li>
-<li>Equally sized groups based on this predicted&nbsp;probability. </li>
-<li>Actual number of observed target class cases in these&nbsp;groups.  </li>
+<li>Predicted probability for the target class, </li>
+<li>Equally sized groups based on this predicted probability. </li>
+<li>Actual number of observed target class cases in these groups.  </li>
 </ul>
-<p>It’s up to you how many equally sized groups you want to use. It’s common practice to split the data to score into 10 equally large groups and call our groups deciles. Those observations in the scored set that belong to the top-10% with highest model probability, are in decile 1; the next group of 10% with high model probability are decile 2 and finally the 10% observations with the lowest model probability on the target class belong to decile 10. If you want to use a more refined grouping, say 100 groups and they are called percentiles or 5 groups splitting them into&nbsp;quintiles.</p>
-<p>Each chart plots the deciles on the x axis and another measure on the y axis. The deciles are plotted from left to right so the observations with the highest model probability are on the left side of the plot. This results in plots like&nbsp;this:</p>
+<p>It’s up to you how many equally sized groups you want to use. It’s common practice to split the data to score into 10 equally large groups and call our groups deciles. Those observations in the scored set that belong to the top-10% with highest model probability, are in decile 1; the next group of 10% with high model probability are decile 2 and finally the 10% observations with the lowest model probability on the target class belong to decile 10. If you want to use a more refined grouping, say 100 groups and they are called percentiles or 5 groups splitting them into quintiles.</p>
+<p>Each chart plots the deciles on the x axis and another measure on the y axis. The deciles are plotted from left to right so the observations with the highest model probability are on the left side of the plot. This results in plots like this:</p>
 <p><img alt="''" src="/img/decileplot.png" /> </p>
-<p>Now that it’s clear what is on the horizontal axis of each of the plots, we can go into more detail on the metrics per plot on the vertical axis. Per plot, we’ll start with a brief explanation what insight you gain with the plot from a business perspective. After that, we can go into more detail on the plotted&nbsp;lines.</p>
-<h4>The cumulative gains&nbsp;chart</h4>
-<p>The cumulative gains chart - often named ‘gains chart’ - helps you answer the&nbsp;question:</p>
-<p><strong><em><span style="color:orange">When we apply the model and select the best X deciles, what % of the actual target class observations can we expect to&nbsp;target?</span></em></strong> </p>
-<p>Hence, the cumulative gains chart visualises the percentage of the target class members you have selected if you would decide to select up until decile&nbsp;X. </p>
-<p>In most cases, you want to use a predictive model to target a subset of observations - customers, prospects, cases,&#8230; - instead of targeting all cases. Which ones to pick? That’s why you’ve built a model. This means that you will miss out on some of the true positives in your&nbsp;selection. </p>
-<p>Consequently, it also provides insights in the percentage you’ll miss when applying the model. Yes, you will miss some potential, because if you are not willing to accept that, you should not use a model in the first place. Or build a perfect model, that scores all actual target class members with a 100% probability and all the cases that do not belong to the target class with a 0% probability. However, if you’re such a wizard, you don’t need these plots any way or you should reconsider the features you’ve used in your model - maybe you’re&nbsp;cheating?&#8230;.  </p>
-<p>What part of the actual target class members you did pick, that’s what the cumulative gains chart tells you. The plot comes with two references to tell you how good/bad your model is: The random model line and the wizard model line. The random model line tells you what proportion of the actual target class you would expect to select when no model is used at all. This vertical line runs from the origin (with 0% of cases, you can only have 0% of the actual target class members) to the upper right corner (with 100% of the cases, you have 100% of the target class members). It’s the rock bottom of how your model can perform; are you close to this, then your model is not much better than a flip of a coin. The wizard model is the upper bound of what your model can do. It starts in the origin and rises as steep as possible towards 100%. If less than 10% of all cases belong to the target category, this means that it goes from the origin to the value of decile 1 and cumulative gains of 100%, for all other deciles the cumulative gains remains at 100% as it is a cumulative measure. Your model will always move between these two reference lines and looks like&nbsp;this: </p>
+<p>Now that it’s clear what is on the horizontal axis of each of the plots, we can go into more detail on the metrics per plot on the vertical axis. Per plot, we’ll start with a brief explanation what insight you gain with the plot from a business perspective. After that, we can go into more detail on the plotted lines.</p>
+<h4>The cumulative gains chart</h4>
+<p>The cumulative gains chart - often named ‘gains chart’ - helps you answer the question:</p>
+<p><strong><em><span style="color:orange">When we apply the model and select the best X deciles, what % of the actual target class observations can we expect to target?</span></em></strong> </p>
+<p>Hence, the cumulative gains chart visualises the percentage of the target class members you have selected if you would decide to select up until decile X. </p>
+<p>In most cases, you want to use a predictive model to target a subset of observations - customers, prospects, cases,... - instead of targeting all cases. Which ones to pick? That’s why you’ve built a model. This means that you will miss out on some of the true positives in your selection. </p>
+<p>Consequently, it also provides insights in the percentage you’ll miss when applying the model. Yes, you will miss some potential, because if you are not willing to accept that, you should not use a model in the first place. Or build a perfect model, that scores all actual target class members with a 100% probability and all the cases that do not belong to the target class with a 0% probability. However, if you’re such a wizard, you don’t need these plots any way or you should reconsider the features you’ve used in your model - maybe you’re cheating?....  </p>
+<p>What part of the actual target class members you did pick, that’s what the cumulative gains chart tells you. The plot comes with two references to tell you how good/bad your model is: The random model line and the wizard model line. The random model line tells you what proportion of the actual target class you would expect to select when no model is used at all. This vertical line runs from the origin (with 0% of cases, you can only have 0% of the actual target class members) to the upper right corner (with 100% of the cases, you have 100% of the target class members). It’s the rock bottom of how your model can perform; are you close to this, then your model is not much better than a flip of a coin. The wizard model is the upper bound of what your model can do. It starts in the origin and rises as steep as possible towards 100%. If less than 10% of all cases belong to the target category, this means that it goes from the origin to the value of decile 1 and cumulative gains of 100%, for all other deciles the cumulative gains remains at 100% as it is a cumulative measure. Your model will always move between these two reference lines and looks like this: </p>
 <p><img alt="''" src="/img/cumgainsplot.png" /></p>
 <p>To generate the cumulate gains plot, we can simply call the function <strong>cumgains()</strong>:</p>
 <div class="highlight"><pre><span></span>cumgains<span class="p">()</span>
@@ -220,11 +194,11 @@ scope_modevalplots<span class="p">()</span>
 </pre></div>
 
 
-<h4>The cumulative lift&nbsp;chart</h4>
-<p>The cumulative lift chart, often referred to as lift chart or index chart, helps you answer the&nbsp;question:</p>
-<p><strong><em><span style="color:orange">When we apply the model and select the best X deciles, how many times better is that than using no model at&nbsp;all?</span></em></strong></p>
-<p>The lift chart helps you in explaining how much better selecting based on you model is compared to taking random selections instead. Especially when models are not yet used within a certain organisation or domain, this really helps business understand what selecting based on models can do for&nbsp;them. </p>
-<p>The lift chart only has one reference line: the ‘random model’.  With a random model we mean that each observation gets a random number and all cases are devided into deciles based on these random numbers. The % of actual target category observations in each decile would be equal to the overall % of actual target category observations in the total set. Since the lift is calculated as the ratio of these two numbers, we het a flatliner at the value of 1. Your model should however be able to do better, resulting in a high ratio for decile 1. In the end, since the plot is cumulative, with 100% of cases, we have the whole set again and therefore the cumulative lift will always end up at a value of 1. It looks like&nbsp;this:</p>
+<h4>The cumulative lift chart</h4>
+<p>The cumulative lift chart, often referred to as lift chart or index chart, helps you answer the question:</p>
+<p><strong><em><span style="color:orange">When we apply the model and select the best X deciles, how many times better is that than using no model at all?</span></em></strong></p>
+<p>The lift chart helps you in explaining how much better selecting based on you model is compared to taking random selections instead. Especially when models are not yet used within a certain organisation or domain, this really helps business understand what selecting based on models can do for them. </p>
+<p>The lift chart only has one reference line: the ‘random model’.  With a random model we mean that each observation gets a random number and all cases are devided into deciles based on these random numbers. The % of actual target category observations in each decile would be equal to the overall % of actual target category observations in the total set. Since the lift is calculated as the ratio of these two numbers, we het a flatliner at the value of 1. Your model should however be able to do better, resulting in a high ratio for decile 1. In the end, since the plot is cumulative, with 100% of cases, we have the whole set again and therefore the cumulative lift will always end up at a value of 1. It looks like this:</p>
 <p><img alt="''" src="/img/cumliftplot.png" /></p>
 <p>To generate the cumulate lift plot, we can simply call the function <strong>lift()</strong>:</p>
 <div class="highlight"><pre><span></span>lift<span class="p">()</span>
@@ -232,65 +206,98 @@ scope_modevalplots<span class="p">()</span>
 </pre></div>
 
 
-<h4>The response&nbsp;plot</h4>
-<p>One of the easiest to explain evaluation plots is the response plot. It simply plots the percentage of target class observations per decile. It can be used to answer the following business&nbsp;question:</p>
-<p><strong><em><span style="color:orange">When we apply the model and select decile X, what is the expected % of target class observations in that&nbsp;decile?</span></em></strong> </p>
-<p>The plot has one reference line: The % of target class cases in the total set. It looks like&nbsp;this:</p>
+<h4>The response plot</h4>
+<p>One of the easiest to explain evaluation plots is the response plot. It simply plots the percentage of target class observations per decile. It can be used to answer the following business question:</p>
+<p><strong><em><span style="color:orange">When we apply the model and select decile X, what is the expected % of target class observations in that decile?</span></em></strong> </p>
+<p>The plot has one reference line: The % of target class cases in the total set. It looks like this:</p>
 <p><img alt="''" src="/img/responseplot.png" /></p>
-<p>A good model starts high in decile 1 and drops quickly towards 0. How steep the decline can be, also depends on the % of target class in the total set. Interesting is the location where your model’s line intersects the random model line. From here, the % of target class cases is lower than a random selection of cases would&nbsp;hold.  </p>
+<p>A good model starts high in decile 1 and drops quickly towards 0. How steep the decline can be, also depends on the % of target class in the total set. Interesting is the location where your model’s line intersects the random model line. From here, the % of target class cases is lower than a random selection of cases would hold.  </p>
 <p>To generate the response plot, we can simply call the function <strong>response()</strong>:</p>
 <div class="highlight"><pre><span></span>response<span class="p">()</span>
 <span class="c1">## Error in response(): could not find function &quot;response&quot;</span>
 </pre></div>
 
 
-<h4>The cumulative response&nbsp;plot</h4>
-<p>And finally, one of the most used charts: The cumulative response chart. It answers the question burning on each business reps&nbsp;lips:</p>
-<p><strong><em><span style="color:orange">When we apply the model and select up until decile X, what is the expected % of target class observations in the&nbsp;selection?</span></em></strong></p>
-<p>The reference line in this plot is the same as in the response chart: the % of target class cases in the total&nbsp;set. </p>
+<h4>The cumulative response plot</h4>
+<p>And finally, one of the most used charts: The cumulative response chart. It answers the question burning on each business reps lips:</p>
+<p><strong><em><span style="color:orange">When we apply the model and select up until decile X, what is the expected % of target class observations in the selection?</span></em></strong></p>
+<p>The reference line in this plot is the same as in the response chart: the % of target class cases in the total set. </p>
 <p><img alt="''" src="/img/cumresponseplot.png" /></p>
-<p>Whereas the response plot crosses the reference line, in the cumulative response plot it approaches it to end at the same point: Selecting all cases up until decile 10 is the same as selecting all cases, hence the % of target class cases will be exactly the&nbsp;same.</p>
-<p>This plot most often used to decide - together with the business - up until what decile to select based upon the&nbsp;model. </p>
+<p>Whereas the response plot crosses the reference line, in the cumulative response plot it approaches it to end at the same point: Selecting all cases up until decile 10 is the same as selecting all cases, hence the % of target class cases will be exactly the same.</p>
+<p>This plot most often used to decide - together with the business - up until what decile to select based upon the model. </p>
 <p>To generate the cumulative response plot, we can simply call the function <strong>cumresponse()</strong>:</p>
 <div class="highlight"><pre><span></span>cumresponse<span class="p">()</span>
 <span class="c1">## Error in cumresponse(): could not find function &quot;cumresponse&quot;</span>
-</pre></div>
-  </div>
+</pre></div></div>
+	<hr>
+	<h2>Comments</h2>
 </div>
-      </div>
-
-      <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-
-      <script>
-        (function(document) {
-          var i = 0;
-          // snip empty header rows since markdown can't
-          var rows = document.querySelectorAll('tr');
-          for(i=0; i<rows.length; i++) {
-            var ths = rows[i].querySelectorAll('th');
-            var rowlen = rows[i].children.length;
-            if (ths.length > 0 && ths.length === rowlen) {
-              rows[i].remove();
-            }
-          }
-        })(document);
-      </script>
-
-      <script>
-        /* Lanyon & Poole are Copyright (c) 2014 Mark Otto. Adapted to Pelican 20141223 and extended a bit by @thomaswilley */
-        (function(document) {
-          var toggle = document.querySelector('.sidebar-toggle');
-          var sidebar = document.querySelector('#sidebar');
-          var checkbox = document.querySelector('#sidebar-checkbox');
-          document.addEventListener('click', function(e) {
-            var target = e.target;
-            if(!checkbox.checked ||
-            sidebar.contains(target) ||
-            (target === checkbox || target === toggle)) return;
-            checkbox.checked = false;
-            }, false);
-            })(document);
-      </script>
-     </div>
-  </body>
+		</div>
+	</div> 	<!-- <hr> -->
+</div> <!-- /container -->
+<footer class="aw-footer bg-danger">
+	<div class="container"> <!-- footer -->
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="row">
+					<div class="col-md-3">
+						<h4>Navigation</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="">introduction to modelplotr/py</a></li>
+							<li><a href="/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Author</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="#">You can add links in your config file</a></li>
+							<li><a href="#">Another social link</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Categories</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="/category/misc.html">misc (1)</a></li>
+							<li><a href="/category/posts.html">posts (1)</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Links</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="http://getpelican.com/">Pelican</a></li>
+							<li><a href="http://python.org/">Python.org</a></li>
+							<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+							<li><a href="#">You can modify those links in your config file</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center center-block aw-bottom">
+			<p>&copy; Jurriaan Nagelkerke and Pieter Marcus 2016</p>
+			<p>Powered by Pelican</p>
+		</div>
+	</div>
+</div>
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$("div.collapseheader").click(function () {
+		$header = $(this).children("span").first();
+		$codearea = $(this).children(".input_area");
+		$codearea.slideToggle(500, function () {
+			$header.text(function () {
+				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+			});
+		});
+	});
+});
+</script>
+</body>
 </html>

@@ -1,84 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-
-    <title>introduction to modelplotr/py</title>
-
-    <meta charset="utf-8" />
-    <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="introduction to modelplotr/py Full Atom Feed" />
-    <link href="/feeds/posts.atom.xml" type="application/atom+xml" rel="alternate" title="introduction to modelplotr/py Categories Atom Feed" />
-    <link rel="stylesheet" href="/theme/css/poole.css"/>
-    <link rel="stylesheet" href="/theme/css/syntax.css"/>
-    <link rel="stylesheet" href="/theme/css/lanyon.css"/>
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
-    <link rel="stylesheet" href="/theme/css/styles.css"/>
-
-
-
-    <meta name="tags" contents="python modelplot" />
-
-  </head>
-
-  <body>
-<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
-styles, `#sidebar-checkbox` for behavior. -->
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
-<!-- Toggleable sidebar -->
-<div class="sidebar" id="sidebar">
-  <div class="sidebar-item">
-    <div class="profile">
-      <img src="/theme/img/profile.png"/>
-    </div>
-  </div>
-
-  <nav class="sidebar-nav">
-  <a class="sidebar-nav-item" href="/">All</a>
-
-      <a class="sidebar-nav-item" href="/category/misc.html">misc</a>
-      <a class="sidebar-nav-item" href="/category/posts.html">posts</a>
-
-  <a class="sidebar-nav-item" href="http://getpelican.com/">Pelican</a>
-  <a class="sidebar-nav-item" href="http://python.org/">Python.org</a>
-  <a class="sidebar-nav-item" href="http://jinja.pocoo.org/">Jinja2</a>
-  <a class="sidebar-nav-item" href="#">You can modify those links in your config file</a>
-  </nav>
-
-  <div class="sidebar-item">
-    <p>
-    <a href="https://twitter.com/">&copy; @</a> 2017
-    </p>
-    <p class="tiny-note">
-      <a class="muted" href="https://github.com/thomaswilley/pelicanyan">pelicanyan v0.1</a>
-    </p>
-  </div>
-</div>    <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <h3 class="masthead-title">
-            <a href="/" title="Home">introduction to modelplotr/py</a>
-            <small>sample blog</small>
-          </h3>
-        </div>
-      </div>
-
-      <div class="container content">
-<div class="posts">
-<div class="post">
-    <h1 class="post-title">
-      Evaluation plots for predictive&nbsp;models
-    </h1>
-    <span class="post-date">juli 27, 2018</span>
-
-    <style type="text/css">/*!
+<head>
+	<meta charset="utf-8">
+	<title>Evaluation plots for predictive models — introduction to modelplotr/py</title>
+	<meta name="description" content="Title: Evaluation plots for predictive models; Date: 2018-07-27; Author: Jurriaan Nagelkerke and Pieter Marcus">
+	<meta name="author" content="Jurriaan Nagelkerke and Pieter Marcus">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="/theme/html5.js"></script>
+		<![endif]-->
+	<link href="/theme/css/ipython.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
+	<link href="/theme/css/local.css" rel="stylesheet">
+	<link href="/theme/css/pygments.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<div class="page-header">
+		<h1><a href="/">introduction to modelplotr/py</a>
+			<br>	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="text-center article-header">
+		<h1 itemprop="name headline" class="article-title">Evaluation plots for predictive models</h1>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+			<h4 itemprop="name">Jurriaan Nagelkerke and Pieter Marcus</h4>
+		</span>
+		<time datetime="2018-07-27T11:00:00+02:00" itemprop="datePublished">vr 27 juli 2018</time>
+	</div>
+	<div>
+		Category:
+		<span itemprop="articleSection">
+			<a href="/category/posts.html" rel="category">posts</a>
+		</span>
+	</div>
+ 
+	<div>
+		Tags:
+		<span itemprop="keywords">
+			<a href="/tag/python-modelplot.html" rel="tag">python modelplot</a>
+		</span>
+	</div>
+	<div itemprop="articleBody" class="article-body"><style type="text/css">/*!
 *
 * IPython notebook
 *
 */
-/* <span class="caps">CSS</span> font colors for translated <span class="caps">ANSI</span> colors. */
+/* CSS font colors for translated ANSI colors. */
 .ansibold {
   font-weight: bold;
 }
@@ -164,13 +136,13 @@ div.cell {
   background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #<span class="caps">90CAF9</span>;
-  border-left-color: #<span class="caps">E3F2FD</span>;
+  border-left-color: #90CAF9;
+  border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
-  border-right-color: #<span class="caps">E3F2FD</span>;
+  border-right-color: #E3F2FD;
   border-right-width: 1px;
-  background: #<span class="caps">E3F2FD</span>;
+  background: #E3F2FD;
 }
 @media print {
   div.cell.jupyter-soft-selected {
@@ -181,7 +153,7 @@ div.cell.selected {
   border-color: #ababab;
   border-left-width: 0px;
   padding-left: 6px;
-  background: linear-gradient(to right, #<span class="caps">42A5F5</span> -40px, #<span class="caps">42A5F5</span> 5px, transparent 5px, transparent 100%);
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
 }
 @media print {
   div.cell.selected {
@@ -191,13 +163,13 @@ div.cell.selected {
 div.cell.selected.jupyter-soft-selected {
   border-left-width: 0;
   padding-left: 6px;
-  background: linear-gradient(to right, #<span class="caps">42A5F5</span> -40px, #<span class="caps">42A5F5</span> 7px, #<span class="caps">E3F2FD</span> 7px, #<span class="caps">E3F2FD</span> 100%);
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
 }
 .edit_mode div.cell.selected {
-  border-color: #<span class="caps">66BB6A</span>;
+  border-color: #66BB6A;
   border-left-width: 0px;
   padding-left: 6px;
-  background: linear-gradient(to right, #<span class="caps">66BB6A</span> -40px, #<span class="caps">66BB6A</span> 5px, transparent 5px, transparent 100%);
+  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -350,7 +322,7 @@ div.input {
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_prompt {
-  color: #<span class="caps">303F9F</span>;
+  color: #303F9F;
   border-top: 1px solid transparent;
 }
 div.input_area > div.highlight {
@@ -391,7 +363,7 @@ div.input_area > div.highlight > pre {
   overflow-x: auto;
 }
 .CodeMirror-lines {
-  /* In <span class="caps">CM2</span>, this used to be 0.4em, but in <span class="caps">CM3</span> it went to 4px. We need the em value because */
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
   padding: 0.4em;
 }
@@ -403,7 +375,7 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In <span class="caps">CM3</span> this went to 4px from 0 in <span class="caps">CM2</span>. We need the 0 value because of how we size */
+  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
   /* .CodeMirror-lines */
   padding: 0;
   border: 0;
@@ -428,7 +400,7 @@ Adapted from GitHub theme
   color: #333333;
 }
 .highlight-string {
-  color: #<span class="caps">BA2121</span>;
+  color: #BA2121;
 }
 .highlight-comment {
   color: #408080;
@@ -451,11 +423,11 @@ Adapted from GitHub theme
   color: #f00;
 }
 .highlight-operator {
-  color: #<span class="caps">AA22FF</span>;
+  color: #AA22FF;
   font-weight: bold;
 }
 .highlight-meta {
-  color: #<span class="caps">AA22FF</span>;
+  color: #AA22FF;
 }
 /* previously not defined, copying from default codemirror */
 .highlight-def {
@@ -503,7 +475,7 @@ Adapted from GitHub theme
   color: #000;
 }
 .cm-s-ipython span.cm-operator {
-  color: #<span class="caps">AA22FF</span>;
+  color: #AA22FF;
   font-weight: bold;
 }
 .cm-s-ipython span.cm-variable-2 {
@@ -517,13 +489,13 @@ Adapted from GitHub theme
   font-style: italic;
 }
 .cm-s-ipython span.cm-string {
-  color: #<span class="caps">BA2121</span>;
+  color: #BA2121;
 }
 .cm-s-ipython span.cm-string-2 {
   color: #f50;
 }
 .cm-s-ipython span.cm-meta {
-  color: #<span class="caps">AA22FF</span>;
+  color: #AA22FF;
 }
 .cm-s-ipython span.cm-qualifier {
   color: #555;
@@ -578,9 +550,9 @@ div.output_wrapper {
 }
 /* class for the output area when it should be height-limited */
 div.output_scroll {
-  /* ideally, this would be max-height, but <span class="caps">FF</span> barfs all over that */
+  /* ideally, this would be max-height, but FF barfs all over that */
   height: 24em;
-  /* <span class="caps">FF</span> needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
   width: 100%;
   overflow: auto;
   border-radius: 2px;
@@ -614,7 +586,7 @@ div.out_prompt_overlay {
   border-radius: 2px;
 }
 div.out_prompt_overlay:hover {
-  /* use inner shadow to get border that is computed the same on WebKit/<span class="caps">FF</span> */
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
   -webkit-box-shadow: inset 0 0 1px #000;
   box-shadow: inset 0 0 1px #000;
   background: rgba(240, 240, 240, 0.5);
@@ -942,25 +914,25 @@ h6:hover .anchor-link {
 <style type="text/css">.highlight .hll { background-color: #ffffcc }
 .highlight  { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #<span class="caps">FF0000</span> } /* Error */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
 .highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #<span class="caps">BC7A00</span> } /* Comment.Preproc */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
 .highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
 .highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #<span class="caps">FF0000</span> } /* Generic.Error */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
 .highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .highlight .gi { color: #00A000 } /* Generic.Inserted */
 .highlight .go { color: #888888 } /* Generic.Output */
 .highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
 .highlight .gs { font-weight: bold } /* Generic.Strong */
 .highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #<span class="caps">0044DD</span> } /* Generic.Traceback */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
 .highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
 .highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
 .highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
@@ -968,41 +940,41 @@ h6:hover .anchor-link {
 .highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
 .highlight .kt { color: #B00040 } /* Keyword.Type */
 .highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #<span class="caps">BA2121</span> } /* Literal.String */
+.highlight .s { color: #BA2121 } /* Literal.String */
 .highlight .na { color: #7D9029 } /* Name.Attribute */
 .highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #<span class="caps">0000FF</span>; font-weight: bold } /* Name.Class */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
 .highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #<span class="caps">AA22FF</span> } /* Name.Decorator */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
 .highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #<span class="caps">D2413A</span>; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #<span class="caps">0000FF</span> } /* Name.Function */
-.highlight .nl { color: #<span class="caps">A0A000</span> } /* Name.Label */
-.highlight .nn { color: #<span class="caps">0000FF</span>; font-weight: bold } /* Name.Namespace */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
 .highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
 .highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #<span class="caps">AA22FF</span>; font-weight: bold } /* Operator.Word */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
 .highlight .w { color: #bbbbbb } /* Text.Whitespace */
 .highlight .mb { color: #666666 } /* Literal.Number.Bin */
 .highlight .mf { color: #666666 } /* Literal.Number.Float */
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #<span class="caps">BA2121</span> } /* Literal.String.Affix */
-.highlight .sb { color: #<span class="caps">BA2121</span> } /* Literal.String.Backtick */
-.highlight .sc { color: #<span class="caps">BA2121</span> } /* Literal.String.Char */
-.highlight .dl { color: #<span class="caps">BA2121</span> } /* Literal.String.Delimiter */
-.highlight .sd { color: #<span class="caps">BA2121</span>; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #<span class="caps">BA2121</span> } /* Literal.String.Double */
-.highlight .se { color: #<span class="caps">BB6622</span>; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #<span class="caps">BA2121</span> } /* Literal.String.Heredoc */
-.highlight .si { color: #<span class="caps">BB6688</span>; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
 .highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #<span class="caps">BB6688</span> } /* Literal.String.Regex */
-.highlight .s1 { color: #<span class="caps">BA2121</span> } /* Literal.String.Single */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #<span class="caps">0000FF</span> } /* Name.Function.Magic */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
@@ -1010,38 +982,38 @@ h6:hover .anchor-link {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
 <style type="text/css">
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #<span class="caps">3E424D</span>; }
-.ansi-black-bg { background-color: #<span class="caps">3E424D</span>; }
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
 .ansi-black-intense-fg { color: #282C36; }
 .ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #<span class="caps">E75C58</span>; }
-.ansi-red-bg { background-color: #<span class="caps">E75C58</span>; }
-.ansi-red-intense-fg { color: #<span class="caps">B22B31</span>; }
-.ansi-red-intense-bg { background-color: #<span class="caps">B22B31</span>; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
 .ansi-green-fg { color: #00A250; }
 .ansi-green-bg { background-color: #00A250; }
 .ansi-green-intense-fg { color: #007427; }
 .ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #<span class="caps">DDB62B</span>; }
-.ansi-yellow-bg { background-color: #<span class="caps">DDB62B</span>; }
-.ansi-yellow-intense-fg { color: #<span class="caps">B27D12</span>; }
-.ansi-yellow-intense-bg { background-color: #<span class="caps">B27D12</span>; }
-.ansi-blue-fg { color: #<span class="caps">208FFB</span>; }
-.ansi-blue-bg { background-color: #<span class="caps">208FFB</span>; }
-.ansi-blue-intense-fg { color: #<span class="caps">0065CA</span>; }
-.ansi-blue-intense-bg { background-color: #<span class="caps">0065CA</span>; }
-.ansi-magenta-fg { color: #<span class="caps">D160C4</span>; }
-.ansi-magenta-bg { background-color: #<span class="caps">D160C4</span>; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
 .ansi-magenta-intense-fg { color: #A03196; }
 .ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #<span class="caps">60C6C8</span>; }
-.ansi-cyan-bg { background-color: #<span class="caps">60C6C8</span>; }
-.ansi-cyan-intense-fg { color: #<span class="caps">258F8F</span>; }
-.ansi-cyan-intense-bg { background-color: #<span class="caps">258F8F</span>; }
-.ansi-white-fg { color: #<span class="caps">C5C1B4</span>; }
-.ansi-white-bg { background-color: #<span class="caps">C5C1B4</span>; }
-.ansi-white-intense-fg { color: #<span class="caps">A1A6B2</span>; }
-.ansi-white-intense-bg { background-color: #<span class="caps">A1A6B2</span>; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
 
 .ansi-bold { font-weight: bold; }
 </style>
@@ -1204,7 +1176,7 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Build-3-simple-machine-learning-models-(Random-Forest,-Logistic-Regression-and-XG-Boost)">Build 3 simple machine learning models (Random Forest, Logistic Regression and <span class="caps">XG</span> Boost)<a class="anchor-link" href="#Build-3-simple-machine-learning-models-(Random-Forest,-Logistic-Regression-and-XG-Boost)">&#182;</a></h2>
+<h2 id="Build-3-simple-machine-learning-models-(Random-Forest,-Logistic-Regression-and-XG-Boost)">Build 3 simple machine learning models (Random Forest, Logistic Regression and XG Boost)<a class="anchor-link" href="#Build-3-simple-machine-learning-models-(Random-Forest,-Logistic-Regression-and-XG-Boost)">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -1426,7 +1398,7 @@ h6:hover .anchor-link {
       <th>pct</th>
       <th>postot</th>
       <th>negtot</th>
-      <th>&#8230;</th>
+      <th>...</th>
       <th>cumtot</th>
       <th>cumpct</th>
       <th>gain</th>
@@ -1452,7 +1424,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>0</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1476,7 +1448,7 @@ h6:hover .anchor-link {
       <td>1.0</td>
       <td>18.0</td>
       <td>27.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>5</td>
       <td>1.000000</td>
       <td>0.277778</td>
@@ -1500,7 +1472,7 @@ h6:hover .anchor-link {
       <td>1.0</td>
       <td>18.0</td>
       <td>27.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>9</td>
       <td>1.000000</td>
       <td>0.222222</td>
@@ -1524,7 +1496,7 @@ h6:hover .anchor-link {
       <td>1.0</td>
       <td>18.0</td>
       <td>27.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>14</td>
       <td>1.000000</td>
       <td>0.277778</td>
@@ -1548,7 +1520,7 @@ h6:hover .anchor-link {
       <td>1.0</td>
       <td>18.0</td>
       <td>27.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>18</td>
       <td>1.000000</td>
       <td>0.222222</td>
@@ -1572,7 +1544,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>18.0</td>
       <td>27.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>22</td>
       <td>0.818182</td>
       <td>0.000000</td>
@@ -1596,7 +1568,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>18.0</td>
       <td>27.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>27</td>
       <td>0.666667</td>
       <td>0.000000</td>
@@ -1620,7 +1592,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>18.0</td>
       <td>27.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>31</td>
       <td>0.580645</td>
       <td>0.000000</td>
@@ -1644,7 +1616,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>18.0</td>
       <td>27.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>36</td>
       <td>0.500000</td>
       <td>0.000000</td>
@@ -1668,7 +1640,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>18.0</td>
       <td>27.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>40</td>
       <td>0.450000</td>
       <td>0.000000</td>
@@ -1692,7 +1664,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>18.0</td>
       <td>27.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>45</td>
       <td>0.400000</td>
       <td>0.000000</td>
@@ -1716,7 +1688,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>0</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -1740,7 +1712,7 @@ h6:hover .anchor-link {
       <td>1.0</td>
       <td>11.0</td>
       <td>34.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>5</td>
       <td>1.000000</td>
       <td>0.454545</td>
@@ -1764,7 +1736,7 @@ h6:hover .anchor-link {
       <td>1.0</td>
       <td>11.0</td>
       <td>34.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>9</td>
       <td>1.000000</td>
       <td>0.363636</td>
@@ -1788,7 +1760,7 @@ h6:hover .anchor-link {
       <td>0.4</td>
       <td>11.0</td>
       <td>34.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>14</td>
       <td>0.785714</td>
       <td>0.181818</td>
@@ -1812,7 +1784,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>11.0</td>
       <td>34.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>18</td>
       <td>0.611111</td>
       <td>0.000000</td>
@@ -1836,7 +1808,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>11.0</td>
       <td>34.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>22</td>
       <td>0.500000</td>
       <td>0.000000</td>
@@ -1860,7 +1832,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>11.0</td>
       <td>34.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>27</td>
       <td>0.407407</td>
       <td>0.000000</td>
@@ -1884,7 +1856,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>11.0</td>
       <td>34.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>31</td>
       <td>0.354839</td>
       <td>0.000000</td>
@@ -1908,7 +1880,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>11.0</td>
       <td>34.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>36</td>
       <td>0.305556</td>
       <td>0.000000</td>
@@ -1932,7 +1904,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>11.0</td>
       <td>34.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>40</td>
       <td>0.275000</td>
       <td>0.000000</td>
@@ -1956,7 +1928,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>11.0</td>
       <td>34.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>45</td>
       <td>0.244444</td>
       <td>0.000000</td>
@@ -1980,7 +1952,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>0</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -2004,7 +1976,7 @@ h6:hover .anchor-link {
       <td>1.0</td>
       <td>16.0</td>
       <td>29.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>5</td>
       <td>1.000000</td>
       <td>0.312500</td>
@@ -2028,7 +2000,7 @@ h6:hover .anchor-link {
       <td>1.0</td>
       <td>16.0</td>
       <td>29.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>9</td>
       <td>1.000000</td>
       <td>0.250000</td>
@@ -2052,7 +2024,7 @@ h6:hover .anchor-link {
       <td>1.0</td>
       <td>16.0</td>
       <td>29.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>14</td>
       <td>1.000000</td>
       <td>0.312500</td>
@@ -2076,7 +2048,7 @@ h6:hover .anchor-link {
       <td>0.5</td>
       <td>16.0</td>
       <td>29.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>18</td>
       <td>0.888889</td>
       <td>0.125000</td>
@@ -2100,7 +2072,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>16.0</td>
       <td>29.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>22</td>
       <td>0.727273</td>
       <td>0.000000</td>
@@ -2124,7 +2096,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>16.0</td>
       <td>29.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>27</td>
       <td>0.592593</td>
       <td>0.000000</td>
@@ -2148,7 +2120,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>16.0</td>
       <td>29.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>31</td>
       <td>0.516129</td>
       <td>0.000000</td>
@@ -2161,28 +2133,28 @@ h6:hover .anchor-link {
       <td>1</td>
     </tr>
     <tr>
-      <th>&#8230;</th>
-      <td>&#8230;</td>
-      <td>&#8230;</td>
-      <td>&#8230;</td>
-      <td>&#8230;</td>
-      <td>&#8230;</td>
-      <td>&#8230;</td>
-      <td>&#8230;</td>
-      <td>&#8230;</td>
-      <td>&#8230;</td>
-      <td>&#8230;</td>
-      <td>&#8230;</td>
-      <td>&#8230;</td>
-      <td>&#8230;</td>
-      <td>&#8230;</td>
-      <td>&#8230;</td>
-      <td>&#8230;</td>
-      <td>&#8230;</td>
-      <td>&#8230;</td>
-      <td>&#8230;</td>
-      <td>&#8230;</td>
-      <td>&#8230;</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>2</th>
@@ -2196,7 +2168,7 @@ h6:hover .anchor-link {
       <td>1.0</td>
       <td>32.0</td>
       <td>73.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>32</td>
       <td>1.000000</td>
       <td>0.343750</td>
@@ -2220,7 +2192,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>32.0</td>
       <td>73.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>42</td>
       <td>0.761905</td>
       <td>0.000000</td>
@@ -2244,7 +2216,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>32.0</td>
       <td>73.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>52</td>
       <td>0.615385</td>
       <td>0.000000</td>
@@ -2268,7 +2240,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>32.0</td>
       <td>73.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>63</td>
       <td>0.507937</td>
       <td>0.000000</td>
@@ -2292,7 +2264,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>32.0</td>
       <td>73.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>73</td>
       <td>0.438356</td>
       <td>0.000000</td>
@@ -2316,7 +2288,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>32.0</td>
       <td>73.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>84</td>
       <td>0.380952</td>
       <td>0.000000</td>
@@ -2340,7 +2312,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>32.0</td>
       <td>73.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>94</td>
       <td>0.340426</td>
       <td>0.000000</td>
@@ -2364,7 +2336,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>32.0</td>
       <td>73.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>105</td>
       <td>0.304762</td>
       <td>0.000000</td>
@@ -2388,7 +2360,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>0</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -2412,7 +2384,7 @@ h6:hover .anchor-link {
       <td>1.0</td>
       <td>39.0</td>
       <td>66.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>11</td>
       <td>1.000000</td>
       <td>0.282051</td>
@@ -2436,7 +2408,7 @@ h6:hover .anchor-link {
       <td>1.0</td>
       <td>39.0</td>
       <td>66.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>21</td>
       <td>1.000000</td>
       <td>0.256410</td>
@@ -2460,7 +2432,7 @@ h6:hover .anchor-link {
       <td>1.0</td>
       <td>39.0</td>
       <td>66.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>32</td>
       <td>1.000000</td>
       <td>0.282051</td>
@@ -2484,7 +2456,7 @@ h6:hover .anchor-link {
       <td>0.7</td>
       <td>39.0</td>
       <td>66.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>42</td>
       <td>0.928571</td>
       <td>0.179487</td>
@@ -2508,7 +2480,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>39.0</td>
       <td>66.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>52</td>
       <td>0.750000</td>
       <td>0.000000</td>
@@ -2532,7 +2504,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>39.0</td>
       <td>66.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>63</td>
       <td>0.619048</td>
       <td>0.000000</td>
@@ -2556,7 +2528,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>39.0</td>
       <td>66.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>73</td>
       <td>0.534247</td>
       <td>0.000000</td>
@@ -2580,7 +2552,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>39.0</td>
       <td>66.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>84</td>
       <td>0.464286</td>
       <td>0.000000</td>
@@ -2604,7 +2576,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>39.0</td>
       <td>66.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>94</td>
       <td>0.414894</td>
       <td>0.000000</td>
@@ -2628,7 +2600,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>39.0</td>
       <td>66.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>105</td>
       <td>0.371429</td>
       <td>0.000000</td>
@@ -2652,7 +2624,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>0</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -2676,7 +2648,7 @@ h6:hover .anchor-link {
       <td>1.0</td>
       <td>34.0</td>
       <td>71.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>11</td>
       <td>1.000000</td>
       <td>0.323529</td>
@@ -2700,7 +2672,7 @@ h6:hover .anchor-link {
       <td>1.0</td>
       <td>34.0</td>
       <td>71.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>21</td>
       <td>1.000000</td>
       <td>0.294118</td>
@@ -2724,7 +2696,7 @@ h6:hover .anchor-link {
       <td>1.0</td>
       <td>34.0</td>
       <td>71.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>32</td>
       <td>1.000000</td>
       <td>0.323529</td>
@@ -2748,7 +2720,7 @@ h6:hover .anchor-link {
       <td>0.2</td>
       <td>34.0</td>
       <td>71.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>42</td>
       <td>0.809524</td>
       <td>0.058824</td>
@@ -2772,7 +2744,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>34.0</td>
       <td>71.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>52</td>
       <td>0.653846</td>
       <td>0.000000</td>
@@ -2796,7 +2768,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>34.0</td>
       <td>71.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>63</td>
       <td>0.539683</td>
       <td>0.000000</td>
@@ -2820,7 +2792,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>34.0</td>
       <td>71.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>73</td>
       <td>0.465753</td>
       <td>0.000000</td>
@@ -2844,7 +2816,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>34.0</td>
       <td>71.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>84</td>
       <td>0.404762</td>
       <td>0.000000</td>
@@ -2868,7 +2840,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>34.0</td>
       <td>71.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>94</td>
       <td>0.361702</td>
       <td>0.000000</td>
@@ -2892,7 +2864,7 @@ h6:hover .anchor-link {
       <td>0.0</td>
       <td>34.0</td>
       <td>71.0</td>
-      <td>&#8230;</td>
+      <td>...</td>
       <td>105</td>
       <td>0.323810</td>
       <td>0.000000</td>
@@ -2906,7 +2878,7 @@ h6:hover .anchor-link {
     </tr>
   </tbody>
 </table>
-<p>132 rows × 24&nbsp;columns</p>
+<p>132 rows × 24 columns</p>
 </div>
 </div>
 
@@ -3081,43 +3053,76 @@ Target value virginica plotted for dataset Test data and model rf.
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script>
-
-  </div>
 </div>
-      </div>
-
-      <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-
-      <script>
-        (function(document) {
-          var i = 0;
-          // snip empty header rows since markdown can't
-          var rows = document.querySelectorAll('tr');
-          for(i=0; i<rows.length; i++) {
-            var ths = rows[i].querySelectorAll('th');
-            var rowlen = rows[i].children.length;
-            if (ths.length > 0 && ths.length === rowlen) {
-              rows[i].remove();
-            }
-          }
-        })(document);
-      </script>
-
-      <script>
-        /* Lanyon & Poole are Copyright (c) 2014 Mark Otto. Adapted to Pelican 20141223 and extended a bit by @thomaswilley */
-        (function(document) {
-          var toggle = document.querySelector('.sidebar-toggle');
-          var sidebar = document.querySelector('#sidebar');
-          var checkbox = document.querySelector('#sidebar-checkbox');
-          document.addEventListener('click', function(e) {
-            var target = e.target;
-            if(!checkbox.checked ||
-            sidebar.contains(target) ||
-            (target === checkbox || target === toggle)) return;
-            checkbox.checked = false;
-            }, false);
-            })(document);
-      </script>
-     </div>
-  </body>
+	<hr>
+	<h2>Comments</h2>
+</div>
+		</div>
+	</div> 	<!-- <hr> -->
+</div> <!-- /container -->
+<footer class="aw-footer bg-danger">
+	<div class="container"> <!-- footer -->
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="row">
+					<div class="col-md-3">
+						<h4>Navigation</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="">introduction to modelplotr/py</a></li>
+							<li><a href="/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Author</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="#">You can add links in your config file</a></li>
+							<li><a href="#">Another social link</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Categories</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="/category/misc.html">misc (1)</a></li>
+							<li><a href="/category/posts.html">posts (1)</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Links</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="http://getpelican.com/">Pelican</a></li>
+							<li><a href="http://python.org/">Python.org</a></li>
+							<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+							<li><a href="#">You can modify those links in your config file</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center center-block aw-bottom">
+			<p>&copy; Jurriaan Nagelkerke and Pieter Marcus 2016</p>
+			<p>Powered by Pelican</p>
+		</div>
+	</div>
+</div>
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$("div.collapseheader").click(function () {
+		$header = $(this).children("span").first();
+		$codearea = $(this).children(".input_area");
+		$codearea.slideToggle(500, function () {
+			$header.text(function () {
+				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+			});
+		});
+	});
+});
+</script>
+</body>
 </html>
