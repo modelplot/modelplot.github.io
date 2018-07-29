@@ -3012,6 +3012,7 @@ Target value virginica plotted for dataset Test data and model rf.
 &lt;h3&gt;Summary&lt;/h3&gt;
 &lt;p&gt;In this blog we explain four most valuable evaluation charts to assess the business value of a predictive model. Since these visualisations are not included in most popular model building packages or modules in R and Python, we show how you can easily create these plots for your own predictive models. This will help you to explain your model's business value in laymans terms to non-techies. &lt;/p&gt;
 &lt;h3&gt;Intro&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="''" src="c:/temp/intro_modelplotr/content/post/img/cartoonrocplot.jpg" /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;‘...And as we can see clearly on this ROC plot, the sensitivity of the model at the value of 0.2 on one minus the specificity is quite high! Right?…’. &lt;/p&gt;
 &lt;/blockquote&gt;
@@ -3060,11 +3061,9 @@ bank &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; bank&lt;span class="p"&gt;[,&l
 &lt;p&gt;On this data, we've applied some predictive modeling techniques from the &lt;a href="https://mlr-org.github.io/mlr/"&gt;&lt;strong&gt;mlr package&lt;/strong&gt;&lt;/a&gt;. This popular package is a wrapper for many predictive modeling techniques, such as logistic regression, random forest, XG boost, svm, neural nets and many, many others. For instance, to predict the binary target &lt;strong&gt;y&lt;/strong&gt;, mlr currently offers the following algorithms:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# To check available algorithms, create classification task with binary target y &lt;/span&gt;
 task &lt;span class="o"&gt;=&lt;/span&gt; mlr&lt;span class="o"&gt;::&lt;/span&gt;makeClassifTask&lt;span class="p"&gt;(&lt;/span&gt;data &lt;span class="o"&gt;=&lt;/span&gt; bank&lt;span class="p"&gt;,&lt;/span&gt; target &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;y&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in loadNamespace(name): there is no package called &amp;#39;mlr&amp;#39;&lt;/span&gt;
 algos &lt;span class="o"&gt;=&lt;/span&gt; mlr&lt;span class="o"&gt;::&lt;/span&gt;listLearners&lt;span class="p"&gt;(&lt;/span&gt;task&lt;span class="p"&gt;,&lt;/span&gt; check.packages &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;FALSE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;name
-&lt;span class="c1"&gt;## Error in loadNamespace(name): there is no package called &amp;#39;mlr&amp;#39;&lt;/span&gt;
 &lt;span class="kp"&gt;paste0&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Available Algorithms (&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="kp"&gt;length&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;algos&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;): &amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="kp"&gt;paste&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;algos&lt;span class="p"&gt;,&lt;/span&gt;collapse &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;, &amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in paste0(&amp;quot;Available Algorithms (&amp;quot;, length(algos), &amp;quot;): &amp;quot;, paste(algos, : object &amp;#39;algos&amp;#39; not found&lt;/span&gt;
+&lt;span class="c1"&gt;## [1] &amp;quot;Available Algorithms (80): C50, k-Nearest Neighbours, J48 Decision Trees, Propositional Rule Learner, L1-Regularized L2-Loss Support Vector Classification, L1-Regularized Logistic Regression, L2-Regularized L1-Loss Support Vector Classification, L2-Regularized Logistic Regression, L2-Regularized L2-Loss Support Vector Classification, Support Vector Classification by Crammer and Singer, 1-R Classifier, PART Decision Lists, Regularized Random Forests, ada Boosting, ada Boosting M1, Bayesian Additive Regression Trees, Binomial Regression, Gradient Boosting With Regression Trees, Adabag Boosting, Gradient Boosting, Random forest based on conditional inference trees, Clustered Support Vector Machines, Conditional Inference Trees, GLM with Lasso or Elasticnet Regularization (Cross Validated Lambda), Deep neural network with weights initialized by DBN, Divided-Conquer Support Vector Machines, Flexible Discriminant Analysis, Evolutionary learning of globally optimal trees, Extremely Randomized Trees, Featureless classifier, Fast k-Nearest Neighbour, Gradient boosting with smooth components, Mixture of SVMs with Neural Network Gater Function, Gaussian Processes, Gradient Boosting Machine, Geometric Predictive Discriminant Analysis, Boosting for GLMs, GLM with Lasso or Elasticnet Regularization, h2o.deeplearning, h2o.gbm, h2o.glm, h2o.randomForest, k-Nearest Neighbor, k-Nearest Neighbor, Support Vector Machines, Linear Discriminant Analysis, Linear Discriminant Analysis, Logistic Regression, Fitting penalized Generalized Linear Models with the LQA algorithm, Least Squares Support Vector Machine, Learning Vector Quantization, Mixture Discriminant Analysis, Multi-Layer Perceptron, Multinomial Regression, Naive Bayes, Neural Network from neuralnet, Training Neural Network by Backpropagation, Neural Network, Node Harvest, Nearest shrunken centroid, Penalized Logistic Regression, Logistic Regression with a L2 Penalty, Partial Least Squares (PLS) Discriminant Analysis, Probit Regression, Quadratic Discriminant Analysis, Quadratic Discriminant Analysis, Random ferns, Random Forest, Random Forest, Random Forests, Regularized Discriminant Analysis, Random k-Nearest-Neighbors, Rotation Forest, Decision Tree, Robust Regularized Linear Discriminant Analysis, Deep neural network with weights initialized by Stacked AutoEncoder, Shrinkage Discriminant Analysis, Sparse Discriminant Analysis, Support Vector Machines (libsvm), eXtreme Gradient Boosting&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -3078,45 +3077,62 @@ test &lt;span class="o"&gt;=&lt;/span&gt; bank&lt;span class="p"&gt;[&lt;/span&g
 
 &lt;span class="c1"&gt;# estimate models with mlr&lt;/span&gt;
 &lt;span class="kn"&gt;library&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;mlr&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in library(mlr): there is no package called &amp;#39;mlr&amp;#39;&lt;/span&gt;
+&lt;span class="c1"&gt;## Loading required package: ParamHelpers&lt;/span&gt;
 &lt;span class="c1"&gt;#models&lt;/span&gt;
 task &lt;span class="o"&gt;=&lt;/span&gt; makeClassifTask&lt;span class="p"&gt;(&lt;/span&gt;data &lt;span class="o"&gt;=&lt;/span&gt; train&lt;span class="p"&gt;,&lt;/span&gt; target &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;y&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in makeClassifTask(data = train, target = &amp;quot;y&amp;quot;): could not find function &amp;quot;makeClassifTask&amp;quot;&lt;/span&gt;
 lrn &lt;span class="o"&gt;=&lt;/span&gt; makeLearner&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;classif.randomForest&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; predict.type &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;prob&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in makeLearner(&amp;quot;classif.randomForest&amp;quot;, predict.type = &amp;quot;prob&amp;quot;): could not find function &amp;quot;makeLearner&amp;quot;&lt;/span&gt;
 rf &lt;span class="o"&gt;=&lt;/span&gt; train&lt;span class="p"&gt;(&lt;/span&gt;lrn&lt;span class="p"&gt;,&lt;/span&gt; task&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in train(lrn, task): could not find function &amp;quot;train&amp;quot;&lt;/span&gt;
 lrn &lt;span class="o"&gt;=&lt;/span&gt; makeLearner&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;classif.multinom&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; predict.type &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;prob&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in makeLearner(&amp;quot;classif.multinom&amp;quot;, predict.type = &amp;quot;prob&amp;quot;): could not find function &amp;quot;makeLearner&amp;quot;&lt;/span&gt;
 mnl &lt;span class="o"&gt;=&lt;/span&gt; train&lt;span class="p"&gt;(&lt;/span&gt;lrn&lt;span class="p"&gt;,&lt;/span&gt; task&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in train(lrn, task): could not find function &amp;quot;train&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;## # weights:  7 (6 variable)&lt;/span&gt;
+&lt;span class="c1"&gt;## initial  value 1998.343322 &lt;/span&gt;
+&lt;span class="c1"&gt;## iter  10 value 631.646937&lt;/span&gt;
+&lt;span class="c1"&gt;## iter  20 value 611.745310&lt;/span&gt;
+&lt;span class="c1"&gt;## final  value 611.744920 &lt;/span&gt;
+&lt;span class="c1"&gt;## converged&lt;/span&gt;
 lrn &lt;span class="o"&gt;=&lt;/span&gt; makeLearner&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;classif.xgboost&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; predict.type &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;prob&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in makeLearner(&amp;quot;classif.xgboost&amp;quot;, predict.type = &amp;quot;prob&amp;quot;): could not find function &amp;quot;makeLearner&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;## Error in requirePackages(package, why = stri_paste(&amp;quot;learner&amp;quot;, id, sep = &amp;quot; &amp;quot;), : For learner classif.xgboost please install the following packages: xgboost&lt;/span&gt;
 xgb &lt;span class="o"&gt;=&lt;/span&gt; train&lt;span class="p"&gt;(&lt;/span&gt;lrn&lt;span class="p"&gt;,&lt;/span&gt; task&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in train(lrn, task): could not find function &amp;quot;train&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;## # weights:  7 (6 variable)&lt;/span&gt;
+&lt;span class="c1"&gt;## initial  value 1998.343322 &lt;/span&gt;
+&lt;span class="c1"&gt;## iter  10 value 631.646937&lt;/span&gt;
+&lt;span class="c1"&gt;## iter  20 value 611.745310&lt;/span&gt;
+&lt;span class="c1"&gt;## final  value 611.744920 &lt;/span&gt;
+&lt;span class="c1"&gt;## converged&lt;/span&gt;
 lrn &lt;span class="o"&gt;=&lt;/span&gt; makeLearner&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;classif.lda&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; predict.type &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;prob&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in makeLearner(&amp;quot;classif.lda&amp;quot;, predict.type = &amp;quot;prob&amp;quot;): could not find function &amp;quot;makeLearner&amp;quot;&lt;/span&gt;
 lda &lt;span class="o"&gt;=&lt;/span&gt; train&lt;span class="p"&gt;(&lt;/span&gt;lrn&lt;span class="p"&gt;,&lt;/span&gt; task&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in train(lrn, task): could not find function &amp;quot;train&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Ok, we've generated some predictive models. Let's prepare for plotting!&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# apply modelplotr&lt;/span&gt;
 &lt;span class="kn"&gt;library&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;modelplotr&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in library(modelplotr): there is no package called &amp;#39;modelplotr&amp;#39;&lt;/span&gt;
+&lt;span class="c1"&gt;## Package modelplotr loaded! Happy model plotting!&lt;/span&gt;
 dataprep_modevalplots&lt;span class="p"&gt;(&lt;/span&gt;datasets&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kt"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;train&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;test&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
   datasetlabels &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;train data&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;test data&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
   models &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;rf&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mnl&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;xgb&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;lda&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
   modellabels &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;random forest&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;multinomial logit&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;XGBoost&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Discriminant&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
   targetname&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;y&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in dataprep_modevalplots(datasets = list(&amp;quot;train&amp;quot;, &amp;quot;test&amp;quot;), datasetlabels = list(&amp;quot;train data&amp;quot;, : could not find function &amp;quot;dataprep_modevalplots&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;## [1] &amp;quot;Data preparation step 1 succeeded! Dataframe &amp;#39;eval_tot&amp;#39; created.&amp;quot;&lt;/span&gt;
 &lt;span class="kp"&gt;head&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;eval_tot&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in head(eval_tot): object &amp;#39;eval_tot&amp;#39; not found&lt;/span&gt;
+&lt;span class="c1"&gt;##          modelname    dataset y_true prob_no prob_yes dcl_no dcl_yes&lt;/span&gt;
+&lt;span class="c1"&gt;## 173  random forest train data     no   1.000    0.000      4       9&lt;/span&gt;
+&lt;span class="c1"&gt;## 531  random forest train data     no   1.000    0.000      6       6&lt;/span&gt;
+&lt;span class="c1"&gt;## 1630 random forest train data     no   1.000    0.000      3       7&lt;/span&gt;
+&lt;span class="c1"&gt;## 1659 random forest train data    yes   0.298    0.702     10       1&lt;/span&gt;
+&lt;span class="c1"&gt;## 1590 random forest train data     no   1.000    0.000      6       9&lt;/span&gt;
+&lt;span class="c1"&gt;## 2099 random forest train data     no   0.998    0.002      7       5&lt;/span&gt;
 input_modevalplots&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in input_modevalplots(): could not find function &amp;quot;input_modevalplots&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;## [1] &amp;quot;Data preparation step 2 succeeded! Dataframe &amp;#39;eval_t_tot&amp;#39; created.&amp;quot;&lt;/span&gt;
 scope_modevalplots&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in scope_modevalplots(): could not find function &amp;quot;scope_modevalplots&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;## Data preparation step 3 succeeded! Dataframe &amp;#39;eval_t_type&amp;#39; created.&lt;/span&gt;
+&lt;span class="c1"&gt;## &lt;/span&gt;
+&lt;span class="c1"&gt;## No comparison specified! Single evaluation line will be plotted: &lt;/span&gt;
+&lt;span class="c1"&gt;##  Target value &amp;quot;yes&amp;quot; plotted for dataset &amp;quot;test data&amp;quot; and model &amp;quot;Discriminant.&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;##   To compare models, specify: eval_type = &amp;quot;CompareModels&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;##   To compare datasets, specify: eval_type = &amp;quot;CompareDatasets&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;##   To compare target values, specify: eval_type = &amp;quot;CompareTargetValues&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;##   To plot one line, do not specify eval_type or specify eval_type = &amp;quot;NoComparison&amp;quot;.&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -3137,7 +3153,7 @@ scope_modevalplots&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/ul&gt;
 &lt;p&gt;It’s up to you how many equally sized groups you want to use. It’s common practice to split the data to score into 10 equally large groups and call our groups deciles. Those observations in the scored set that belong to the top-10% with highest model probability, are in decile 1; the next group of 10% with high model probability are decile 2 and finally the 10% observations with the lowest model probability on the target class belong to decile 10. If you want to use a more refined grouping, say 100 groups and they are called percentiles or 5 groups splitting them into quintiles.&lt;/p&gt;
 &lt;p&gt;Each chart plots the deciles on the x axis and another measure on the y axis. The deciles are plotted from left to right so the observations with the highest model probability are on the left side of the plot. This results in plots like this:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="''" src="/img/decileplot.png" /&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img alt="''" src="c:/temp/intro_modelplotr/content/post/img/decileplot.png" /&gt; &lt;/p&gt;
 &lt;p&gt;Now that it’s clear what is on the horizontal axis of each of the plots, we can go into more detail on the metrics per plot on the vertical axis. Per plot, we’ll start with a brief explanation what insight you gain with the plot from a business perspective. After that, we can go into more detail on the plotted lines.&lt;/p&gt;
 &lt;h4&gt;The cumulative gains chart&lt;/h4&gt;
 &lt;p&gt;The cumulative gains chart - often named ‘gains chart’ - helps you answer the question:&lt;/p&gt;
@@ -3146,45 +3162,56 @@ scope_modevalplots&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;p&gt;In most cases, you want to use a predictive model to target a subset of observations - customers, prospects, cases,... - instead of targeting all cases. Which ones to pick? That’s why you’ve built a model. This means that you will miss out on some of the true positives in your selection. &lt;/p&gt;
 &lt;p&gt;Consequently, it also provides insights in the percentage you’ll miss when applying the model. Yes, you will miss some potential, because if you are not willing to accept that, you should not use a model in the first place. Or build a perfect model, that scores all actual target class members with a 100% probability and all the cases that do not belong to the target class with a 0% probability. However, if you’re such a wizard, you don’t need these plots any way or you should reconsider the features you’ve used in your model - maybe you’re cheating?....  &lt;/p&gt;
 &lt;p&gt;What part of the actual target class members you did pick, that’s what the cumulative gains chart tells you. The plot comes with two references to tell you how good/bad your model is: The random model line and the wizard model line. The random model line tells you what proportion of the actual target class you would expect to select when no model is used at all. This vertical line runs from the origin (with 0% of cases, you can only have 0% of the actual target class members) to the upper right corner (with 100% of the cases, you have 100% of the target class members). It’s the rock bottom of how your model can perform; are you close to this, then your model is not much better than a flip of a coin. The wizard model is the upper bound of what your model can do. It starts in the origin and rises as steep as possible towards 100%. If less than 10% of all cases belong to the target category, this means that it goes from the origin to the value of decile 1 and cumulative gains of 100%, for all other deciles the cumulative gains remains at 100% as it is a cumulative measure. Your model will always move between these two reference lines and looks like this: &lt;/p&gt;
-&lt;p&gt;&lt;img alt="''" src="/img/cumgainsplot.png" /&gt;&lt;/p&gt;
-&lt;p&gt;To generate the cumulate gains plot, we can simply call the function &lt;strong&gt;cumgains()&lt;/strong&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cumgains&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in cumgains(): could not find function &amp;quot;cumgains&amp;quot;&lt;/span&gt;
+&lt;p&gt;&lt;img alt="''" src="c:/temp/intro_modelplotr/content/post/img/cumgainsplot.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Let's install our package. Since it is available on github, t can easily be installed using devtools:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;library&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;devtools&lt;span class="p"&gt;)&lt;/span&gt;
+install_github&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;modelplot/modelplotr&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;## Skipping install of &amp;#39;modelplotr&amp;#39; from a github remote, the SHA1 (fca284d7) has not changed since last install.&lt;/span&gt;
+&lt;span class="c1"&gt;##   Use `force = TRUE` to force installation&lt;/span&gt;
+&lt;span class="kn"&gt;library&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;modelplotr&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;To generate the cumulate gains plot, we can simply call the function &lt;strong&gt;cumgains()&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cumgains&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img alt="plot of chunk gainsplot" src="/figure/IntroModelplotr-gainsplot-1.png" /&gt;&lt;/p&gt;
 &lt;h4&gt;The cumulative lift chart&lt;/h4&gt;
 &lt;p&gt;The cumulative lift chart, often referred to as lift chart or index chart, helps you answer the question:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;&lt;span style="color:orange"&gt;When we apply the model and select the best X deciles, how many times better is that than using no model at all?&lt;/span&gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;The lift chart helps you in explaining how much better selecting based on you model is compared to taking random selections instead. Especially when models are not yet used within a certain organisation or domain, this really helps business understand what selecting based on models can do for them. &lt;/p&gt;
 &lt;p&gt;The lift chart only has one reference line: the ‘random model’.  With a random model we mean that each observation gets a random number and all cases are devided into deciles based on these random numbers. The % of actual target category observations in each decile would be equal to the overall % of actual target category observations in the total set. Since the lift is calculated as the ratio of these two numbers, we het a flatliner at the value of 1. Your model should however be able to do better, resulting in a high ratio for decile 1. In the end, since the plot is cumulative, with 100% of cases, we have the whole set again and therefore the cumulative lift will always end up at a value of 1. It looks like this:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="''" src="/img/cumliftplot.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="''" src="c:/temp/intro_modelplotr/content/post/img/cumliftplot.png" /&gt;&lt;/p&gt;
 &lt;p&gt;To generate the cumulate lift plot, we can simply call the function &lt;strong&gt;lift()&lt;/strong&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lift&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in lift(): could not find function &amp;quot;lift&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;&lt;img alt="plot of chunk liftplot" src="/figure/IntroModelplotr-liftplot-1.png" /&gt;&lt;/p&gt;
 &lt;h4&gt;The response plot&lt;/h4&gt;
 &lt;p&gt;One of the easiest to explain evaluation plots is the response plot. It simply plots the percentage of target class observations per decile. It can be used to answer the following business question:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;&lt;span style="color:orange"&gt;When we apply the model and select decile X, what is the expected % of target class observations in that decile?&lt;/span&gt;&lt;/em&gt;&lt;/strong&gt; &lt;/p&gt;
 &lt;p&gt;The plot has one reference line: The % of target class cases in the total set. It looks like this:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="''" src="/img/responseplot.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="''" src="c:/temp/intro_modelplotr/content/post/img/responseplot.png" /&gt;&lt;/p&gt;
 &lt;p&gt;A good model starts high in decile 1 and drops quickly towards 0. How steep the decline can be, also depends on the % of target class in the total set. Interesting is the location where your model’s line intersects the random model line. From here, the % of target class cases is lower than a random selection of cases would hold.  &lt;/p&gt;
 &lt;p&gt;To generate the response plot, we can simply call the function &lt;strong&gt;response()&lt;/strong&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;response&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in response(): could not find function &amp;quot;response&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;&lt;img alt="plot of chunk responseplot" src="/figure/IntroModelplotr-responseplot-1.png" /&gt;&lt;/p&gt;
 &lt;h4&gt;The cumulative response plot&lt;/h4&gt;
 &lt;p&gt;And finally, one of the most used charts: The cumulative response chart. It answers the question burning on each business reps lips:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;&lt;span style="color:orange"&gt;When we apply the model and select up until decile X, what is the expected % of target class observations in the selection?&lt;/span&gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;The reference line in this plot is the same as in the response chart: the % of target class cases in the total set. &lt;/p&gt;
-&lt;p&gt;&lt;img alt="''" src="/img/cumresponseplot.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="''" src="c:/temp/intro_modelplotr/content/post/img/cumresponseplot.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Whereas the response plot crosses the reference line, in the cumulative response plot it approaches it to end at the same point: Selecting all cases up until decile 10 is the same as selecting all cases, hence the % of target class cases will be exactly the same.&lt;/p&gt;
 &lt;p&gt;This plot most often used to decide - together with the business - up until what decile to select based upon the model. &lt;/p&gt;
 &lt;p&gt;To generate the cumulative response plot, we can simply call the function &lt;strong&gt;cumresponse()&lt;/strong&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cumresponse&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in cumresponse(): could not find function &amp;quot;cumresponse&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term='["R"'></category><category term='"predictive modeling"]'></category></entry></feed>
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img alt="plot of chunk cumresponseplot" src="/figure/IntroModelplotr-cumresponseplot-1.png" /&gt;&lt;/p&gt;</summary><category term='["R"'></category><category term='"predictive modeling"]'></category></entry></feed>
