@@ -1,40 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-          <title>intro modelplot</title>
-        <meta charset="utf-8" />
-        <link href="https://modelplot.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="intro modelplot Full Atom Feed" />
-        <link href="https://modelplot.github.io/feeds/posts.atom.xml" type="application/atom+xml" rel="alternate" title="intro modelplot Categories Atom Feed" />
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Pieter Marcus" />
+        <meta name="copyright" content="Pieter Marcus" />
 
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
 
+<meta name="keywords" content="modelplot python modelplotpy blog, posts, " />
 
-    <meta name="tags" content="modelplot python modelplotpy blog" />
+<meta property="og:title" content="Introducing modelplotpy - Plots to evaluate the business value of predictive models "/>
+<meta property="og:url" content="https://modelplot.github.io/intro_modelplotpy.html" />
+<meta property="og:description" content="In this blog we explain four most valuable evaluation plots to assess the business value of a predictive model. These plots are cumulative gains, cumulative lift, response and cumulative response. Since these visualisations are not included in most popular model building packages or modules in R and Python, we show how you can easily create these plots for your own predictive models with our modelplotpy python module and our modelplotr R package (Prefer R? Read all about modelplotr here!). This will help you to explain your model&#39;s business value in laymans terms to non-techies." />
+<meta property="og:site_name" content="intro modelplot" />
+<meta property="og:article:author" content="Pieter Marcus" />
+<meta property="og:article:published_time" content="2018-08-22T14:00:00+02:00" />
+<meta name="twitter:title" content="Introducing modelplotpy - Plots to evaluate the business value of predictive models ">
+<meta name="twitter:description" content="In this blog we explain four most valuable evaluation plots to assess the business value of a predictive model. These plots are cumulative gains, cumulative lift, response and cumulative response. Since these visualisations are not included in most popular model building packages or modules in R and Python, we show how you can easily create these plots for your own predictive models with our modelplotpy python module and our modelplotr R package (Prefer R? Read all about modelplotr here!). This will help you to explain your model&#39;s business value in laymans terms to non-techies.">
 
-</head>
+        <title>Introducing modelplotpy - Plots to evaluate the business value of predictive models  · intro modelplot
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://modelplot.github.io/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://modelplot.github.io/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://modelplot.github.io/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://modelplot.github.io/theme/css/custom.css" media="screen">
+        <link href="https://modelplot.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="intro modelplot - Full Atom Feed" />
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="https://modelplot.github.io/"><span class=site-name>intro modelplot</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="https://modelplot.github.io">Home</a></li>
+                            <li ><a href="https://modelplot.github.io/categories.html">Categories</a></li>
+                            <li ><a href="https://modelplot.github.io/tags.html">Tags</a></li>
+                            <li ><a href="https://modelplot.github.io/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="https://modelplot.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="https://modelplot.github.io/intro_modelplotpy.html"> Introducing modelplotpy - Plots to evaluate the business value of predictive models  </a></h1>
+    </header>
+</div>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="https://modelplot.github.io/">intro modelplot <strong></strong></a></h1>
-        </header><!-- /#banner -->
-        <nav id="menu"><ul>
-        </ul></nav><!-- /#menu -->
-<section id="content" class="body">
-  <header>
-    <h2 class="entry-title">
-      <a href="https://modelplot.github.io/intro_modelplotpy.html" rel="bookmark"
-         title="Permalink to Introducing modelplotpy - Plots to evaluate the business value of predictive models">Introducing modelplotpy - Plots to evaluate the business value of predictive models</a></h2>
- 
-  </header>
-  <footer class="post-info">
-    <abbr class="published" title="2018-08-22T14:00:00+02:00">
-      wo 22 augustus 2018
-    </abbr>
-    <address class="vcard author">
-      By           <a class="url fn" href="https://modelplot.github.io/author/pieter-marcus.html">Pieter Marcus</a>
-    </address>
-  </footer><!-- /.post-info -->
-  <div class="entry-content">
-    <style type="text/css">/*!
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            <style type="text/css">/*!
 *
 * IPython notebook
 *
@@ -1905,13 +1940,54 @@ The cumulative response chart is saved in C:\Users\marcus000/Cumulative response
 }
 </script>
 
-  </div><!-- /.entry-content -->
-</section>
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
-                which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-        </footer><!-- /#contentinfo -->
-</body>
+            
+            
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2018-08-22T14:00:00+02:00">aug 22, 2018</time>
+            <h4>Category</h4>
+            <a class="category-link" href="https://modelplot.github.io/categories.html#posts-ref">posts</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://modelplot.github.io/tags.html#modelplot-python-modelplotpy-blog-ref">modelplot python modelplotpy blog
+                    <span>1</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="#" title="My You can add links in your config file Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-you can add links in your config file sidebar-social-links"></i></a>
+    <a href="#" title="My Another social link Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-another social link sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
 </html>

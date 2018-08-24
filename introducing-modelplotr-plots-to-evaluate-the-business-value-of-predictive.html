@@ -1,39 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-          <title>intro modelplot</title>
-        <meta charset="utf-8" />
-        <link href="https://modelplot.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="intro modelplot Full Atom Feed" />
-        <link href="https://modelplot.github.io/feeds/misc.atom.xml" type="application/atom+xml" rel="alternate" title="intro modelplot Categories Atom Feed" />
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Pieter Marcus and Jurriaan Nagelkerke" />
+        <meta name="copyright" content="Pieter Marcus and Jurriaan Nagelkerke" />
 
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
 
+<meta name="keywords" content=", misc, " />
 
+<meta property="og:title" content="&#39;Introducing modelplotr: Plots to evaluate the business value of predictive "/>
+<meta property="og:url" content="https://modelplot.github.io/introducing-modelplotr-plots-to-evaluate-the-business-value-of-predictive.html" />
+<meta property="og:description" content="models&#39; author: &#34;Jurriaan Nagelkerke and Pieter Marcus&#34; date: &#39;2018-08-17&#39; output: html_document: df_print: paged pdf_document: default word_document: default tags: - R - predictive modeling categories: - R - modelplotr - modelplot - modelplotpy Why ROC curves are a bad idea to explain your model to business people Summary In this blog we explain four most valuable evaluation ..." />
+<meta property="og:site_name" content="intro modelplot" />
+<meta property="og:article:author" content="Pieter Marcus and Jurriaan Nagelkerke" />
+<meta property="og:article:published_time" content="2018-07-25T17:07:36.228860+02:00" />
+<meta name="twitter:title" content="&#39;Introducing modelplotr: Plots to evaluate the business value of predictive ">
+<meta name="twitter:description" content="models&#39; author: &#34;Jurriaan Nagelkerke and Pieter Marcus&#34; date: &#39;2018-08-17&#39; output: html_document: df_print: paged pdf_document: default word_document: default tags: - R - predictive modeling categories: - R - modelplotr - modelplot - modelplotpy Why ROC curves are a bad idea to explain your model to business people Summary In this blog we explain four most valuable evaluation ...">
 
-</head>
+        <title>&#39;Introducing modelplotr: Plots to evaluate the business value of predictive  · intro modelplot
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://modelplot.github.io/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://modelplot.github.io/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://modelplot.github.io/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://modelplot.github.io/theme/css/custom.css" media="screen">
+        <link href="https://modelplot.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="intro modelplot - Full Atom Feed" />
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="https://modelplot.github.io/"><span class=site-name>intro modelplot</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="https://modelplot.github.io">Home</a></li>
+                            <li ><a href="https://modelplot.github.io/categories.html">Categories</a></li>
+                            <li ><a href="https://modelplot.github.io/tags.html">Tags</a></li>
+                            <li ><a href="https://modelplot.github.io/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="https://modelplot.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="https://modelplot.github.io/introducing-modelplotr-plots-to-evaluate-the-business-value-of-predictive.html"> 'Introducing modelplotr: Plots to evaluate the business value of predictive  </a></h1>
+    </header>
+</div>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="https://modelplot.github.io/">intro modelplot <strong></strong></a></h1>
-        </header><!-- /#banner -->
-        <nav id="menu"><ul>
-        </ul></nav><!-- /#menu -->
-<section id="content" class="body">
-  <header>
-    <h2 class="entry-title">
-      <a href="https://modelplot.github.io/introducing-modelplotr-plots-to-evaluate-the-business-value-of-predictive.html" rel="bookmark"
-         title="Permalink to 'Introducing modelplotr: Plots to evaluate the business value of predictive">'Introducing modelplotr: Plots to evaluate the business value of predictive</a></h2>
- 
-  </header>
-  <footer class="post-info">
-    <abbr class="published" title="2018-07-25T17:07:36.228860+02:00">
-      wo 25 juli 2018
-    </abbr>
-    <address class="vcard author">
-      By           <a class="url fn" href="https://modelplot.github.io/author/pieter-marcus-and-jurriaan-nagelkerke.html">Pieter Marcus and Jurriaan Nagelkerke</a>
-    </address>
-  </footer><!-- /.post-info -->
-  <div class="entry-content">
-    <p>models'
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            <p>models'
 author: "Jurriaan Nagelkerke and Pieter Marcus"
 date: '2018-08-17'
 output:
@@ -284,13 +320,48 @@ plot_cumresponse<span class="p">(</span>highlight_decile <span class="o">=</span
 
 <p><img alt="plot of chunk comparemodels" src="https://modelplot.github.io/img/IntroModelplotr-comparemodels-1.png" /></p>
 <p>Seems like the algorithm used will not make a big difference in this case. Hopefully you agree by now that using these plots really can make a difference in explaining the business value of your predictive models! Happy modelplotting!</p>
-  </div><!-- /.entry-content -->
-</section>
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
-                which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-        </footer><!-- /#contentinfo -->
-</body>
+            
+            
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2018-07-25T17:07:36.228860+02:00">jul 25, 2018</time>
+            <h4>Category</h4>
+            <a class="category-link" href="https://modelplot.github.io/categories.html#misc-ref">misc</a>
+<h4>Contact</h4>
+    <a href="#" title="My You can add links in your config file Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-you can add links in your config file sidebar-social-links"></i></a>
+    <a href="#" title="My Another social link Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-another social link sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
 </html>
