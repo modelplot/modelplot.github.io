@@ -206,7 +206,7 @@ plotting_scope<span class="p">(</span>select_model_label <span class="o">=</span
 </pre></div>
 
 
-<p><img alt="plot of chunk gainsplot" src="https://modelplot.github.io/figure/IntroModelplotr-gainsplot-1.png" /></p>
+<p><img alt="plot of chunk gainsplot" src="https://modelplot.github.io/img/IntroModelplotr-gainsplot-1.png" /></p>
 <p>We don't need to specify any parameters, since the default input is <strong>plot_input</strong>, which is generated with the <strong>plotting_scope()</strong> function we ran previously. There are several parameters available to customize the plot, though. If we want to emphasize the model performance at a given point, we can add both highlighting to the plot and add some explanatoty text below the plot. Both are optional, though:</p>
 <div class="highlight"><pre><span></span>plot_cumgains<span class="p">(</span>highlight_decile <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
 <span class="c1">##  </span>
@@ -217,7 +217,7 @@ plotting_scope<span class="p">(</span>select_model_label <span class="o">=</span
 </pre></div>
 
 
-<p><img alt="plot of chunk gainsplotannotated" src="https://modelplot.github.io/figure/IntroModelplotr-gainsplotannotated-1.png" /></p>
+<p><img alt="plot of chunk gainsplotannotated" src="https://modelplot.github.io/img/IntroModelplotr-gainsplotannotated-1.png" /></p>
 <p>Our 'highlight_decile' parameter ads some guiding elements to the plot at decile 2 as well as a text box below the graph with the interpretation of the plot at decile 2 in words. This interpretation also printed to the console. Our simple model - only 6 pedictors were used - seems to do a nice job selecting the customers interested in buying term deposites. <em>When we select 20% with the highest probability according to XGBoost, this selection holds 80% of all yes cases in test data.</em> With a perfect model, we would have selected 100%, since less than 20% of all customers in the test set buy term deposits.A random pick would only hold 20% of the customers with term deposits. How much better than random we do, brings us to plot number 2! </p>
 <h4>The cumulative lift chart</h4>
 <p>The cumulative lift chart, often referred to as lift chart or index chart, helps you answer the question:</p>
@@ -235,7 +235,7 @@ plotting_scope<span class="p">(</span>select_model_label <span class="o">=</span
 </pre></div>
 
 
-<p><img alt="plot of chunk liftplot" src="https://modelplot.github.io/figure/IntroModelplotr-liftplot-1.png" /></p>
+<p><img alt="plot of chunk liftplot" src="https://modelplot.github.io/img/IntroModelplotr-liftplot-1.png" /></p>
 <p>A term deposit campaign targeted at a selection of 20% of all customers based on our XGBoost model can be expected to have a 4 times higher response (400%) compared to a random sample of customer. Not bad, right? The cumulative lift really helps in getting a positive return on marketing investments. It should be noted, though, that since the cumulative lift plot is relative, it doesn't tell us how high the actual reponse will be on our campaign...   </p>
 <h4>The response plot</h4>
 <p>One of the easiest to explain evaluation plots is the response plot. It simply plots the percentage of target class observations per decile. It can be used to answer the following business question:</p>
@@ -253,7 +253,7 @@ plotting_scope<span class="p">(</span>select_model_label <span class="o">=</span
 </pre></div>
 
 
-<p><img alt="plot of chunk responseplot" src="https://modelplot.github.io/figure/IntroModelplotr-responseplot-1.png" /></p>
+<p><img alt="plot of chunk responseplot" src="https://modelplot.github.io/img/IntroModelplotr-responseplot-1.png" /></p>
 <p>As the plot shows and the text below the plot states: <em>When we select decile 1 according to model XGBoost in dataset test data the % of yes cases in the selection is 55%.</em>. This is quite good, especially when compared to the overall likelihood of 11%. The response in the second decile is much lower, about 28%. From decile 3 onwards, the expected response will be lower than the overall likelihood of 10.4%. However, most of the time, our model will be used to select the highest decile <em>up until</em> some decile. That makes it even more relevant to have a look at the cumulative version of the response chart. And guess what, that's our final plot!   </p>
 <h4>The cumulative response plot</h4>
 <p>Finally, one of the most used charts: The cumulative response chart. It answers the question burning on each business reps lips:</p>
@@ -271,7 +271,7 @@ plotting_scope<span class="p">(</span>select_model_label <span class="o">=</span
 </pre></div>
 
 
-<p><img alt="plot of chunk cumresponseplot" src="https://modelplot.github.io/figure/IntroModelplotr-cumresponseplot-1.png" /></p>
+<p><img alt="plot of chunk cumresponseplot" src="https://modelplot.github.io/img/IntroModelplotr-cumresponseplot-1.png" /></p>
 <p><em>When we select deciles 1 until 3 according to model XGBoost in dataset test data the % of yes cases in the selection is 36%.</em> Since the test data is an independent set, not used to train the model, we can expect the response on the term deposit campaign to be 36%. </p>
 <p>The cumulative response percentage at a given decile is a number your business colleagues can really work with: Is that response big enough to have a successfull campaign, given costs and other expectations? Will the absolute number of sold term deposits meet the targets? Or do we loose too much of all potential term deposit buyers by only selecting the top 30%? To answer that question, we can go back to the cumulative gains plot. And that's why there's no absolute winner among these plots and we advice to use them all. To make that happen, there's also a function to easily combine all four plots. </p>
 <h4>All four plots together</h4>
@@ -281,7 +281,7 @@ plotting_scope<span class="p">(</span>select_model_label <span class="o">=</span
 </pre></div>
 
 
-<p><img alt="plot of chunk allplots" src="https://modelplot.github.io/figure/IntroModelplotr-allplots-1.png" /></p>
+<p><img alt="plot of chunk allplots" src="https://modelplot.github.io/img/IntroModelplotr-allplots-1.png" /></p>
 <p>Neat! With these plots, we are able to talk with business people about the actual value of our predictive model, without having to bore them with technicalities any nitty gritty details. We've translated our model in business terms and visualised it to ease interpretation. Hopefully, this helps many of you in discussing how to optimally take advantage of your predictive model building efforts.   </p>
 <h3>Three other scopes in modelplotr.</h3>
 <p>As briefly discussed earlier, the modelplotr package doesn't only allow to add a single line to the plots, but also enable to make interesting comparisons. Comparisons between different models, between different datasets and (in case of a multiclass target) between different target classes. To discuss all this, please have a look at the package documentation or read our other posts on modelplotr. </p>
@@ -303,7 +303,7 @@ plot_cumresponse<span class="p">(</span>highlight_decile <span class="o">=</span
 </pre></div>
 
 
-<p><img alt="plot of chunk comparemodels" src="https://modelplot.github.io/figure/IntroModelplotr-comparemodels-1.png" /></p>
+<p><img alt="plot of chunk comparemodels" src="https://modelplot.github.io/img/IntroModelplotr-comparemodels-1.png" /></p>
 <p>Seems like the algorithm used will not make a big difference in this case. Hopefully you agree by now that using these plots really can make a difference in explaining the business value of your predictive models! Happy modelplotting!</p>
       </div>
 <!-- /.entry-content -->
