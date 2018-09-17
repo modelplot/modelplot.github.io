@@ -164,14 +164,22 @@ bank<span class="o">$</span>y<span class="p">[</span>bank<span class="o">$</span
 
 <span class="c1">#explore data</span>
 str<span class="p">(</span>bank<span class="p">)</span>
+<span class="c1">## &#39;data.frame&#39;:    41188 obs. of  6 variables:</span>
+<span class="c1">##  $ y        : chr  &quot;no&quot; &quot;no&quot; &quot;no&quot; &quot;no&quot; ...</span>
+<span class="c1">##  $ duration : int  261 149 226 151 307 198 139 217 380 50 ...</span>
+<span class="c1">##  $ campaign : int  1 1 1 1 1 1 1 1 1 1 ...</span>
+<span class="c1">##  $ pdays    : int  999 999 999 999 999 999 999 999 999 999 ...</span>
+<span class="c1">##  $ previous : int  0 0 0 0 0 0 0 0 0 0 ...</span>
+<span class="c1">##  $ euribor3m: num  4.86 4.86 4.86 4.86 4.86 ...</span>
 </pre></div>
 
 
 <p>On this data, we've applied some predictive modeling techniques from the <a href="https://mlr-org.github.io/mlr/"><strong>mlr package</strong></a>. This popular R package is a wrapper for many predictive modeling techniques, such as logistic regression, random forest, XG boost, svm, neural nets and many, many others. For instance, to predict the binary target <strong>y</strong>, mlr currently offers the following algorithms:</p>
 <div class="highlight"><pre><span></span><span class="c1"># To check available algorithms, create classification task with binary target y </span>
-<span class="c1">#task = mlr::makeClassifTask(data = bank, target = &quot;y&quot;)</span>
-<span class="c1">#algos = mlr::listLearners(task, check.packages = FALSE)$name</span>
-<span class="c1">#paste0(&#39;Available Algorithms (&#39;,length(algos),&#39;): &#39;,paste(head(algos,5),collapse = &#39;, &#39;),&#39;, ..., &#39;,paste(tail(algos,5),collapse = &#39;, &#39;))</span>
+task <span class="o">=</span> mlr<span class="o">::</span>makeClassifTask<span class="p">(</span>data <span class="o">=</span> bank<span class="p">,</span> target <span class="o">=</span> <span class="s">&quot;y&quot;</span><span class="p">)</span>
+algos <span class="o">=</span> mlr<span class="o">::</span>listLearners<span class="p">(</span>task<span class="p">,</span> check.packages <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span><span class="o">$</span>name
+<span class="kp">paste0</span><span class="p">(</span><span class="s">&#39;Available Algorithms (&#39;</span><span class="p">,</span><span class="kp">length</span><span class="p">(</span>algos<span class="p">),</span><span class="s">&#39;): &#39;</span><span class="p">,</span><span class="kp">paste</span><span class="p">(</span><span class="kp">head</span><span class="p">(</span>algos<span class="p">,</span><span class="m">5</span><span class="p">),</span>collapse <span class="o">=</span> <span class="s">&#39;, &#39;</span><span class="p">),</span><span class="s">&#39;, ..., &#39;</span><span class="p">,</span><span class="kp">paste</span><span class="p">(</span><span class="kp">tail</span><span class="p">(</span>algos<span class="p">,</span><span class="m">5</span><span class="p">),</span>collapse <span class="o">=</span> <span class="s">&#39;, &#39;</span><span class="p">))</span>
+<span class="c1">## [1] &quot;Available Algorithms (78): C50, k-Nearest Neighbours, J48 Decision Trees, Propositional Rule Learner, L1-Regularized L2-Loss Support Vector Classification, ..., Deep neural network with weights initialized by Stacked AutoEncoder, Shrinkage Discriminant Analysis, Sparse Discriminant Analysis, Support Vector Machines (libsvm), eXtreme Gradient Boosting&quot;</span>
 </pre></div>
 
 

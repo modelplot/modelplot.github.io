@@ -1920,14 +1920,22 @@ bank&lt;span class="o"&gt;$&lt;/span&gt;y&lt;span class="p"&gt;[&lt;/span&gt;ban
 
 &lt;span class="c1"&gt;#explore data&lt;/span&gt;
 str&lt;span class="p"&gt;(&lt;/span&gt;bank&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;## &amp;#39;data.frame&amp;#39;:    41188 obs. of  6 variables:&lt;/span&gt;
+&lt;span class="c1"&gt;##  $ y        : chr  &amp;quot;no&amp;quot; &amp;quot;no&amp;quot; &amp;quot;no&amp;quot; &amp;quot;no&amp;quot; ...&lt;/span&gt;
+&lt;span class="c1"&gt;##  $ duration : int  261 149 226 151 307 198 139 217 380 50 ...&lt;/span&gt;
+&lt;span class="c1"&gt;##  $ campaign : int  1 1 1 1 1 1 1 1 1 1 ...&lt;/span&gt;
+&lt;span class="c1"&gt;##  $ pdays    : int  999 999 999 999 999 999 999 999 999 999 ...&lt;/span&gt;
+&lt;span class="c1"&gt;##  $ previous : int  0 0 0 0 0 0 0 0 0 0 ...&lt;/span&gt;
+&lt;span class="c1"&gt;##  $ euribor3m: num  4.86 4.86 4.86 4.86 4.86 ...&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;On this data, we've applied some predictive modeling techniques from the &lt;a href="https://mlr-org.github.io/mlr/"&gt;&lt;strong&gt;mlr package&lt;/strong&gt;&lt;/a&gt;. This popular R package is a wrapper for many predictive modeling techniques, such as logistic regression, random forest, XG boost, svm, neural nets and many, many others. For instance, to predict the binary target &lt;strong&gt;y&lt;/strong&gt;, mlr currently offers the following algorithms:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# To check available algorithms, create classification task with binary target y &lt;/span&gt;
-&lt;span class="c1"&gt;#task = mlr::makeClassifTask(data = bank, target = &amp;quot;y&amp;quot;)&lt;/span&gt;
-&lt;span class="c1"&gt;#algos = mlr::listLearners(task, check.packages = FALSE)$name&lt;/span&gt;
-&lt;span class="c1"&gt;#paste0(&amp;#39;Available Algorithms (&amp;#39;,length(algos),&amp;#39;): &amp;#39;,paste(head(algos,5),collapse = &amp;#39;, &amp;#39;),&amp;#39;, ..., &amp;#39;,paste(tail(algos,5),collapse = &amp;#39;, &amp;#39;))&lt;/span&gt;
+task &lt;span class="o"&gt;=&lt;/span&gt; mlr&lt;span class="o"&gt;::&lt;/span&gt;makeClassifTask&lt;span class="p"&gt;(&lt;/span&gt;data &lt;span class="o"&gt;=&lt;/span&gt; bank&lt;span class="p"&gt;,&lt;/span&gt; target &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;y&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+algos &lt;span class="o"&gt;=&lt;/span&gt; mlr&lt;span class="o"&gt;::&lt;/span&gt;listLearners&lt;span class="p"&gt;(&lt;/span&gt;task&lt;span class="p"&gt;,&lt;/span&gt; check.packages &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;FALSE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;name
+&lt;span class="kp"&gt;paste0&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Available Algorithms (&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="kp"&gt;length&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;algos&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;): &amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="kp"&gt;paste&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;head&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;algos&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;collapse &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;, &amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;, ..., &amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="kp"&gt;paste&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;tail&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;algos&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;collapse &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;, &amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="c1"&gt;## [1] &amp;quot;Available Algorithms (78): C50, k-Nearest Neighbours, J48 Decision Trees, Propositional Rule Learner, L1-Regularized L2-Loss Support Vector Classification, ..., Deep neural network with weights initialized by Stacked AutoEncoder, Shrinkage Discriminant Analysis, Sparse Discriminant Analysis, Support Vector Machines (libsvm), eXtreme Gradient Boosting&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
