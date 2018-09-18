@@ -1912,7 +1912,7 @@ csvname &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;bank
 temp &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;tempfile&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 download.file&lt;span class="p"&gt;(&lt;/span&gt;zipname&lt;span class="p"&gt;,&lt;/span&gt;temp&lt;span class="p"&gt;,&lt;/span&gt; mode&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;wb&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="c1"&gt;## Warning in download.file(zipname, temp, mode = &amp;quot;wb&amp;quot;): InternetOpenUrl&lt;/span&gt;
-&lt;span class="c1"&gt;## failed: &amp;#39;Kan geen verbinding met de server maken.&amp;#39;&lt;/span&gt;
+&lt;span class="c1"&gt;## failed: &amp;#39;Er heeft een time-out van de bewerking plaatsgevonden.&amp;#39;&lt;/span&gt;
 &lt;span class="c1"&gt;## Error in download.file(zipname, temp, mode = &amp;quot;wb&amp;quot;): cannot open URL &amp;#39;https://archive.ics.uci.edu/ml/machine-learning-databases/00222/bank-additional.zip&amp;#39;&lt;/span&gt;
 bank &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; read.table&lt;span class="p"&gt;(&lt;/span&gt;unzip&lt;span class="p"&gt;(&lt;/span&gt;temp&lt;span class="p"&gt;,&lt;/span&gt;csvname&lt;span class="p"&gt;),&lt;/span&gt;sep&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; stringsAsFactors&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;FALSE&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;header &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;T&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="c1"&gt;## Warning in unzip(temp, csvname): error 1 in extracting from zip file&lt;/span&gt;
@@ -1931,7 +1931,7 @@ str&lt;span class="p"&gt;(&lt;/span&gt;bank&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="kp"&gt;gc&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="c1"&gt;##           used (Mb) gc trigger (Mb) max used (Mb)&lt;/span&gt;
 &lt;span class="c1"&gt;## Ncells  510134 27.3    1172268 62.7  1172268 62.7&lt;/span&gt;
-&lt;span class="c1"&gt;## Vcells 1302714 10.0    8388608 64.0  7012624 53.6&lt;/span&gt;
+&lt;span class="c1"&gt;## Vcells 1302706 10.0    8388608 64.0  7012616 53.6&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
