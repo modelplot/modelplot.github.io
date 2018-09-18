@@ -1931,7 +1931,7 @@ str&lt;span class="p"&gt;(&lt;/span&gt;bank&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="kp"&gt;gc&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="c1"&gt;##           used (Mb) gc trigger (Mb) max used (Mb)&lt;/span&gt;
 &lt;span class="c1"&gt;## Ncells  510134 27.3    1172268 62.7  1172268 62.7&lt;/span&gt;
-&lt;span class="c1"&gt;## Vcells 1302706 10.0    8388608 64.0  7012616 53.6&lt;/span&gt;
+&lt;span class="c1"&gt;## Vcells 1302706 10.0    8388608 64.0  7012624 53.6&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 

@@ -1,109 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
+    <title>intro modelplot - modelplot python modelplotpy blog</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>modelplot python modelplotpy blog &ndash; intro modelplot</title>
-
-    <!-- Meta -->
-    <meta name="description" content="intro modelplot &ndash; ">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Social -->
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content="intro modelplot"/>
-    <meta property="og:description" content=""/>
-    <meta property="og:site_name" content="intro modelplot" />
-    <meta property="og:url" content="https://modelplot.github.io"/>
-    <meta property="og:image" content=""/>
-
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="intro modelplot">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:url" content="https://modelplot.github.io">
-    <meta name="twitter:image" content="">
-
-    <!-- Feed -->
-    <link rel="alternate" type="application/atom+xml" href="https://modelplot.github.io/feeds/all.atom.xml" title="intro modelplot Atom Feed" />
-
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,bold">
-    <link rel="stylesheet" type="text/css" href="https://modelplot.github.io/theme/css/w3.css">
-    <link rel="stylesheet" type="text/css" href="https://modelplot.github.io/theme/css/style.css">
-    <link rel="stylesheet" type="text/css" href="https://modelplot.github.io/theme/css/jqcloud.css">
-    <link rel="stylesheet" type="text/css" href="https://modelplot.github.io/theme/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="https://modelplot.github.io/theme/css/pygments-highlight-github.css">
-
-    <!-- Icon -->
-
-    <!-- JavaScript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://modelplot.github.io/theme/js/jqcloud.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
+    <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" rel="stylesheet" />-->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://modelplot.github.io/theme/style.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://modelplot.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="intro modelplot Full Atom Feed" />
   </head>
-
-  <body>
-    <div class="w3-row w3-card w3-white">
-      <header id="header">
-        <a href="https://modelplot.github.io" id="header-logo" title="Home">PM</a>
-        <nav id="header-menu">
-          <ul>
-            <li class="w3-bottombar w3-border-white w3-hover-border-green" ><a href="https://modelplot.github.io/category/posts.html">posts</a></li>
-          </ul>
-        </nav>
-      </header>
-    </div>
-
-
-    <br><br><br>
-
-    <div class="w3-container col-main w3-center">
-      <h2>Articles tagged with #modelplot python modelplotpy blog</h2>
-    </div>
-
-
-
-    <br><br><br>
-
-    <section id="listing">
-      <article class="w3-container w3-card-2 w3-white col-main">
-        <header>
-          <h2><a href="https://modelplot.github.io/intro_modelplotpy.html">Introducing modelplotpy - Plots to evaluate the business value of predictive models</a></h2>
-          <div class="post-info">
-            <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
-              <span><time datetime="2018-08-22T14:00:00+02:00">wo 22 augustus 2018</time> in <a href="https://modelplot.github.io/category/posts.html" title="All articles in category posts">posts</a></span>
-            </div>
-            <div class="w3-margin-right">
-              <span class="w3-tag w3-light-grey w3-text-green w3-hover-green">
-                <a href="https://modelplot.github.io/tag/modelplot-python-modelplotpy-blog.html" title="All articles with Modelplot Python Modelplotpy Blog tag">#modelplot python modelplotpy blog</a>
-              </span>
-            </div>
-          </div>
-        </header>
-
-        <div class="entry-content">
-          In this blog we explain four most valuable evaluation plots to assess the business value of a predictive model. These plots are cumulative gains, cumulative lift, response and cumulative response. Since these visualisations are not included in most popular model building packages or modules in R and Python, we show how you can easily create these plots for your own predictive models with our modelplotpy python module and our modelplotr R package (Prefer R? Read all about modelplotr here!). This will help you to explain your model's business value in laymans terms to non-techies.
+  <body id="index" class="archive">
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="https://modelplot.github.io">intro modelplot</a>
         </div>
-
-        <footer>
-          <a class="w3-btn w3-green w3-right" href="https://modelplot.github.io/intro_modelplotpy.html">Read &#10093;</a>
-        </footer>
-      </article>
-
-      <br><br><br>
-
-
-
+        <div class="collapse navbar-collapse navbar-right">
+          <ul class="nav navbar-nav">
+            <li class="active"active><a href="https://modelplot.github.io/tags.html">tags</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+    </nav>
+    <div class="container">
+    <section id="content" class="content">
+      <ol class="breadcrumb">
+        <li><a href="https://modelplot.github.io"><div class="fa fa-lg fa-home"></div><span class="hidden-xs"> Home</span></a></li>
+        <li><a href="https://modelplot.github.io/tags.html"><div class="fa fa-lg fa-tags"></div> Tags <span class="badge">2</span></a></li>
+        <li class="active"><div class="fa fa-lg fa-tag"></div> modelplot python modelplotpy blog <span class="badge">1</span></li>
+      </ol>
+      <div class="row">
+        <div class="col-sm-3">
+          <span class="text-muted">wo 22 augustus 2018</span>
+        </div>
+        <div class="col-sm-9">
+          <p>
+            <a href="https://modelplot.github.io/intro_modelplotpy.html" rel="bookmark" title="Permalink to Introducing modelplotpy - Plots to evaluate the business value of predictive models">Introducing modelplotpy - Plots to evaluate the business value of predictive models</a>
+            <br/>
+            In this blog we explain four most valuable evaluation plots to assess the business value of a predictive model. These plots are cumulative gains, cumulative lift, response and cumulative response. Since these visualisations are not included in most popular model building packages or modules in R and Python, we show how you can easily create these plots for your own predictive models with our modelplotpy python module and our modelplotr R package (Prefer R? Read all about modelplotr here!). This will help you to explain your model's business value in laymans terms to non-techies.
+          </p>
+        </div>
+      </div>
     </section>
-
-
-    <footer id="footer">
-      <div id="footer-copyright" class="w3-center w3-small w3-text-grey w3-padding-48">
-        <span>&copy;  Pieter Marcus and Jurriaan Nagelkerke  | <a href="https://modelplot.github.io/feeds/all.atom.xml">Atom feed <i class="fa fa-rss" aria-hidden="true"></i></a></span>
+    <!-- content -->
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <p class="footer-text">&copy; <a href="https://modelplot.github.io">intro modelplot</a> powered by <a href="http://getpelican.com/">pelican</a> and <a href="http://nodotcom.org">nikhil</a></p>
       </div>
     </footer>
-
-
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
 </html>
