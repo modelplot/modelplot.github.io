@@ -1099,11 +1099,25 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 </style>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;style&gt;.container { width:100% !important; }&lt;/style&gt;&quot;</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Why-ROC-curves-are-a-bad-idea-to-explain-your-model-to-business-people?">Why ROC curves are a bad idea to explain your model to business people?<a class="anchor-link" href="#Why-ROC-curves-are-a-bad-idea-to-explain-your-model-to-business-people?">&#182;</a></h2><h3 id="Pieter-Marcus-and-Jurriaan-Nagelkerke,-18-september-2018">Pieter Marcus and Jurriaan Nagelkerke, 18 september 2018<a class="anchor-link" href="#Pieter-Marcus-and-Jurriaan-Nagelkerke,-18-september-2018">&#182;</a></h3><h3 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h3><p>In this blog we explain four most valuable evaluation plots to assess the business value of a predictive model. These plots are cumulative gains, cumulative lift, response and cumulative response. Since these visualisations are not included in most popular model building packages or modules in R and Python, we show how you can easily create these plots for your own predictive models with our modelplotpy python module and our <a href="https://modelplot.github.io/intro_modelplotr.html">modelplotr R package (Prefer R? Read all about modelplotr here!)</a>. This will help you to explain your model's business value in laymans terms to non-techies.</p>
+<h2 id="Why-ROC-curves-are-a-bad-idea-to-explain-your-model-to-business-people">Why ROC curves are a bad idea to explain your model to business people<a class="anchor-link" href="#Why-ROC-curves-are-a-bad-idea-to-explain-your-model-to-business-people">&#182;</a></h2><h3 id="Pieter-Marcus-and-Jurriaan-Nagelkerke,-20-september-2018">Pieter Marcus and Jurriaan Nagelkerke, 20 september 2018<a class="anchor-link" href="#Pieter-Marcus-and-Jurriaan-Nagelkerke,-20-september-2018">&#182;</a></h3><h3 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h3><p>In this blog we explain four most valuable evaluation plots to assess the business value of a predictive model. These plots are cumulative gains, cumulative lift, response and cumulative response. Since these visualisations are not included in most popular model building packages or modules in R and Python, we show how you can easily create these plots for your own predictive models with our modelplotpy python module and our <a href="https://modelplot.github.io/intro_modelplotr.html">modelplotr R package (Prefer R? Read all about modelplotr here!)</a>. This will help you to explain your model's business value in laymans terms to non-techies.</p>
 <h3 id="Intro">Intro<a class="anchor-link" href="#Intro">&#182;</a></h3><p><img src="img/cartoonrocplot.jpg" alt=" "></p>
 <blockquote><p>‘...And as we can see clearly on this ROC plot, the sensitivity of the model at the value of 0.2 on one minus the specificity is quite high! Right?...’.</p>
 </blockquote>
