@@ -1274,6 +1274,10 @@ img {
 	width:100% !important; 
     position: relative
 }
+.container {
+    width: 200% !important;
+}   
+
 
 .container .post {
     padding: 4em 0
