@@ -5,34 +5,34 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://modelplot.github.io/</loc>
-<lastmod>2018-09-19T19:12:55-00:00</lastmod>
+<lastmod>2018-09-19T19:21:17-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://modelplot.github.io/archives.html</loc>
-<lastmod>2018-09-19T19:12:55-00:00</lastmod>
+<lastmod>2018-09-19T19:21:17-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://modelplot.github.io/tags.html</loc>
-<lastmod>2018-09-19T19:12:55-00:00</lastmod>
+<lastmod>2018-09-19T19:21:17-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://modelplot.github.io/2018/08/intro_modelplotpy.html</loc>
+<loc>https://modelplot.github.io/intro_modelplotpy.html</loc>
 <lastmod>2018-08-22T14:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://modelplot.github.io/2018/08/intro_modelplotr.html</loc>
+<loc>https://modelplot.github.io/intro_modelplotr.html</loc>
 <lastmod>2018-08-22T14:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
