@@ -1270,8 +1270,8 @@ img {
 #blog-author.has-cover .post-author-about {
     margin-top: 1.333em
 }
-
 .container {
+	width:100% !important; 
     position: relative
 }
 
