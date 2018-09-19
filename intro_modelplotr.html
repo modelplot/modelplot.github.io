@@ -14,19 +14,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="referrer" content="origin" />
   <meta name="generator" content="Pelican" />
-  <link href="https://modelplot.github.io" rel="canonical" />
+  <link href="modelplot.github.io" rel="canonical" />
 
   <!-- Feed -->
-        <link href="https://modelplot.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="intro modelplot Full Atom Feed" />
-          <link href="https://modelplot.github.io/feeds/posts.atom.xml" type="application/atom+xml" rel="alternate" title="intro modelplot Categories Atom Feed" />
 
-  <link href="https://modelplot.github.io/theme/css/style.css" type="text/css" rel="stylesheet" />
+  <link href="modelplot.github.io/theme/css/style.css" type="text/css" rel="stylesheet" />
 
   <!-- Code highlight color scheme -->
-      <link href="https://modelplot.github.io/theme/css/code_blocks/github.css" rel="stylesheet">
+      <link href="modelplot.github.io/theme/css/code_blocks/github.css" rel="stylesheet">
 
     <!-- CSS specified by the user -->
-    <link href="https://modelplot.github.io/pelican-themes/attila/assets/css/our_style.css" type="text/css" rel="stylesheet" />
+    <link href="modelplot.github.io/pelican-themes/attila/assets/css/our_style.css" type="text/css" rel="stylesheet" />
 
   <!-- Custom fonts -->
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
@@ -40,7 +38,7 @@
   <![endif]-->
 
 
-    <link href="https://modelplot.github.io/intro_modelplotr.html" rel="canonical" />
+    <link href="modelplot.github.io/intro_modelplotr.html" rel="canonical" />
 
         <meta name="description" content="In this blog we explain four most valuable evaluation charts to assess the business value of a predictive model. Since these...">
 
@@ -53,17 +51,17 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="intro modelplot" />
     <meta property="og:description" content="View the blog." />
-    <meta property="og:url" content="https://modelplot.github.io" />
-      <meta property="og:image" content="https://modelplot.github.io/img/cat-0.png" />
+    <meta property="og:url" content="modelplot.github.io" />
+      <meta property="og:image" content="modelplot.github.io/img/cat-0.png" />
 
   <meta property="og:type" content="article">
-            <meta property="article:author" content="https://modelplot.github.io/author/jurriaan-nagelkerke">
-  <meta property="og:url" content="https://modelplot.github.io/intro_modelplotr.html">
+            <meta property="article:author" content="modelplot.github.io/author/jurriaan-nagelkerke">
+  <meta property="og:url" content="modelplot.github.io/intro_modelplotr.html">
   <meta property="og:title" content="Introducing modelplotr - Plots to evaluate the business value of predictive models">
   <meta property="article:published_time" content="2018-08-22 14:00:00+02:00">
             <meta property="og:description" content="In this blog we explain four most valuable evaluation charts to assess the business value of a predictive model. Since these...">
 
-            <meta property="og:image" content="https://modelplot.github.io/img/cat-0.png">
+            <meta property="og:image" content="modelplot.github.io/img/cat-0.png">
 </head>
 <!-- TODO : Body class -->
 <body class="home-template">
@@ -89,7 +87,7 @@
       <div class="inner">
         <nav id="navigation">
             <span id="home-button" class="nav-button">
-                <a class="home-button" href="https://modelplot.github.io" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+                <a class="home-button" href="modelplot.github.io" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
             </span>
           <span id="menu-button" class="nav-button">
             <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
@@ -98,7 +96,7 @@
         <h1 class="post-title">Introducing modelplotr - Plots to evaluate the business value of predictive models</h1>
         <!-- TODO : Proper class for headline -->
         <span class="post-meta">
-                <a href="https://modelplot.github.io/author/jurriaan-nagelkerke">Jurriaan nagelkerke</a>
+                <a href="modelplot.github.io/author/jurriaan-nagelkerke">Jurriaan nagelkerke</a>
             | <time datetime="22 aug 2018">22 aug 2018</time>
         </span>
         <!-- TODO : Modified check -->
@@ -271,7 +269,7 @@ plot_cumgains<span class="p">()</span>
 </pre></div>
 
 
-<p><img alt="plot of chunk gainsplot" src="https://modelplot.github.io/img/intro_modelplotr_pelicanRMD-gainsplot-1.png" /></p>
+<p><img alt="plot of chunk gainsplot" src="modelplot.github.io/img/intro_modelplotr_pelicanRMD-gainsplot-1.png" /></p>
 <p>We don't need to specify any parameters, since the default input is <strong>plot_input</strong>, which is generated with the <strong>plotting_scope()</strong> function we ran previously. There are several parameters available to customize the plot, though. If we want to emphasize the model performance at a given point, we can add both highlighting to the plot and add some explanatory text below the plot. Both are optional, though:</p>
 <div class="highlight"><pre><span></span><span class="c1"># plot the cumulative gains plot and annotate the plot at decile = 2</span>
 plot_cumgains<span class="p">(</span>highlight_decile <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
@@ -283,7 +281,7 @@ plot_cumgains<span class="p">(</span>highlight_decile <span class="o">=</span> <
 </pre></div>
 
 
-<p><img alt="plot of chunk gainsplotannotated" src="https://modelplot.github.io/img/intro_modelplotr_pelicanRMD-gainsplotannotated-1.png" /></p>
+<p><img alt="plot of chunk gainsplotannotated" src="modelplot.github.io/img/intro_modelplotr_pelicanRMD-gainsplotannotated-1.png" /></p>
 <p>Our 'highlight_decile' parameter adds some guiding elements to the plot at decile 2 as well as a text box below the graph with the interpretation of the plot at decile 2 in words. This interpretation is also printed to the console. Our simple model - only 6 pedictors were used - seems to do a nice job selecting the customers interested in buying term deposites. <em>When we select 20% with the highest probability according to XGBoost, this selection holds 82% of all term deposit cases in test data.</em> With a perfect model, we would have selected 100%, since less than 20% of all customers in the test set buy term deposits. A random pick would only hold 20% of the customers with term deposits. How much better than random we do, brings us to plot number 2! </p>
 <h4>2. Cumulative lift plot</h4>
 <p>The cumulative lift plot, often referred to as lift plot or index plot, helps you answer the question:</p>
@@ -302,7 +300,7 @@ plot_cumlift<span class="p">(</span>highlight_decile <span class="o">=</span> <s
 </pre></div>
 
 
-<p><img alt="plot of chunk liftplot" src="https://modelplot.github.io/img/intro_modelplotr_pelicanRMD-liftplot-1.png" /></p>
+<p><img alt="plot of chunk liftplot" src="modelplot.github.io/img/intro_modelplotr_pelicanRMD-liftplot-1.png" /></p>
 <p>A term deposit campaign targeted at a selection of 20% of all customers based on our XGBoost model can be expected to have a 4 times higher response (411%) compared to a random sample of customers. Not bad, right? The cumulative lift really helps in getting a positive return on marketing investments. It should be noted, though, that since the cumulative lift plot is relative, it doesn't tell us how high the actual reponse will be on our campaign...   </p>
 <h4>3. Response plot</h4>
 <p>One of the easiest to explain evaluation plots is the response plot. It simply plots the percentage of target class observations per decile. It can be used to answer the following business question:</p>
@@ -321,7 +319,7 @@ plot_response<span class="p">(</span>highlight_decile <span class="o">=</span> <
 </pre></div>
 
 
-<p><img alt="plot of chunk responseplot" src="https://modelplot.github.io/img/intro_modelplotr_pelicanRMD-responseplot-1.png" /></p>
+<p><img alt="plot of chunk responseplot" src="modelplot.github.io/img/intro_modelplotr_pelicanRMD-responseplot-1.png" /></p>
 <p>As the plot shows and the text below the plot states: <em>When we select decile 1 according to model XGBoost in dataset test data the % of term deposit cases in the selection is 61%.</em>. This is quite good, especially when compared to the overall likelihood of 11%. The response in the second decile is much lower, about 28%. From decile 3 onwards, the expected response will be lower than the overall likelihood of 10.4%. However, most of the time, our model will be used to select the highest decile <em>up until</em> some decile. That makes it even more relevant to have a look at the cumulative version of the response plot. And guess what, that's our final plot!   </p>
 <h4>4. Cumulative response plot</h4>
 <p>Finally, one of the most used plots: The cumulative response plot. It answers the question burning on each business reps lips:</p>
@@ -340,7 +338,7 @@ plot_cumresponse<span class="p">(</span>highlight_decile <span class="o">=</span
 </pre></div>
 
 
-<p><img alt="plot of chunk cumresponseplot" src="https://modelplot.github.io/img/intro_modelplotr_pelicanRMD-cumresponseplot-1.png" /></p>
+<p><img alt="plot of chunk cumresponseplot" src="modelplot.github.io/img/intro_modelplotr_pelicanRMD-cumresponseplot-1.png" /></p>
 <p><em>When we select deciles 1 until 3 according to model XGBoost in dataset test data the % of term deposit cases in the selection is 33%.</em> Since the test data is an independent set, not used to train the model, we can expect the response on the term deposit campaign to be 33%. </p>
 <p>The cumulative response percentage at a given decile is a number your business colleagues can really work with: Is that response big enough to have a successfull campaign, given costs and other expectations? Will the absolute number of sold term deposits meet the targets? Or do we lose too much of all potential term deposit buyers by only selecting the top 30%? To answer that question, we can go back to the cumulative gains plot. And that's why there's no absolute winner among these plots and we advice to use them all. To make that happen, there's also a function to easily combine all four plots. </p>
 <h4>All four plots together</h4>
@@ -351,7 +349,7 @@ plot_all<span class="p">(</span>save_fig <span class="o">=</span> <span class="k
 </pre></div>
 
 
-<p><img alt="plot of chunk allplots" src="https://modelplot.github.io/img/intro_modelplotr_pelicanRMD-allplots-1.png" /></p>
+<p><img alt="plot of chunk allplots" src="modelplot.github.io/img/intro_modelplotr_pelicanRMD-allplots-1.png" /></p>
 <p>Neat! With these plots, we are able to talk with business colleagues about the actual value of our predictive model, without having to bore them with technicalities any nitty gritty details. We've translated our model in business terms and visualised it to simplify interpretation and communication. Hopefully, this helps many of you in discussing how to optimally take advantage of your predictive model building efforts.   </p>
 <h3>Get more out of modelplotr: using different scopes.</h3>
 <p>As we mentioned earlier, the modelplotr package also enables to make interesting comparisons, using the <strong>scope</strong> parameter. Comparisons between different models, between different datasets and (in case of a multiclass target) between different target classes. Curious? Please have a look at the package documentation or read our other posts on modelplotr. </p>
@@ -375,27 +373,27 @@ plot_cumresponse<span class="p">(</span>highlight_decile <span class="o">=</span
 </pre></div>
 
 
-<p><img alt="plot of chunk comparemodels" src="https://modelplot.github.io/img/intro_modelplotr_pelicanRMD-comparemodels-1.png" /></p>
+<p><img alt="plot of chunk comparemodels" src="modelplot.github.io/img/intro_modelplotr_pelicanRMD-comparemodels-1.png" /></p>
 <p>Seems like the algorithm used will not make a big difference in this case. Hopefully you agree by now that using these plots really can make a difference in explaining the business value of your predictive models! Happy modelplotting!</p>
 <p><img alt=" " src="img/cartoon2d.jpg" /></p>
             </section>
 
             <section class="post-info">
                 <div class="post-share">
-                    <a class="twitter" href="https://twitter.com/share?text=Introducing modelplotr - Plots to evaluate the business value of predictive models&amp;url=https://modelplot.github.io/intro_modelplotr.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <a class="twitter" href="https://twitter.com/share?text=Introducing modelplotr - Plots to evaluate the business value of predictive models&amp;url=modelplot.github.io/intro_modelplotr.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
                     </a>
-                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://modelplot.github.io/intro_modelplotr.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=modelplot.github.io/intro_modelplotr.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
                     </a>
-                    <a class="googleplus" href="https://plus.google.com/share?url=https://modelplot.github.io/intro_modelplotr.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <a class="googleplus" href="https://plus.google.com/share?url=modelplot.github.io/intro_modelplotr.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
                     </a>
                     <div class="clear"></div>
                 </div>
 
                 <aside class="post-tags">
-<a href="https://modelplot.github.io/tag/modelplot-r-modelplotr-blog">modelplot R modelplotr blog</a>                </aside>
+<a href="modelplot.github.io/tag/modelplot-r-modelplotr-blog">modelplot R modelplotr blog</a>                </aside>
 
                 <div class="clear"></div>
 
@@ -405,7 +403,7 @@ plot_cumresponse<span class="p">(</span>highlight_decile <span class="o">=</span
 
 
                 <aside class="post-nav">
-                    <a class="post-nav-next" href="https://modelplot.github.io/intro_modelplotpy.html">
+                    <a class="post-nav-next" href="modelplot.github.io/intro_modelplotpy.html">
                         <section class="post-nav-teaser">
                             <i class="ic ic-arrow-left"></i>
                                 <h2 class="post-nav-title">Introducing modelplotpy - Plots to evaluate the business value of predictive models</h2>
@@ -431,7 +429,7 @@ plot_cumresponse<span class="p">(</span>highlight_decile <span class="o">=</span
     </footer>
   </section>
 
-  <script type="text/javascript" src="https://modelplot.github.io/theme/js/script.js"></script>
+  <script type="text/javascript" src="modelplot.github.io/theme/js/script.js"></script>
   
 </body>
 </html>
