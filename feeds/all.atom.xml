@@ -2019,6 +2019,11 @@ plot_cumgains&lt;span class="p"&gt;()&lt;/span&gt;
 
 
 &lt;p&gt;&lt;img alt="plot of chunk gainsplot" src="https://modelplot.github.io/img/intro_modelplotr_pelicanRMD-gainsplot-1.png" /&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;plot_cumgains&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img alt="plot of chunk gainsplot" src="https://modelplot.github.io/img/intro_modelplotr_pelicanRMD-gainsplot-2.png" /&gt;&lt;/p&gt;
 &lt;p&gt;We don't need to specify any parameters, since the default input is &lt;strong&gt;plot_input&lt;/strong&gt;, which is generated with the &lt;strong&gt;plotting_scope()&lt;/strong&gt; function we ran previously. There are several parameters available to customize the plot, though. If we want to emphasize the model performance at a given point, we can add both highlighting to the plot and add some explanatory text below the plot. Both are optional, though:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# plot the cumulative gains plot and annotate the plot at decile = 2&lt;/span&gt;
 plot_cumgains&lt;span class="p"&gt;(&lt;/span&gt;highlight_decile &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
