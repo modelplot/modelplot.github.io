@@ -1271,12 +1271,9 @@ img {
     margin-top: 1.333em
 }
 .container {
-	width:100% !important; 
+    width: 200% !important;
     position: relative
 }
-.container {
-    width: 200% !important;
-}   
 
 
 .container .post {
