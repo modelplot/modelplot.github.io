@@ -1218,6 +1218,7 @@ img {
 }
 
 #blog-author {
+	text-transform: capitalize;
     position: relative;
     z-index: 40;
     margin: auto 6em
@@ -1519,6 +1520,7 @@ img {
 }
 
 .post-author {
+	text-transform: capitalize;
     position: relative;
     margin: 2em 0 0;
     padding: 2em 0;
