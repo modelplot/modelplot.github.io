@@ -713,7 +713,7 @@ pre tt {
     margin: -1.333em -1.333em -1.333em 1.333em;
     padding: 1.333em;
     overflow: scroll;
-    font-size: 0.75em;
+    font-size: 0.6em;
     line-height: 2em;
     white-space: pre;
     background: transparent;
@@ -1218,7 +1218,7 @@ img {
 }
 
 #blog-author {
-	text-transform: uppercase;
+	text-transform: capitalize;
     position: relative;
     z-index: 40;
     margin: auto 6em
@@ -1236,6 +1236,7 @@ img {
 }
 
 #blog-author .post-author {
+	text-transform: capitalize;
     margin-top: -5em;
     padding-bottom: 3em;
     border: 0
@@ -1386,7 +1387,8 @@ img {
 }
 
 .post-meta {
-    position: relative;
+	text-transform: capitalize;
+	position: relative;
     z-index: 10;
     display: block;
     margin-bottom: 1.333em;
@@ -1520,7 +1522,7 @@ img {
 }
 
 .post-author {
-	text-transform: uppercase;
+	text-transform: capitalize;
     position: relative;
     margin: 2em 0 0;
     padding: 2em 0;
