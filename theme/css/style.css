@@ -7,8 +7,7 @@ html {
 }
 
 body {
-    margin: 0;
-	width : 100% 
+    margin: 0
 }
 
 article,
@@ -1218,7 +1217,6 @@ img {
 }
 
 #blog-author {
-	text-transform: capitalize;
     position: relative;
     z-index: 40;
     margin: auto 6em
@@ -1236,7 +1234,6 @@ img {
 }
 
 #blog-author .post-author {
-	text-transform: capitalize;
     margin-top: -5em;
     padding-bottom: 3em;
     border: 0
@@ -1272,11 +1269,10 @@ img {
 #blog-author.has-cover .post-author-about {
     margin-top: 1.333em
 }
+
 .container {
-    width: 100% !important;
     position: relative
 }
-
 
 .container .post {
     padding: 4em 0
@@ -1387,8 +1383,7 @@ img {
 }
 
 .post-meta {
-	text-transform: capitalize;
-	position: relative;
+    position: relative;
     z-index: 10;
     display: block;
     margin-bottom: 1.333em;
@@ -1522,7 +1517,6 @@ img {
 }
 
 .post-author {
-	text-transform: capitalize;
     position: relative;
     margin: 2em 0 0;
     padding: 2em 0;
