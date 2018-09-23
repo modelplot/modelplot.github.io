@@ -27,6 +27,12 @@ body {
     position: relative
 }
 
+@media {
+  .container {
+    width: 98%;
+  }
+}
+
 .post-meta {
 	text-transform: capitalize;
 	position: relative;
