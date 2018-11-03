@@ -17,11 +17,6 @@
 &lt;p&gt;Before we start exploring the plots, let's install our &lt;strong&gt;modelplotr&lt;/strong&gt; package. Since it is available on github, it can easily be installed using &lt;strong&gt;devtools&lt;/strong&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;library&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;devtools&lt;span class="p"&gt;)&lt;/span&gt;
 install_github&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;modelplot/modelplotr&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Warning in utils::install.packages(pkgs, repos = repos, type = type,&lt;/span&gt;
-&lt;span class="c1"&gt;## dependencies = dependencies, : &amp;#39;lib = &amp;quot;C:/Program Files/RStudio/bin&amp;quot;&amp;#39; is&lt;/span&gt;
-&lt;span class="c1"&gt;## not writable&lt;/span&gt;
-&lt;span class="c1"&gt;## Warning in dir.create(tmpDir): cannot create dir &amp;#39;C:\Program Files\RStudio&lt;/span&gt;
-&lt;span class="c1"&gt;## \bin\file2dbc36272f7&amp;#39;, reason &amp;#39;Permission denied&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -109,6 +104,9 @@ prepare_scores_and_deciles&lt;span class="p"&gt;(&lt;/span&gt;datasets&lt;span c
   models &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;rf&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mnl&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;xgb&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;lda&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
   model_labels &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;random forest&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;multinomial logit&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;XGBoost&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Discriminant&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
   target_column&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;y&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;## ... scoring mlr model &amp;quot;rf&amp;quot; on dataset &amp;quot;train&amp;quot;.&lt;/span&gt;
+&lt;span class="c1"&gt;## ... scoring mlr model &amp;quot;mnl&amp;quot; on dataset &amp;quot;train&amp;quot;.&lt;/span&gt;
+&lt;span class="c1"&gt;## ... scoring mlr model &amp;quot;xgb&amp;quot; on dataset &amp;quot;train&amp;quot;.&lt;/span&gt;
 &lt;span class="c1"&gt;## Error in match.names(clabs, names(xi)): names do not match previous names&lt;/span&gt;
 
 &lt;span class="c1"&gt;# transform data generated with prepare_scores_and_deciles into aggregated data for chosen plotting scope &lt;/span&gt;
@@ -234,7 +232,7 @@ plot_cumresponse&lt;span class="p"&gt;(&lt;/span&gt;highlight_decile &lt;span cl
 &lt;p&gt;With the function call &lt;strong&gt;plot_all&lt;/strong&gt; we get all four plots on one grid. We can easily save it to a file to include it in a presentation or share it with colleagues.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# plot all four evaluation plots and save to file&lt;/span&gt;
 plot_all&lt;span class="p"&gt;(&lt;/span&gt;save_fig &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;TRUE&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;save_fig_filename &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Selection model Term Deposits&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Plot is saved as: C:/TEMP/jupyter-blog/content/Selection model Term Deposits.png&lt;/span&gt;
+&lt;span class="c1"&gt;## Plot is saved as: c:/TEMP/jupyter-blog/content/Selection model Term Deposits.png&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 

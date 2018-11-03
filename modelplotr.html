@@ -174,11 +174,6 @@
 <p>Before we start exploring the plots, let's install our <strong>modelplotr</strong> package. Since it is available on github, it can easily be installed using <strong>devtools</strong>:</p>
 <div class="highlight"><pre><span></span><span class="kn">library</span><span class="p">(</span>devtools<span class="p">)</span>
 install_github<span class="p">(</span><span class="s">&quot;modelplot/modelplotr&quot;</span><span class="p">)</span>
-<span class="c1">## Warning in utils::install.packages(pkgs, repos = repos, type = type,</span>
-<span class="c1">## dependencies = dependencies, : &#39;lib = &quot;C:/Program Files/RStudio/bin&quot;&#39; is</span>
-<span class="c1">## not writable</span>
-<span class="c1">## Warning in dir.create(tmpDir): cannot create dir &#39;C:\Program Files\RStudio</span>
-<span class="c1">## \bin\file2dbc36272f7&#39;, reason &#39;Permission denied&#39;</span>
 </pre></div>
 
 
@@ -266,6 +261,9 @@ prepare_scores_and_deciles<span class="p">(</span>datasets<span class="o">=</spa
   models <span class="o">=</span> <span class="kt">list</span><span class="p">(</span><span class="s">&quot;rf&quot;</span><span class="p">,</span><span class="s">&quot;mnl&quot;</span><span class="p">,</span><span class="s">&quot;xgb&quot;</span><span class="p">,</span><span class="s">&quot;lda&quot;</span><span class="p">),</span>
   model_labels <span class="o">=</span> <span class="kt">list</span><span class="p">(</span><span class="s">&quot;random forest&quot;</span><span class="p">,</span><span class="s">&quot;multinomial logit&quot;</span><span class="p">,</span><span class="s">&quot;XGBoost&quot;</span><span class="p">,</span><span class="s">&quot;Discriminant&quot;</span><span class="p">),</span>
   target_column<span class="o">=</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
+<span class="c1">## ... scoring mlr model &quot;rf&quot; on dataset &quot;train&quot;.</span>
+<span class="c1">## ... scoring mlr model &quot;mnl&quot; on dataset &quot;train&quot;.</span>
+<span class="c1">## ... scoring mlr model &quot;xgb&quot; on dataset &quot;train&quot;.</span>
 <span class="c1">## Error in match.names(clabs, names(xi)): names do not match previous names</span>
 
 <span class="c1"># transform data generated with prepare_scores_and_deciles into aggregated data for chosen plotting scope </span>
@@ -391,7 +389,7 @@ plot_cumresponse<span class="p">(</span>highlight_decile <span class="o">=</span
 <p>With the function call <strong>plot_all</strong> we get all four plots on one grid. We can easily save it to a file to include it in a presentation or share it with colleagues.</p>
 <div class="highlight"><pre><span></span><span class="c1"># plot all four evaluation plots and save to file</span>
 plot_all<span class="p">(</span>save_fig <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span>save_fig_filename <span class="o">=</span> <span class="s">&#39;Selection model Term Deposits&#39;</span><span class="p">)</span>
-<span class="c1">## Plot is saved as: C:/TEMP/jupyter-blog/content/Selection model Term Deposits.png</span>
+<span class="c1">## Plot is saved as: c:/TEMP/jupyter-blog/content/Selection model Term Deposits.png</span>
 </pre></div>
 
 
