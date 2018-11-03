@@ -227,27 +227,22 @@ train <span class="o">=</span> bank<span class="p">[</span>train_index<span clas
 test <span class="o">=</span> bank<span class="p">[</span><span class="o">-</span>train_index<span class="p">,]</span>
 
 <span class="c1"># estimate some models with caret...</span>
-<span class="kn">library</span><span class="p">(</span>caret<span class="p">)</span>
 <span class="c1"># setting caret cross validation, here tuned for speed (not accuracy!)</span>
-fitControl <span class="o">&lt;-</span> trainControl<span class="p">(</span>method <span class="o">=</span> <span class="s">&quot;cv&quot;</span><span class="p">,</span>number <span class="o">=</span> <span class="m">2</span><span class="p">,</span>classProbs<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+fitControl <span class="o">&lt;-</span> caret<span class="o">::</span>trainControl<span class="p">(</span>method <span class="o">=</span> <span class="s">&quot;cv&quot;</span><span class="p">,</span>number <span class="o">=</span> <span class="m">2</span><span class="p">,</span>classProbs<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 <span class="c1"># mnl model using glmnet package</span>
-mnl <span class="o">=</span> train<span class="p">(</span>y <span class="o">~</span><span class="m">.</span><span class="p">,</span>data <span class="o">=</span> train<span class="p">,</span> method <span class="o">=</span> <span class="s">&quot;glmnet&quot;</span><span class="p">,</span>trControl <span class="o">=</span> fitControl<span class="p">)</span>
-<span class="c1">## Error: package e1071 is required</span>
+mnl <span class="o">=</span> caret<span class="o">::</span>train<span class="p">(</span>y <span class="o">~</span><span class="m">.</span><span class="p">,</span>data <span class="o">=</span> train<span class="p">,</span> method <span class="o">=</span> <span class="s">&quot;glmnet&quot;</span><span class="p">,</span>trControl <span class="o">=</span> fitControl<span class="p">)</span>
 <span class="c1"># random forest using ranger package, here tuned for speed (not accuracy!)</span>
-rf <span class="o">=</span> train<span class="p">(</span>y <span class="o">~</span><span class="m">.</span><span class="p">,</span>data <span class="o">=</span> train<span class="p">,</span> method <span class="o">=</span> <span class="s">&quot;ranger&quot;</span><span class="p">,</span>trControl <span class="o">=</span> fitControl<span class="p">,</span>
+rf <span class="o">=</span> caret<span class="o">::</span>train<span class="p">(</span>y <span class="o">~</span><span class="m">.</span><span class="p">,</span>data <span class="o">=</span> train<span class="p">,</span> method <span class="o">=</span> <span class="s">&quot;ranger&quot;</span><span class="p">,</span>trControl <span class="o">=</span> fitControl<span class="p">,</span>
   tuneGrid <span class="o">=</span> <span class="kp">expand.grid</span><span class="p">(</span><span class="m">.</span>mtry <span class="o">=</span> <span class="m">2</span><span class="p">,</span><span class="m">.</span>splitrule <span class="o">=</span> <span class="s">&quot;gini&quot;</span><span class="p">,</span><span class="m">.</span>min.node.size<span class="o">=</span><span class="m">10</span><span class="p">))</span>
 
 <span class="c1"># ... and estimate some models with mlr</span>
-<span class="kn">library</span><span class="p">(</span>mlr<span class="p">)</span>
-task <span class="o">=</span> makeClassifTask<span class="p">(</span>data <span class="o">=</span> train<span class="p">,</span> target <span class="o">=</span> <span class="s">&quot;y&quot;</span><span class="p">)</span>
+task <span class="o">=</span> mlr<span class="o">::</span>makeClassifTask<span class="p">(</span>data <span class="o">=</span> train<span class="p">,</span> target <span class="o">=</span> <span class="s">&quot;y&quot;</span><span class="p">)</span>
 <span class="c1"># discriminant model </span>
-lrn <span class="o">=</span> makeLearner<span class="p">(</span><span class="s">&quot;classif.lda&quot;</span><span class="p">,</span> predict.type <span class="o">=</span> <span class="s">&quot;prob&quot;</span><span class="p">)</span>
-lda <span class="o">=</span> train<span class="p">(</span>lrn<span class="p">,</span> task<span class="p">)</span>
-<span class="c1">## Error: Please use column names for `x`</span>
+lrn <span class="o">=</span> mlr<span class="o">::</span>makeLearner<span class="p">(</span><span class="s">&quot;classif.lda&quot;</span><span class="p">,</span> predict.type <span class="o">=</span> <span class="s">&quot;prob&quot;</span><span class="p">)</span>
+lda <span class="o">=</span> mlr<span class="o">::</span>train<span class="p">(</span>lrn<span class="p">,</span> task<span class="p">)</span>
 <span class="c1">#xgboost model</span>
-lrn <span class="o">=</span> makeLearner<span class="p">(</span><span class="s">&quot;classif.xgboost&quot;</span><span class="p">,</span> predict.type <span class="o">=</span> <span class="s">&quot;prob&quot;</span><span class="p">)</span>
-xgb <span class="o">=</span> train<span class="p">(</span>lrn<span class="p">,</span> task<span class="p">)</span>
-<span class="c1">## Error: Please use column names for `x`</span>
+lrn <span class="o">=</span> mlr<span class="o">::</span>makeLearner<span class="p">(</span><span class="s">&quot;classif.xgboost&quot;</span><span class="p">,</span> predict.type <span class="o">=</span> <span class="s">&quot;prob&quot;</span><span class="p">)</span>
+xgb <span class="o">=</span> mlr<span class="o">::</span>train<span class="p">(</span>lrn<span class="p">,</span> task<span class="p">)</span>
 </pre></div>
 
 
@@ -261,8 +256,14 @@ prepare_scores_and_deciles<span class="p">(</span>datasets<span class="o">=</spa
   model_labels <span class="o">=</span> <span class="kt">list</span><span class="p">(</span><span class="s">&quot;random forest&quot;</span><span class="p">,</span><span class="s">&quot;multinomial logit&quot;</span><span class="p">,</span><span class="s">&quot;XGBoost&quot;</span><span class="p">,</span><span class="s">&quot;Discriminant&quot;</span><span class="p">),</span>
   target_column<span class="o">=</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
 <span class="c1">## ... scoring caret model &quot;rf&quot; on dataset &quot;train&quot;.</span>
-<span class="c1">## ... scoring mlr model &quot;mnl&quot; on dataset &quot;train&quot;.</span>
-<span class="c1">## Error in match.names(clabs, names(xi)): names do not match previous names</span>
+<span class="c1">## ... scoring caret model &quot;mnl&quot; on dataset &quot;train&quot;.</span>
+<span class="c1">## ... scoring mlr model &quot;xgb&quot; on dataset &quot;train&quot;.</span>
+<span class="c1">## ... scoring mlr model &quot;lda&quot; on dataset &quot;train&quot;.</span>
+<span class="c1">## ... scoring caret model &quot;rf&quot; on dataset &quot;test&quot;.</span>
+<span class="c1">## ... scoring caret model &quot;mnl&quot; on dataset &quot;test&quot;.</span>
+<span class="c1">## ... scoring mlr model &quot;xgb&quot; on dataset &quot;test&quot;.</span>
+<span class="c1">## ... scoring mlr model &quot;lda&quot; on dataset &quot;test&quot;.</span>
+<span class="c1">## [1] &quot;Data preparation step 1 succeeded! Dataframe &#39;scores_and_deciles&#39; created.&quot;</span>
 
 <span class="c1"># transform data generated with prepare_scores_and_deciles into aggregated data for chosen plotting scope </span>
 plotting_scope<span class="p">(</span>select_model_label <span class="o">=</span> <span class="s">&#39;XGBoost&#39;</span><span class="p">,</span>select_dataset_label <span class="o">=</span> <span class="s">&#39;test data&#39;</span><span class="p">)</span>
