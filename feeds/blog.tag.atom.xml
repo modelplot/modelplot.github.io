@@ -71,17 +71,14 @@ test &lt;span class="o"&gt;=&lt;/span&gt; bank&lt;span class="p"&gt;[&lt;/span&g
 
 &lt;span class="c1"&gt;# estimate some models with caret...&lt;/span&gt;
 &lt;span class="kn"&gt;library&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;caret&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in library(caret): there is no package called &amp;#39;caret&amp;#39;&lt;/span&gt;
 &lt;span class="c1"&gt;# setting caret cross validation, here tuned for speed (not accuracy!)&lt;/span&gt;
 fitControl &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; trainControl&lt;span class="p"&gt;(&lt;/span&gt;method &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;cv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;number &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;classProbs&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;TRUE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in trainControl(method = &amp;quot;cv&amp;quot;, number = 2, classProbs = TRUE): could not find function &amp;quot;trainControl&amp;quot;&lt;/span&gt;
 &lt;span class="c1"&gt;# mnl model using glmnet package&lt;/span&gt;
 mnl &lt;span class="o"&gt;=&lt;/span&gt; train&lt;span class="p"&gt;(&lt;/span&gt;y &lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="m"&gt;.&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;data &lt;span class="o"&gt;=&lt;/span&gt; train&lt;span class="p"&gt;,&lt;/span&gt; method &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;glmnet&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;trControl &lt;span class="o"&gt;=&lt;/span&gt; fitControl&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in train(y ~ ., data = train, method = &amp;quot;glmnet&amp;quot;, trControl = fitControl): unused arguments (data = train, method = &amp;quot;glmnet&amp;quot;, trControl = fitControl)&lt;/span&gt;
+&lt;span class="c1"&gt;## Error: package e1071 is required&lt;/span&gt;
 &lt;span class="c1"&gt;# random forest using ranger package, here tuned for speed (not accuracy!)&lt;/span&gt;
 rf &lt;span class="o"&gt;=&lt;/span&gt; train&lt;span class="p"&gt;(&lt;/span&gt;y &lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="m"&gt;.&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;data &lt;span class="o"&gt;=&lt;/span&gt; train&lt;span class="p"&gt;,&lt;/span&gt; method &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;ranger&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;trControl &lt;span class="o"&gt;=&lt;/span&gt; fitControl&lt;span class="p"&gt;,&lt;/span&gt;
   tuneGrid &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;expand.grid&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;.&lt;/span&gt;mtry &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;.&lt;/span&gt;splitrule &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;gini&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;.&lt;/span&gt;min.node.size&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in train(y ~ ., data = train, method = &amp;quot;ranger&amp;quot;, trControl = fitControl, : unused arguments (data = train, method = &amp;quot;ranger&amp;quot;, trControl = fitControl, tuneGrid = expand.grid(.mtry = 2, .splitrule = &amp;quot;gini&amp;quot;, .min.node.size = 10))&lt;/span&gt;
 
 &lt;span class="c1"&gt;# ... and estimate some models with mlr&lt;/span&gt;
 &lt;span class="kn"&gt;library&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;mlr&lt;span class="p"&gt;)&lt;/span&gt;
@@ -89,9 +86,11 @@ task &lt;span class="o"&gt;=&lt;/span&gt; makeClassifTask&lt;span class="p"&gt;(
 &lt;span class="c1"&gt;# discriminant model &lt;/span&gt;
 lrn &lt;span class="o"&gt;=&lt;/span&gt; makeLearner&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;classif.lda&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; predict.type &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;prob&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 lda &lt;span class="o"&gt;=&lt;/span&gt; train&lt;span class="p"&gt;(&lt;/span&gt;lrn&lt;span class="p"&gt;,&lt;/span&gt; task&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;## Error: Please use column names for `x`&lt;/span&gt;
 &lt;span class="c1"&gt;#xgboost model&lt;/span&gt;
 lrn &lt;span class="o"&gt;=&lt;/span&gt; makeLearner&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;classif.xgboost&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; predict.type &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;prob&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 xgb &lt;span class="o"&gt;=&lt;/span&gt; train&lt;span class="p"&gt;(&lt;/span&gt;lrn&lt;span class="p"&gt;,&lt;/span&gt; task&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;## Error: Please use column names for `x`&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -104,9 +103,8 @@ prepare_scores_and_deciles&lt;span class="p"&gt;(&lt;/span&gt;datasets&lt;span c
   models &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;rf&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mnl&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;xgb&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;lda&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
   model_labels &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;random forest&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;multinomial logit&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;XGBoost&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Discriminant&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
   target_column&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;y&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## ... scoring mlr model &amp;quot;rf&amp;quot; on dataset &amp;quot;train&amp;quot;.&lt;/span&gt;
+&lt;span class="c1"&gt;## ... scoring caret model &amp;quot;rf&amp;quot; on dataset &amp;quot;train&amp;quot;.&lt;/span&gt;
 &lt;span class="c1"&gt;## ... scoring mlr model &amp;quot;mnl&amp;quot; on dataset &amp;quot;train&amp;quot;.&lt;/span&gt;
-&lt;span class="c1"&gt;## ... scoring mlr model &amp;quot;xgb&amp;quot; on dataset &amp;quot;train&amp;quot;.&lt;/span&gt;
 &lt;span class="c1"&gt;## Error in match.names(clabs, names(xi)): names do not match previous names&lt;/span&gt;
 
 &lt;span class="c1"&gt;# transform data generated with prepare_scores_and_deciles into aggregated data for chosen plotting scope &lt;/span&gt;
@@ -2197,10 +2195,6 @@ The cumulative response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\i
 &lt;p&gt;Before we start exploring the plots, let's install our &lt;strong&gt;modelplotr&lt;/strong&gt; package. Since it is available on github, it can easily be installed using &lt;strong&gt;devtools&lt;/strong&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;library&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;devtools&lt;span class="p"&gt;)&lt;/span&gt;
 install_github&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;modelplot/modelplotr&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## package &amp;#39;ggplot2&amp;#39; successfully unpacked and MD5 sums checked&lt;/span&gt;
-&lt;span class="c1"&gt;## &lt;/span&gt;
-&lt;span class="c1"&gt;## The downloaded binary packages are in&lt;/span&gt;
-&lt;span class="c1"&gt;##  C:\Users\nagelk000\AppData\Local\Temp\RtmpsRh0wG\downloaded_packages&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
