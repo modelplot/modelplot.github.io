@@ -240,9 +240,11 @@ task <span class="o">=</span> mlr<span class="o">::</span>makeClassifTask<span c
 <span class="c1"># discriminant model </span>
 lrn <span class="o">=</span> mlr<span class="o">::</span>makeLearner<span class="p">(</span><span class="s">&quot;classif.lda&quot;</span><span class="p">,</span> predict.type <span class="o">=</span> <span class="s">&quot;prob&quot;</span><span class="p">)</span>
 lda <span class="o">=</span> mlr<span class="o">::</span>train<span class="p">(</span>lrn<span class="p">,</span> task<span class="p">)</span>
+<span class="c1">## Error in opts$show.learner.output || inherits(learner, &quot;OptWrapper&quot;): invalid &#39;x&#39; type in &#39;x || y&#39;</span>
 <span class="c1">#xgboost model</span>
 lrn <span class="o">=</span> mlr<span class="o">::</span>makeLearner<span class="p">(</span><span class="s">&quot;classif.xgboost&quot;</span><span class="p">,</span> predict.type <span class="o">=</span> <span class="s">&quot;prob&quot;</span><span class="p">)</span>
 xgb <span class="o">=</span> mlr<span class="o">::</span>train<span class="p">(</span>lrn<span class="p">,</span> task<span class="p">)</span>
+<span class="c1">## Error in opts$show.learner.output || inherits(learner, &quot;OptWrapper&quot;): invalid &#39;x&#39; type in &#39;x || y&#39;</span>
 </pre></div>
 
 
@@ -257,26 +259,12 @@ prepare_scores_and_deciles<span class="p">(</span>datasets<span class="o">=</spa
   target_column<span class="o">=</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
 <span class="c1">## ... scoring caret model &quot;rf&quot; on dataset &quot;train&quot;.</span>
 <span class="c1">## ... scoring caret model &quot;mnl&quot; on dataset &quot;train&quot;.</span>
-<span class="c1">## ... scoring mlr model &quot;xgb&quot; on dataset &quot;train&quot;.</span>
-<span class="c1">## ... scoring mlr model &quot;lda&quot; on dataset &quot;train&quot;.</span>
-<span class="c1">## ... scoring caret model &quot;rf&quot; on dataset &quot;test&quot;.</span>
-<span class="c1">## ... scoring caret model &quot;mnl&quot; on dataset &quot;test&quot;.</span>
-<span class="c1">## ... scoring mlr model &quot;xgb&quot; on dataset &quot;test&quot;.</span>
-<span class="c1">## ... scoring mlr model &quot;lda&quot; on dataset &quot;test&quot;.</span>
-<span class="c1">## [1] &quot;Data preparation step 1 succeeded! Dataframe &#39;scores_and_deciles&#39; created.&quot;</span>
+<span class="c1">## Error in get(mdl): object &#39;xgb&#39; not found</span>
 
 <span class="c1"># transform data generated with prepare_scores_and_deciles into aggregated data for chosen plotting scope </span>
 plotting_scope<span class="p">(</span>select_model_label <span class="o">=</span> <span class="s">&#39;XGBoost&#39;</span><span class="p">,</span>select_dataset_label <span class="o">=</span> <span class="s">&#39;test data&#39;</span><span class="p">)</span>
-<span class="c1">## Data preparation step 3 succeeded! Dataframe &#39;plot_input&#39; created.</span>
-<span class="c1">## </span>
-<span class="c1">## No comparison specified, default values are used. </span>
-<span class="c1">## </span>
-<span class="c1">## Single evaluation line will be plotted: Target value &quot;term deposit&quot; plotted for dataset &quot;test data&quot; and model &quot;XGBoost.</span>
-<span class="c1">## &quot;</span>
-<span class="c1">## -&gt; To compare models, specify: scope = &quot;compare_models&quot;</span>
-<span class="c1">## -&gt; To compare datasets, specify: scope = &quot;compare_datasets&quot;</span>
-<span class="c1">## -&gt; To compare target classes, specify: scope = &quot;compare_targetclasses&quot;</span>
-<span class="c1">## -&gt; To plot one line, do not specify scope or specify scope = &quot;no_comparison&quot;.</span>
+<span class="c1">## Error in plotting_scope(select_model_label = &quot;XGBoost&quot;, select_dataset_label = &quot;test data&quot;): prepared_input unavailable and input dataframe scores_and_deciles to create prepared_input</span>
+<span class="c1">##           not available! First run prepare_scores_and_deciles() to generate scores_and_deciles.</span>
 </pre></div>
 
 
@@ -309,22 +297,17 @@ plotting_scope<span class="p">(</span>select_model_label <span class="o">=</span
 <p>Back to our business example. How many of the term deposit buyers can we select with the top-20% of our predictive models? Let's find out! To generate the cumulate gains plot, we can simply call the function <strong>plot_cumgains()</strong>:</p>
 <div class="highlight"><pre><span></span><span class="c1"># plot the cumulative gains plot</span>
 plot_cumgains<span class="p">()</span>
+<span class="c1">## Error in plot_cumgains(): object &#39;plot_input&#39; not found</span>
 </pre></div>
 
 
-<p><img alt="plot of chunk gainsplot" src="https://modelplot.github.io/img/modelplotr_caret_mlr-gainsplot-1.png" /></p>
 <p>We don't need to specify any parameters, since the default input is <strong>plot_input</strong>, which is generated with the <strong>plotting_scope()</strong> function we ran previously. There are several parameters available to customize the plot, though. If we want to emphasize the model performance at a given point, we can add both highlighting to the plot and add some explanatory text below the plot. Both are optional, though:</p>
 <div class="highlight"><pre><span></span><span class="c1"># plot the cumulative gains plot and annotate the plot at decile = 2</span>
 plot_cumgains<span class="p">(</span>highlight_decile <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
-<span class="c1">##  </span>
-<span class="c1">## Plot annotation:</span>
-<span class="c1">## - When we select 20% with the highest probability according to XGBoost, this selection holds 82% of all term deposit cases in test data.</span>
-<span class="c1">##  </span>
-<span class="c1">## </span>
+<span class="c1">## Error in plot_cumgains(highlight_decile = 2): object &#39;plot_input&#39; not found</span>
 </pre></div>
 
 
-<p><img alt="plot of chunk gainsplotannotated" src="https://modelplot.github.io/img/modelplotr_caret_mlr-gainsplotannotated-1.png" /></p>
 <p>Our 'highlight_decile' parameter adds some guiding elements to the plot at decile 2 as well as a text box below the graph with the interpretation of the plot at decile 2 in words. This interpretation is also printed to the console. Our simple model - only 6 pedictors were used - seems to do a nice job selecting the customers interested in buying term deposites. <em>When we select 20% with the highest probability according to XGBoost, this selection holds 82% of all term deposit cases in test data.</em> With a perfect model, we would have selected 100%, since less than 20% of all customers in the test set buy term deposits. A random pick would only hold 20% of the customers with term deposits. How much better than random we do, brings us to plot number 2! </p>
 <h4>2. Cumulative lift plot</h4>
 <p>The cumulative lift plot, often referred to as lift plot or index plot, helps you answer the question:</p>
@@ -335,15 +318,10 @@ plot_cumgains<span class="p">(</span>highlight_decile <span class="o">=</span> <
 <p>To generate the cumulative lift plot for our XGBoost model predicting term deposit buying, we call the function <strong>plot_cumlift()</strong>. Let's add some highlighting to see how much better a selection based on our model containing deciles 1 and 2 would be, compared to a random selection of 20% of all customers:</p>
 <div class="highlight"><pre><span></span><span class="c1"># plot the cumulative lift plot and annotate the plot at decile = 2</span>
 plot_cumlift<span class="p">(</span>highlight_decile <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
-<span class="c1">##  </span>
-<span class="c1">## Plot annotation:</span>
-<span class="c1">## - When we select 20% with the highest probability according to model XGBoost in test data, this selection for term deposit cases is 4.1 times better than selecting without a model.</span>
-<span class="c1">##  </span>
-<span class="c1">## </span>
+<span class="c1">## Error in plot_cumlift(highlight_decile = 2): object &#39;plot_input&#39; not found</span>
 </pre></div>
 
 
-<p><img alt="plot of chunk liftplot" src="https://modelplot.github.io/img/modelplotr_caret_mlr-liftplot-1.png" /></p>
 <p>A term deposit campaign targeted at a selection of 20% of all customers based on our XGBoost model can be expected to have a 4 times higher response (411%) compared to a random sample of customers. Not bad, right? The cumulative lift really helps in getting a positive return on marketing investments. It should be noted, though, that since the cumulative lift plot is relative, it doesn't tell us how high the actual reponse will be on our campaign...   </p>
 <h4>3. Response plot</h4>
 <p>One of the easiest to explain evaluation plots is the response plot. It simply plots the percentage of target class observations per decile. It can be used to answer the following business question:</p>
@@ -354,15 +332,10 @@ plot_cumlift<span class="p">(</span>highlight_decile <span class="o">=</span> <s
 <p>To generate the response plot for our term deposit model, we can simply call the function <strong>plot_response()</strong>. Let's immediately highlight the plot to have the interpretation of the response plot at decile 1 added to the plot:</p>
 <div class="highlight"><pre><span></span><span class="c1"># plot the response plot and annotate the plot at decile = 1</span>
 plot_response<span class="p">(</span>highlight_decile <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
-<span class="c1">##  </span>
-<span class="c1">## Plot annotation:</span>
-<span class="c1">## - When we select decile 1 according to model XGBoost in dataset test data the % of term deposit cases in the selection is 61%.</span>
-<span class="c1">##  </span>
-<span class="c1">## </span>
+<span class="c1">## Error in plot_response(highlight_decile = 1): object &#39;plot_input&#39; not found</span>
 </pre></div>
 
 
-<p><img alt="plot of chunk responseplot" src="https://modelplot.github.io/img/modelplotr_caret_mlr-responseplot-1.png" /></p>
 <p>As the plot shows and the text below the plot states: <em>When we select decile 1 according to model XGBoost in dataset test data the % of term deposit cases in the selection is 61%.</em>. This is quite good, especially when compared to the overall likelihood of 11%. The response in the second decile is much lower, about 28%. From decile 3 onwards, the expected response will be lower than the overall likelihood of 10.4%. However, most of the time, our model will be used to select the highest decile <em>up until</em> some decile. That makes it even more relevant to have a look at the cumulative version of the response plot. And guess what, that's our final plot!   </p>
 <h4>4. Cumulative response plot</h4>
 <p>Finally, one of the most used plots: The cumulative response plot. It answers the question burning on each business reps lips:</p>
@@ -373,50 +346,35 @@ plot_response<span class="p">(</span>highlight_decile <span class="o">=</span> <
 <p>Back to our banking business case. To generate the cumulative response plot, we call the function <strong>plot_cumresponse()</strong>. Let's highlight it at decile 3 to see what the overall expected response will be if we select prospects for a term deposit offer based on our XGBoost model:</p>
 <div class="highlight"><pre><span></span><span class="c1"># plot the cumulative response plot and annotate the plot at decile = 3</span>
 plot_cumresponse<span class="p">(</span>highlight_decile <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
-<span class="c1">##  </span>
-<span class="c1">## Plot annotation:</span>
-<span class="c1">## - When we select deciles 1 until 3 according to model XGBoost in dataset test data the % of term deposit cases in the selection is 33%.</span>
-<span class="c1">##  </span>
-<span class="c1">## </span>
+<span class="c1">## Error in plot_cumresponse(highlight_decile = 3): object &#39;plot_input&#39; not found</span>
 </pre></div>
 
 
-<p><img alt="plot of chunk cumresponseplot" src="https://modelplot.github.io/img/modelplotr_caret_mlr-cumresponseplot-1.png" /></p>
 <p><em>When we select deciles 1 until 3 according to model XGBoost in dataset test data the % of term deposit cases in the selection is 33%.</em> Since the test data is an independent set, not used to train the model, we can expect the response on the term deposit campaign to be 33%. </p>
 <p>The cumulative response percentage at a given decile is a number your business colleagues can really work with: Is that response big enough to have a successfull campaign, given costs and other expectations? Will the absolute number of sold term deposits meet the targets? Or do we lose too much of all potential term deposit buyers by only selecting the top 30%? To answer that question, we can go back to the cumulative gains plot. And that's why there's no absolute winner among these plots and we advice to use them all. To make that happen, there's also a function to easily combine all four plots. </p>
 <h4>All four plots together</h4>
 <p>With the function call <strong>plot_all</strong> we get all four plots on one grid. We can easily save it to a file to include it in a presentation or share it with colleagues.</p>
 <div class="highlight"><pre><span></span><span class="c1"># plot all four evaluation plots and save to file</span>
 plot_all<span class="p">(</span>save_fig <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span>save_fig_filename <span class="o">=</span> <span class="s">&#39;Selection model Term Deposits&#39;</span><span class="p">)</span>
-<span class="c1">## Plot is saved as: c:/TEMP/jupyter-blog/content/Selection model Term Deposits.png</span>
+<span class="c1">## Error in plot_all(save_fig = TRUE, save_fig_filename = &quot;Selection model Term Deposits&quot;): object &#39;plot_input&#39; not found</span>
 </pre></div>
 
 
-<p><img alt="plot of chunk allplots" src="https://modelplot.github.io/img/modelplotr_caret_mlr-allplots-1.png" /></p>
 <p>Neat! With these plots, we are able to talk with business colleagues about the actual value of our predictive model, without having to bore them with technicalities any nitty gritty details. We've translated our model in business terms and visualised it to simplify interpretation and communication. Hopefully, this helps many of you in discussing how to optimally take advantage of your predictive model building efforts.   </p>
 <h3>Get more out of modelplotr: using different scopes.</h3>
 <p>As we mentioned earlier, the modelplotr package also enables to make interesting comparisons, using the <strong>scope</strong> parameter. Comparisons between different models, between different datasets and (in case of a multiclass target) between different target classes. Curious? Please have a look at the package documentation or read our other posts on modelplotr. </p>
 <p>However, to give one example, we could compare whether XGBoost was indeed the best choice to select the top-30% customers for a term deposit offer:  </p>
 <div class="highlight"><pre><span></span><span class="c1"># set plotting scope to model comparison</span>
 plotting_scope<span class="p">(</span>scope <span class="o">=</span> <span class="s">&quot;compare_models&quot;</span><span class="p">)</span>
-<span class="c1">## Data preparation step 3 succeeded! Dataframe &#39;plot_input&#39; created.</span>
-<span class="c1">## </span>
-<span class="c1">## Models &quot;random forest&quot;, &quot;multinomial logit&quot;, &quot;XGBoost&quot;, &quot;Discriminant&quot; compared for dataset &quot;test data&quot; and target value &quot;term deposit&quot;.</span>
+<span class="c1">## Error in plotting_scope(scope = &quot;compare_models&quot;): prepared_input unavailable and input dataframe scores_and_deciles to create prepared_input</span>
+<span class="c1">##           not available! First run prepare_scores_and_deciles() to generate scores_and_deciles.</span>
 
 <span class="c1"># plot the cumulative response plot and annotate the plot at decile = 3</span>
 plot_cumresponse<span class="p">(</span>highlight_decile <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
-<span class="c1">##  </span>
-<span class="c1">## Plot annotation:</span>
-<span class="c1">## - When we select deciles 1 until 3 according to model random forest in dataset test data the % of term deposit cases in the selection is 34%.</span>
-<span class="c1">## - When we select deciles 1 until 3 according to model multinomial logit in dataset test data the % of term deposit cases in the selection is 32%.</span>
-<span class="c1">## - When we select deciles 1 until 3 according to model XGBoost in dataset test data the % of term deposit cases in the selection is 33%.</span>
-<span class="c1">## - When we select deciles 1 until 3 according to model Discriminant in dataset test data the % of term deposit cases in the selection is 33%.</span>
-<span class="c1">##  </span>
-<span class="c1">## </span>
+<span class="c1">## Error in plot_cumresponse(highlight_decile = 3): object &#39;plot_input&#39; not found</span>
 </pre></div>
 
 
-<p><img alt="plot of chunk comparemodels" src="https://modelplot.github.io/img/modelplotr_caret_mlr-comparemodels-1.png" /></p>
 <p>Seems like the algorithm used will not make a big difference in this case. Hopefully you agree by now that using these plots really can make a difference in explaining the business value of your predictive models! </p>
 <p>In case you experience issues when using modelplotr, please let us know via the <a href="https://github.com/jurrr/modelplotr/issues" target="_blank">issues section on Github</a>. Any other feedback or suggestions, please let us know via <a href="mailto:jurriaan.nagelkerke@gmail.com">jurriaan.nagelkerke@gmail.com</a> or <a href="mailto:pb.marcus@hotmail.com">pb.marcus@hotmail.com</a>. Happy modelplotting!</p>
 <p><img alt=" " src="img/cartoon2d.jpg" /></p>
