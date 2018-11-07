@@ -111,7 +111,6 @@ prepare_scores_and_deciles&lt;span class="p"&gt;(&lt;/span&gt;datasets&lt;span c
 
 &lt;span class="c1"&gt;# transform data generated with prepare_scores_and_deciles into aggregated data for chosen plotting scope &lt;/span&gt;
 plotting_scope&lt;span class="p"&gt;(&lt;/span&gt;select_model_label &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;XGBoost&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;select_dataset_label &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;test data&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## [1] &amp;quot;deciles_aggregate not available; input_modelevalplots() is run...&amp;quot;&lt;/span&gt;
 &lt;span class="c1"&gt;## Data preparation step 3 succeeded! Dataframe &amp;#39;plot_input&amp;#39; created.&lt;/span&gt;
 &lt;span class="c1"&gt;## &lt;/span&gt;
 &lt;span class="c1"&gt;## No comparison specified, default values are used. &lt;/span&gt;
