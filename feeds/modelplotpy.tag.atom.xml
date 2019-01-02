@@ -1,127 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Modelplot[R/py] introduction</title><link href="modelplot.github.io/" rel="alternate"></link><link href="modelplot.github.io/feeds/modelplotpy.tag.atom.xml" rel="self"></link><id>modelplot.github.io/</id><updated>2018-09-20T14:00:00+02:00</updated><entry><title>Introduction to modelplotpy</title><link href="modelplot.github.io/intro_modelplotpy.html" rel="alternate"></link><published>2018-09-20T14:00:00+02:00</published><updated>2018-09-20T14:00:00+02:00</updated><author><name>Pieter Marcus</name></author><id>tag:,2018-09-20:modelplot.github.io/intro_modelplotpy.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Modelplot[R/py] introduction</title><link href="https://modelplot.github.io/" rel="alternate"></link><link href="https://modelplot.github.io/feeds/modelplotpy.tag.atom.xml" rel="self"></link><id>https://modelplot.github.io/</id><updated>2018-09-20T14:00:00+02:00</updated><entry><title>Introduction to modelplotpy</title><link href="https://modelplot.github.io/intro_modelplotpy.html" rel="alternate"></link><published>2018-09-20T14:00:00+02:00</published><updated>2018-09-20T14:00:00+02:00</updated><author><name>Pieter Marcus</name></author><id>tag:modelplot.github.io,2018-09-20:intro_modelplotpy.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI escape sequences */
-/* The color values are a mix of
-   http://www.xcolors.net/dl/baskerville-ivorylight and
-   http://www.xcolors.net/dl/euphrasia */
-.ansi-black-fg {
-  color: #3E424D;
-}
-.ansi-black-bg {
-  background-color: #3E424D;
-}
-.ansi-black-intense-fg {
-  color: #282C36;
-}
-.ansi-black-intense-bg {
-  background-color: #282C36;
-}
-.ansi-red-fg {
-  color: #E75C58;
-}
-.ansi-red-bg {
-  background-color: #E75C58;
-}
-.ansi-red-intense-fg {
-  color: #B22B31;
-}
-.ansi-red-intense-bg {
-  background-color: #B22B31;
-}
-.ansi-green-fg {
-  color: #00A250;
-}
-.ansi-green-bg {
-  background-color: #00A250;
-}
-.ansi-green-intense-fg {
-  color: #007427;
-}
-.ansi-green-intense-bg {
-  background-color: #007427;
-}
-.ansi-yellow-fg {
-  color: #DDB62B;
-}
-.ansi-yellow-bg {
-  background-color: #DDB62B;
-}
-.ansi-yellow-intense-fg {
-  color: #B27D12;
-}
-.ansi-yellow-intense-bg {
-  background-color: #B27D12;
-}
-.ansi-blue-fg {
-  color: #208FFB;
-}
-.ansi-blue-bg {
-  background-color: #208FFB;
-}
-.ansi-blue-intense-fg {
-  color: #0065CA;
-}
-.ansi-blue-intense-bg {
-  background-color: #0065CA;
-}
-.ansi-magenta-fg {
-  color: #D160C4;
-}
-.ansi-magenta-bg {
-  background-color: #D160C4;
-}
-.ansi-magenta-intense-fg {
-  color: #A03196;
-}
-.ansi-magenta-intense-bg {
-  background-color: #A03196;
-}
-.ansi-cyan-fg {
-  color: #60C6C8;
-}
-.ansi-cyan-bg {
-  background-color: #60C6C8;
-}
-.ansi-cyan-intense-fg {
-  color: #258F8F;
-}
-.ansi-cyan-intense-bg {
-  background-color: #258F8F;
-}
-.ansi-white-fg {
-  color: #C5C1B4;
-}
-.ansi-white-bg {
-  background-color: #C5C1B4;
-}
-.ansi-white-intense-fg {
-  color: #A1A6B2;
-}
-.ansi-white-intense-bg {
-  background-color: #A1A6B2;
-}
-.ansi-default-inverse-fg {
-  color: #FFFFFF;
-}
-.ansi-default-inverse-bg {
-  background-color: #000000;
-}
-.ansi-bold {
-  font-weight: bold;
-}
-.ansi-underline {
-  text-decoration: underline;
-}
-/* The following styles are deprecated an will be removed in a future version */
+/* CSS font colors for translated ANSI colors. */
 .ansibold {
   font-weight: bold;
-}
-.ansi-inverse {
-  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -200,20 +85,12 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  position: relative;
-  overflow: visible;
-}
-div.cell:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: transparent;
+  border-left-width: 1px;
+  padding-left: 5px;
+  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
 }
 div.cell.jupyter-soft-selected {
+  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -226,39 +103,27 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected,
-div.cell.selected.jupyter-soft-selected {
+div.cell.selected {
   border-color: #ababab;
-}
-div.cell.selected:before,
-div.cell.selected.jupyter-soft-selected:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: #42A5F5;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
 }
 @media print {
-  div.cell.selected,
-  div.cell.selected.jupyter-soft-selected {
+  div.cell.selected {
     border-color: transparent;
   }
 }
+div.cell.selected.jupyter-soft-selected {
+  border-left-width: 0;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
+}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-}
-.edit_mode div.cell.selected:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: #66BB6A;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -454,9 +319,7 @@ div.input_area &gt; div.highlight &gt; pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  /* Note that this should set vertical padding only, since CodeMirror assumes
-       that horizontal padding will be set on CodeMirror pre */
-  padding: 0.4em 0;
+  padding: 0.4em;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -466,24 +329,11 @@ div.input_area &gt; div.highlight &gt; pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
-    use .CodeMirror-lines for vertical */
-  padding: 0 0.4em;
+  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
+  /* .CodeMirror-lines */
+  padding: 0;
   border: 0;
   border-radius: 0;
-}
-.CodeMirror-cursor {
-  border-left: 1.4px solid black;
-}
-@media screen and (min-width: 2138px) and (max-width: 4319px) {
-  .CodeMirror-cursor {
-    border-left: 2px solid black;
-  }
-}
-@media screen and (min-width: 4320px) {
-  .CodeMirror-cursor {
-    border-left: 4px solid black;
-  }
 }
 /*
 
@@ -731,9 +581,6 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
-div.output_area .mglyph &gt; img {
-  max-width: none;
-}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -772,7 +619,7 @@ div.output_area .mglyph &gt; img {
 }
 div.output_area pre {
   margin: 0;
-  padding: 1px 0 1px 0;
+  padding: 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -894,10 +741,6 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
-.rendered_html ul:not(.list-inline),
-.rendered_html ol:not(.list-inline) {
-  padding-left: 2em;
-}
 
 
 
@@ -914,24 +757,16 @@ div.output_unrecognized a:hover {
 }
 
 
-
-
-
 .rendered_html pre,
-
 
 
 
 .rendered_html tr,
 .rendered_html th,
 
+.rendered_html td,
 
-.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
+
 .rendered_html * + table {
   margin-top: 1em;
 }
@@ -947,11 +782,6 @@ div.output_unrecognized a:hover {
 
 .rendered_html img.unconfined,
 
-
-.rendered_html * + .alert {
-  margin-top: 1em;
-}
-[dir="rtl"] 
 div.text_cell {
   /* Old browsers */
   display: -webkit-box;
@@ -1002,15 +832,8 @@ h6:hover .anchor-link {
   display: none;
 }
 .text_cell.rendered 
-.text_cell.rendered .rendered_html tr,
-.text_cell.rendered .rendered_html th,
-.text_cell.rendered 
 .text_cell.unrendered .text_cell_render {
   display: none;
-}
-.text_cell .dropzone .input_area {
-  border: 2px dashed #bababa;
-  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -1149,7 +972,8 @@ h6:hover .anchor-link {
 .ansi-bold { font-weight: bold; }
 &lt;/style&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Why-ROC-curves-are-a-bad-idea-to-explain-your-model-to-business-people"&gt;Why ROC curves are a bad idea to explain your model to business people&lt;a class="anchor-link" href="#Why-ROC-curves-are-a-bad-idea-to-explain-your-model-to-business-people"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;h3 id="Summary"&gt;Summary&lt;a class="anchor-link" href="#Summary"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In this blog we explain four most valuable evaluation plots to assess the business value of a predictive model. These plots are cumulative gains, cumulative lift, response and cumulative response. Since these visualisations are not included in most popular model building packages or modules in R and Python, we show how you can easily create these plots for your own predictive models with our modelplotpy python module and our &lt;a href="https://modelplot.github.io/modelplotr.html"&gt;modelplotr R package (Prefer R? Read all about modelplotr here!)&lt;/a&gt;. This will help you to explain your model's business value in laymans terms to non-techies.&lt;/p&gt;
 &lt;h3 id="Intro"&gt;Intro&lt;a class="anchor-link" href="#Intro"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;img src="img/cartoonrocplot.jpg" alt=" "&gt;&lt;/p&gt;
@@ -1164,7 +988,8 @@ h6:hover .anchor-link {
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Get-modelplotpy-working-on-your-machine"&gt;Get modelplotpy working on your machine&lt;a class="anchor-link" href="#Get-modelplotpy-working-on-your-machine"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Let's start this tutorial with installing the &lt;strong&gt;modelplotpy&lt;/strong&gt; module. Modelplotpy is already available from &lt;a href="https://github.com/modelplot/modelplotpy"&gt;Github&lt;/a&gt;, but currently it is not possible to install through the &lt;a href="https://pypi.org"&gt;Python Package Index (PyPI)  repository&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;For some users we encountered that GitHub needs to be installed on your machine first. If you don't have GitHub installed  on your machine yet, it can be downloaded from &lt;a href="https://desktop.github.com/"&gt;here&lt;/a&gt;. After installing GitHub on your machine, it helps to restart and then continue with this tutorial.&lt;/p&gt;
@@ -1184,13 +1009,14 @@ h6:hover .anchor-link {
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;modelplotpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;mp&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-    &lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Now we're ready to use modelplotpy. In another post, we'll go into much more detail on our modelplot packages in r and python and all its functionalities. Here, we'll focus on using modelplotpy with a business example.&lt;/p&gt;
 &lt;h3 id="Example:-Predictive-models-from-sklearn-on-the-Bank-Marketing-Data-Set"&gt;Example: Predictive models from &lt;em&gt;sklearn&lt;/em&gt; on the &lt;em&gt;Bank Marketing Data Set&lt;/em&gt;&lt;a class="anchor-link" href="#Example:-Predictive-models-from-sklearn-on-the-Bank-Marketing-Data-Set"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Let's get down to business! When we introduce the plots, we'll show you how to use them with a business example. This example is based on a publicly available dataset, called the Bank Marketing Data Set. It is one of the most popular datasets which is made available on the &lt;a href="https://archive.ics.uci.edu/ml/index.php"&gt;UCI Machine Learning Repository&lt;/a&gt;. The data set comes from a Portugese bank and deals with a frequently-posed marketing question: whether a customer did or did not acquire a term deposit, a financial product. There are 4 datasets available and the &lt;strong&gt;bank-additional-full.csv&lt;/strong&gt; is the one we use. It contains the information of 41.188 customers and 21 columns of information.&lt;/p&gt;
@@ -1243,7 +1069,7 @@ h6:hover .anchor-link {
 &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;bank&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-    &lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1253,7 +1079,7 @@ h6:hover .anchor-link {
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -1273,7 +1099,8 @@ h6:hover .anchor-link {
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;On this data, we've applied some predictive modeling techniques from the &lt;a href="http://scikit-learn.org"&gt;&lt;strong&gt;sklearn module&lt;/strong&gt;&lt;/a&gt;. This well known module is a wrapper for many predictive modeling techniques, such as logistic regression, random forest and many, many others. Lets train a few models to evaluate with our plots.&lt;/p&gt;
 
@@ -1303,7 +1130,7 @@ h6:hover .anchor-link {
 &lt;span class="n"&gt;clf_mult&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LogisticRegression&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;multi_class&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;multinomial&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;solver&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;newton-cg&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_train&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-    &lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1313,7 +1140,7 @@ h6:hover .anchor-link {
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stderr output_text"&gt;
@@ -1328,7 +1155,8 @@ h6:hover .anchor-link {
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;In another post, we'll go into much more detail on our modelplot packages in R and Python and all its functionalities. For now, we focus on explaining to our marketing colleagues how good our predictive model can help them select customers for their term deposit campaign.&lt;/p&gt;
 
@@ -1351,7 +1179,7 @@ h6:hover .anchor-link {
 &lt;span class="n"&gt;ps&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;obj&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plotting_scope&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;select_model_label&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;random forest&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;select_dataset_label&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;test data&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-    &lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1361,7 +1189,7 @@ h6:hover .anchor-link {
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -1377,7 +1205,8 @@ Target value term deposit plotted for dataset test data and model random forest.
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;What just happened? In the &lt;strong&gt;modelplotpy&lt;/strong&gt; a class is instantiated and the &lt;strong&gt;plotting_scope&lt;/strong&gt; function specifies the scope of the plots you want to show. In general, there are 3 methods (functions) that can be applied to the modelplotpy class but you don't have to specify them since they are chained to each other. These functions are:&lt;/p&gt;
 &lt;ul&gt;
@@ -1422,7 +1251,7 @@ Target value term deposit plotted for dataset test data and model random forest.
 &lt;span class="n"&gt;mp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot_cumgains&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ps&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-    &lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1432,7 +1261,7 @@ Target value term deposit plotted for dataset test data and model random forest.
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -1443,7 +1272,7 @@ Target value term deposit plotted for dataset test data and model random forest.
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -1458,7 +1287,7 @@ Target value term deposit plotted for dataset test data and model random forest.
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
+&lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
 
 
 
@@ -1471,7 +1300,7 @@ Target value term deposit plotted for dataset test data and model random forest.
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
+&lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
 
 
 
@@ -1487,7 +1316,8 @@ Target value term deposit plotted for dataset test data and model random forest.
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;We only have to specify the input with the plotting_scope output. There are several parameters available to customize the plot, though. If we want to emphasize the model performance at a given point, we can add both highlighting to the plot and add some explanatory text below the plot. Both are optional, though:&lt;/p&gt;
 
@@ -1503,7 +1333,7 @@ Target value term deposit plotted for dataset test data and model random forest.
 &lt;span class="n"&gt;mp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot_cumgains&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ps&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;highlight_decile&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-    &lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1513,7 +1343,7 @@ Target value term deposit plotted for dataset test data and model random forest.
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -1525,7 +1355,7 @@ The cumulative gains plot is saved in C:\Users\nagelk000\AppData\Local\Temp\intr
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -1540,7 +1370,7 @@ The cumulative gains plot is saved in C:\Users\nagelk000\AppData\Local\Temp\intr
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[16]:&lt;/div&gt;
+&lt;div class="prompt output_prompt"&gt;Out[16]:&lt;/div&gt;
 
 
 
@@ -1553,7 +1383,7 @@ The cumulative gains plot is saved in C:\Users\nagelk000\AppData\Local\Temp\intr
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[16]:&lt;/div&gt;
+&lt;div class="prompt output_prompt"&gt;Out[16]:&lt;/div&gt;
 
 
 
@@ -1569,7 +1399,8 @@ The cumulative gains plot is saved in C:\Users\nagelk000\AppData\Local\Temp\intr
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Our 'highlight_decile' parameter adds some guiding elements to the plot at decile 2 as well as a text box below the graph with the interpretation of the plot at decile 2 in words. This interpretation is also printed to the console. Our simple model - only 6 pedictors were used - seems to do a nice job selecting the customers interested in buying term deposites. &lt;em&gt;When we select 20% with the highest probability according to random forest, this selection holds 79% of all term deposit cases in test data.&lt;/em&gt; With a perfect model, we would have selected 100%, since less than 20% of all customers in the test set buy term deposits. A random pick would only hold 20% of the customers with term deposits. How much better than random we do, brings us to plot number 2!&lt;/p&gt;
 &lt;h4 id="2.-Cumulative-lift-plot"&gt;2. Cumulative lift plot&lt;a class="anchor-link" href="#2.-Cumulative-lift-plot"&gt;&amp;#182;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;The cumulative lift plot, often referred to as lift plot or index plot, helps you answer the question:&lt;/p&gt;
@@ -1591,7 +1422,7 @@ The cumulative gains plot is saved in C:\Users\nagelk000\AppData\Local\Temp\intr
 &lt;span class="n"&gt;mp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot_cumlift&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ps&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;highlight_decile&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-    &lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1601,7 +1432,7 @@ The cumulative gains plot is saved in C:\Users\nagelk000\AppData\Local\Temp\intr
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -1613,7 +1444,7 @@ The cumulative lift plot is saved in C:\Users\nagelk000\AppData\Local\Temp\intro
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -1628,7 +1459,7 @@ The cumulative lift plot is saved in C:\Users\nagelk000\AppData\Local\Temp\intro
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[20]:&lt;/div&gt;
+&lt;div class="prompt output_prompt"&gt;Out[20]:&lt;/div&gt;
 
 
 
@@ -1641,7 +1472,7 @@ The cumulative lift plot is saved in C:\Users\nagelk000\AppData\Local\Temp\intro
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[20]:&lt;/div&gt;
+&lt;div class="prompt output_prompt"&gt;Out[20]:&lt;/div&gt;
 
 
 
@@ -1657,7 +1488,8 @@ The cumulative lift plot is saved in C:\Users\nagelk000\AppData\Local\Temp\intro
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;A term deposit campaign targeted at a selection of 20% of all customers based on our random forest model can be expected to have a 4 times higher response (396%) compared to a random sample of customers. Not bad, right? The cumulative lift really helps in getting a positive return on marketing investments. It should be noted, though, that since the cumulative lift plot is relative, it doesn't tell us how high the actual reponse will be on our campaign...&lt;/p&gt;
 &lt;h4 id="3.-Response-plot"&gt;3. Response plot&lt;a class="anchor-link" href="#3.-Response-plot"&gt;&amp;#182;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;One of the easiest to explain evaluation plots is the response plot. It simply plots the percentage of target class observations per decile. It can be used to answer the following business question:&lt;/p&gt;
@@ -1679,7 +1511,7 @@ The cumulative lift plot is saved in C:\Users\nagelk000\AppData\Local\Temp\intro
 &lt;span class="n"&gt;mp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot_response&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ps&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;highlight_decile&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-    &lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1689,7 +1521,7 @@ The cumulative lift plot is saved in C:\Users\nagelk000\AppData\Local\Temp\intro
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -1701,7 +1533,7 @@ The response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\intro_modelp
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -1716,7 +1548,7 @@ The response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\intro_modelp
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[21]:&lt;/div&gt;
+&lt;div class="prompt output_prompt"&gt;Out[21]:&lt;/div&gt;
 
 
 
@@ -1729,7 +1561,7 @@ The response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\intro_modelp
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[21]:&lt;/div&gt;
+&lt;div class="prompt output_prompt"&gt;Out[21]:&lt;/div&gt;
 
 
 
@@ -1745,7 +1577,8 @@ The response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\intro_modelp
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;As the plot shows and the text below the plot states: &lt;em&gt;When we select decile 1 from model random forest in dataset test data the percentage of term deposit cases in the selection is 55%.&lt;/em&gt;. This is quite good, especially when compared to the overall likelihood of 11%. The response in the second decile is much lower, about 28%. From decile 3 onwards, the expected response will be lower than the overall likelihood of 10.4%. However, most of the time, our model will be used to select the highest decile &lt;em&gt;up until&lt;/em&gt; some decile. That makes it even more relevant to have a look at the cumulative version of the response plot. And guess what, that's our final plot!&lt;/p&gt;
 &lt;h4 id="4.-Cumulative-response-plot"&gt;4. Cumulative response plot&lt;a class="anchor-link" href="#4.-Cumulative-response-plot"&gt;&amp;#182;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Finally, one of the most used plots: The cumulative response plot. It answers the question burning on each business reps lips:&lt;/p&gt;
@@ -1767,7 +1600,7 @@ The response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\intro_modelp
 &lt;span class="n"&gt;mp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot_cumresponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ps&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;highlight_decile&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-    &lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1777,7 +1610,7 @@ The response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\intro_modelp
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -1789,7 +1622,7 @@ The cumulative response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\i
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -1804,7 +1637,7 @@ The cumulative response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\i
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[23]:&lt;/div&gt;
+&lt;div class="prompt output_prompt"&gt;Out[23]:&lt;/div&gt;
 
 
 
@@ -1817,7 +1650,7 @@ The cumulative response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\i
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[23]:&lt;/div&gt;
+&lt;div class="prompt output_prompt"&gt;Out[23]:&lt;/div&gt;
 
 
 
@@ -1833,7 +1666,8 @@ The cumulative response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\i
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;em&gt;When we select deciles 1 until 3 according to model random forest in dataset test data the percentage of term deposit cases in the selection is 33%.&lt;/em&gt; Since the test data is an independent set, not used to train the model, we can expect the response on the term deposit campaign to be 33%.&lt;/p&gt;
 &lt;p&gt;The cumulative response percentage at a given decile is a number your business colleagues can really work with: Is that response big enough to have a successfull campaign, given costs and other expectations? Will the absolute number of sold term deposits meet the targets? Or do we lose too much of all potential term deposit buyers by only selecting the top 30%? To answer that question, we can go back to the cumulative gains plot. And that's why there's no absolute winner among these plots and we advice to use them all. To make that happen, there's also a function to easily combine all four plots.&lt;/p&gt;
@@ -1851,7 +1685,7 @@ The cumulative response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\i
 &lt;span class="n"&gt;mp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot_all&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ps&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;save_fig&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;save_fig_filename&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Selection model Term Deposits&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-    &lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1861,7 +1695,7 @@ The cumulative response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\i
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -1872,7 +1706,7 @@ The cumulative response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\i
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -1887,7 +1721,7 @@ The cumulative response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\i
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[25]:&lt;/div&gt;
+&lt;div class="prompt output_prompt"&gt;Out[25]:&lt;/div&gt;
 
 
 
@@ -1900,7 +1734,7 @@ The cumulative response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\i
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[25]:&lt;/div&gt;
+&lt;div class="prompt output_prompt"&gt;Out[25]:&lt;/div&gt;
 
 
 
@@ -1916,7 +1750,8 @@ The cumulative response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\i
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Neat! With these plots, we are able to talk with business colleagues about the actual value of our predictive model, without having to bore them with technicalities any nitty gritty details. We've translated our model in business terms and visualised it to simplify interpretation and communication. Hopefully, this helps many of you in discussing how to optimally take advantage of your predictive model building efforts.&lt;/p&gt;
 &lt;h3 id="Get-more-out-of-modelplotpy:-using-different-scopes"&gt;Get more out of modelplotpy: using different scopes&lt;a class="anchor-link" href="#Get-more-out-of-modelplotpy:-using-different-scopes"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;As we mentioned discussed earlier, the modelplotpy also enables to make interesting comparisons, using the &lt;strong&gt;scope&lt;/strong&gt; parameter. Comparisons between different models, between different datasets and (in case of a multiclass target) between different target classes. Curious? Please have a look at the package documentation or read our other posts on modelplot.&lt;/p&gt;
@@ -1937,7 +1772,7 @@ The cumulative response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\i
 &lt;span class="n"&gt;mp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot_cumresponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ps2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;highlight_decile&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-    &lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1947,7 +1782,7 @@ The cumulative response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\i
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
@@ -1962,7 +1797,7 @@ The cumulative response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\i
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
 
 
 
@@ -1977,7 +1812,7 @@ The cumulative response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\i
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[28]:&lt;/div&gt;
+&lt;div class="prompt output_prompt"&gt;Out[28]:&lt;/div&gt;
 
 
 
@@ -1990,7 +1825,7 @@ The cumulative response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\i
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[28]:&lt;/div&gt;
+&lt;div class="prompt output_prompt"&gt;Out[28]:&lt;/div&gt;
 
 
 
@@ -2006,7 +1841,8 @@ The cumulative response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\i
 
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Seems like the algorithm used will not make a big difference in this case. Hopefully you agree by now that using these plots really can make a difference in explaining the business value of your predictive models!&lt;/p&gt;
 &lt;p&gt;In case you experience issues when using modelplotpy, please let us know via the &lt;a href="https://github.com/pbmarcus/modelplotpy/issues" target="_blank"&gt;issues section on Github&lt;/a&gt;. Any other feedback or suggestions,  please let us know via &lt;a href="mailto:pb.marcus@hotmail.com"&gt;pb.marcus@hotmail.com&lt;/a&gt; or &lt;a href="mailto:jurriaan.nagelkerke@gmail.com"&gt;jurriaan.nagelkerke@gmail.com&lt;/a&gt;. Happy modelplotting!&lt;/p&gt;
@@ -2026,7 +1862,7 @@ The cumulative response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\i
 &lt;span class="c1"&gt;#np.set_printoptions(linewidth=110)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-    &lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -2036,7 +1872,7 @@ The cumulative response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\i
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[27]:&lt;/div&gt;
+&lt;div class="prompt output_prompt"&gt;Out[27]:&lt;/div&gt;
 
 
 
@@ -2046,19 +1882,6 @@ The cumulative response plot is saved in C:\Users\nagelk000\AppData\Local\Temp\i
 
 &lt;/div&gt;
 
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[&amp;nbsp;]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
