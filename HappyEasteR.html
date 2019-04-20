@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Happy EasteR! Let's find some eggs...</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="https://modelplot.github.io/" rel="canonical" />
+
+  <!-- Feed -->
+        <link href="https://modelplot.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Modelplot[R/py] introduction Full Atom Feed" />
+          <link href="https://modelplot.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Modelplot[R/py] introduction Full RSS Feed" />
+          <link href="https://modelplot.github.io/feeds/posts.atom.xml" type="application/atom+xml" rel="alternate" title="Modelplot[R/py] introduction Categories Atom Feed" />
+          <link href="https://modelplot.github.io/feeds/posts.rss.xml" type="application/rss+xml" rel="alternate" title="Modelplot[R/py] introduction Categories RSS Feed" />
+
+  <link href="https://modelplot.github.io/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="https://modelplot.github.io/theme/css/code_blocks/darkly.css" rel="stylesheet">
+
+    <!-- CSS specified by the user -->
+
+
+    <link href="https://modelplot.github.io/our_style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <link href="https://modelplot.github.io/HappyEasteR.html" rel="canonical" />
+
+    <meta name="description" content="Happy EasteR! Fun example how to use image processing package magick to hide and find easter eggs.">
+
+    <meta name="author" content="Jurriaan Nagelkerke">
+
+    <meta name="tags" content="R">
+    <meta name="tags" content="blog">
+    <meta name="tags" content="magick">
+    <meta name="tags" content="fun">
+    <meta name="tags" content="easter">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Modelplot[R/py] introduction"/>
+<meta property="og:title" content="Happy EasteR! Let's find some eggs..."/>
+<meta property="og:description" content="Happy EasteR! Fun example how to use image processing package magick to hide and find easter eggs."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://modelplot.github.io/HappyEasteR.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2019-04-20 00:00:00+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://modelplot.github.io/author/jurriaan-nagelkerke.html">
+<meta property="article:section" content="posts"/>
+<meta property="article:tag" content="R"/>
+<meta property="article:tag" content="blog"/>
+<meta property="article:tag" content="magick"/>
+<meta property="article:tag" content="fun"/>
+<meta property="article:tag" content="easter"/>
+<meta property="og:image" content="https://modelplot.github.io/img/goplay.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Happy EasteR! Let's find some eggs...",
+  "headline": "Happy EasteR! Let's find some eggs...",
+  "datePublished": "2019-04-20 00:00:00+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Jurriaan Nagelkerke",
+    "url": "https://modelplot.github.io/author/jurriaan-nagelkerke.html"
+  },
+  "image": "https://modelplot.github.io/img/goplay.jpg",
+  "url": "https://modelplot.github.io/HappyEasteR.html",
+  "description": "Happy EasteR! Fun example how to use image processing package magick to hide and find easter eggs."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+          <li><a href="/intro_modelplotpy.html" role="presentation">intro modelplotpy</a></li>
+          <li><a href="/modelplotr.html" role="presentation">intro modelplotr</a></li>
+          <li><a href="https://github.com/modelplot/modelplotpy" role="presentation">modelplotpy on github</a></li>
+          <li><a href="https://github.com/modelplot/modelplotr" role="presentation">modelplotr on github</a></li>
+          <li><a href="/authors.html" role="presentation">about us</a></li>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="https://modelplot.github.io/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Happy EasteR! Let's find some eggs...</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="https://modelplot.github.io/author/jurriaan-nagelkerke.html">Jurriaan Nagelkerke</a>
+            | <time datetime="20 Apr 2019">20 Apr 2019</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <div class="post-cover cover" style="background-image: url('https://modelplot.github.io/img/goplay.jpg')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <h2>It's Easter Time! Let's find some eggs...</h2>
+<div class="highlight"><pre><span></span>## Error in library(magick): there is no package called &#39;magick&#39;
+## Error in eval(expr, envir, enclos): could not find function &quot;%&gt;%&quot;
+## Error in eval(expr, envir, enclos): could not find function &quot;image_info&quot;
+## Error in eval(expr, envir, enclos): could not find function &quot;image_info&quot;
+## Error in eval(expr, envir, enclos): could not find function &quot;%&gt;%&quot;
+## Error in eval(expr, envir, enclos): could not find function &quot;%&gt;%&quot;
+## Error in eval(expr, envir, enclos): could not find function &quot;%&gt;%&quot;
+## Error in eval(expr, envir, enclos): could not find function &quot;%&gt;%&quot;
+## Error in eval(expr, envir, enclos): could not find function &quot;%&gt;%&quot;
+## Error in eval(expr, envir, enclos): could not find function &quot;%&gt;%&quot;
+## Error in eval(expr, envir, enclos): could not find function &quot;image_morph&quot;
+## Error in eval(expr, envir, enclos): could not find function &quot;image_animate&quot;
+</pre></div>
+
+
+<p>Hi there! Yes, <em>it's the most Easterful time of the year</em> again. For some of us a sacret time, for others mainly an egg-eating period and some just enjoy the extra day of spare time. In case you have some time available for some good egg searching business, but no-one seems willing to hide them for you this year, here's an alteRnative. Hide them yourself and have a nice easteR holyday! As you go, you also get to know the very nice image processing package:  <a href="https://cran.r-project.org/web/packages/magick/vignettes/intro.html">magick</a>. </p>
+<h2>Get some easter scenes, collect some eggs...</h2>
+<p>Before we can start hiding eggs, we need some scenes...</p>
+<div class="highlight"><pre><span></span><span class="n">easterScenes</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span>
+    <span class="s">&#39;https://www.godupdates.com/wp-content/uploads/2018/03/Easter_LastSupper_GU2018.jpg&#39;</span><span class="p">,</span>
+    <span class="s">&#39;https://image.cnbcfm.com/api/v1/image/105764024-1551270113306gettyimages-1127697101.jpeg&#39;</span><span class="p">,</span>
+    <span class="s">&#39;https://images.pexels.com/photos/33152/european-rabbits-bunnies-grass-wildlife.jpg&#39;</span>
+    <span class="p">)</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">magick</span><span class="p">)</span>
+<span class="c1">## Error in library(magick): there is no package called &#39;magick&#39;</span>
+
+<span class="c1"># read images and put in a vector</span>
+<span class="n">images</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">image_read</span><span class="p">(</span><span class="n">easterScenes[1]</span><span class="p">),</span><span class="nf">image_read</span><span class="p">(</span><span class="n">easterScenes[2]</span><span class="p">),</span><span class="nf">image_read</span><span class="p">(</span><span class="n">easterScenes[3]</span><span class="p">))</span>
+<span class="c1">## Error in eval(expr, envir, enclos): could not find function &quot;image_read&quot;</span>
+<span class="c1">#show all images, next to eachother</span>
+<span class="nf">image_append</span><span class="p">(</span><span class="nf">image_scale</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s">&quot;x200&quot;</span><span class="p">))</span>
+<span class="c1">## Error in eval(expr, envir, enclos): could not find function &quot;image_append&quot;</span>
+</pre></div>
+
+
+<p>...and - obviously - we need some eggs to hide!</p>
+<div class="highlight"><pre><span></span><span class="n">easterEggs</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span>
+    <span class="s">&#39;https://cdn.pixabay.com/photo/2017/02/04/20/28/easter-2038263_960_720.png&#39;</span><span class="p">,</span>
+    <span class="s">&#39;https://cdn.pixabay.com/photo/2016/12/15/11/41/easter-1908690_960_720.png&#39;</span><span class="p">,</span>
+    <span class="s">&#39;https://cdn.pixabay.com/photo/2017/03/28/09/56/easter-egg-2181493_960_720.png&#39;</span><span class="p">,</span>
+    <span class="s">&#39;https://cdn.pixabay.com/photo/2019/01/29/13/49/egg-3962420_960_720.png&#39;</span><span class="p">,</span>
+    <span class="s">&#39;https://cdn.pixabay.com/photo/2018/02/25/09/44/easter-3180067_960_720.png&#39;</span>
+<span class="p">)</span>
+
+<span class="c1"># read images and put in a vector</span>
+<span class="n">images</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">image_trim</span><span class="p">(</span><span class="nf">image_read</span><span class="p">(</span><span class="n">easterEggs[1]</span><span class="p">)),</span><span class="nf">image_trim</span><span class="p">(</span><span class="nf">image_read</span><span class="p">(</span><span class="n">easterEggs[2]</span><span class="p">)),</span>
+           <span class="nf">image_trim</span><span class="p">(</span><span class="nf">image_read</span><span class="p">(</span><span class="n">easterEggs[3]</span><span class="p">)),</span>
+           <span class="nf">image_trim</span><span class="p">(</span><span class="nf">image_read</span><span class="p">(</span><span class="n">easterEggs[4]</span><span class="p">)),</span><span class="nf">image_trim</span><span class="p">(</span><span class="nf">image_read</span><span class="p">(</span><span class="n">easterEggs[5]</span><span class="p">)))</span>
+<span class="c1">## Error in eval(expr, envir, enclos): could not find function &quot;image_trim&quot;</span>
+<span class="c1">#show all images, next to eachother</span>
+<span class="nf">image_append</span><span class="p">(</span><span class="nf">image_scale</span><span class="p">(</span><span class="n">images</span><span class="p">,</span><span class="s">&quot;x100&quot;</span><span class="p">))</span>
+<span class="c1">## Error in eval(expr, envir, enclos): could not find function &quot;image_append&quot;</span>
+</pre></div>
+
+
+<h2>Hiding Eggs function</h2>
+<p>Excellent, we have some scenes and some eggs, let's create a function to make hiding our eggs easy. We'll take advantage of some other functions from the great image processing package <strong>magick</strong>.  </p>
+<div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">magick</span><span class="p">)</span>
+<span class="c1">## Error in library(magick): there is no package called &#39;magick&#39;</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="c1">## Error in library(dplyr): there is no package called &#39;dplyr&#39;</span>
+
+<span class="n">hideEggs</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">sceneUrl</span><span class="p">,</span><span class="n">nEggs</span><span class="o">=</span><span class="n">nEggs</span><span class="p">,</span><span class="n">eggPositions</span><span class="p">,</span><span class="n">eggSize</span><span class="o">=</span><span class="m">0.04</span><span class="p">){</span>
+    <span class="c1"># read scene</span>
+    <span class="n">easterScene</span> <span class="o">&lt;-</span> <span class="nf">image_read</span><span class="p">(</span><span class="n">sceneUrl</span><span class="p">)</span>
+    <span class="c1"># resize picture to 800 width (keep aspect ratio)</span>
+    <span class="n">easterScene</span> <span class="o">&lt;-</span> <span class="nf">image_scale</span><span class="p">(</span><span class="n">easterScene</span><span class="p">,</span> <span class="s">&quot;800x&quot;</span><span class="p">)</span>
+    <span class="n">sceneWidth</span> <span class="o">&lt;-</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="nf">image_info</span><span class="p">(</span><span class="n">easterScene</span><span class="p">)</span><span class="n">[</span><span class="s">&#39;width&#39;</span><span class="n">]</span><span class="p">)</span>
+    <span class="n">sceneHeight</span> <span class="o">&lt;-</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="nf">image_info</span><span class="p">(</span><span class="n">easterScene</span><span class="p">)</span><span class="n">[</span><span class="s">&#39;height&#39;</span><span class="n">]</span><span class="p">)</span>
+    <span class="c1"># collect some eggs (sample with replacement in the basket ;))</span>
+    <span class="n">nEggs</span> <span class="o">=</span> <span class="n">nEggs</span>
+    <span class="n">eggUrls</span> <span class="o">=</span> <span class="nf">sample</span><span class="p">(</span><span class="n">easterEggs</span><span class="p">,</span><span class="n">nEggs</span><span class="p">,</span><span class="n">replace</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+
+    <span class="n">easterSceneEggs</span> <span class="o">&lt;-</span> <span class="n">easterScene</span>
+
+    <span class="nf">for </span><span class="p">(</span><span class="n">eggn</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">nEggs</span><span class="p">){</span>
+        <span class="n">eggUrl</span> <span class="o">=</span> <span class="n">eggUrls[eggn]</span>
+        <span class="c1"># get egg, resize, rotate and put on canvas!</span>
+        <span class="n">egg</span> <span class="o">&lt;-</span> <span class="nf">image_read</span><span class="p">(</span><span class="n">eggUrl</span><span class="p">)</span>
+        <span class="c1"># resize egg to 5% of canvas height (keep aspect ratio)</span>
+        <span class="n">egg</span> <span class="o">&lt;-</span> <span class="nf">image_scale</span><span class="p">(</span><span class="n">egg</span><span class="p">,</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="nf">round</span><span class="p">(</span><span class="n">eggSize</span><span class="o">*</span><span class="n">sceneWidth</span><span class="p">)))</span>
+        <span class="c1"># remove background</span>
+        <span class="n">egg</span> <span class="o">&lt;-</span> <span class="nf">image_background</span><span class="p">(</span><span class="n">egg</span><span class="p">,</span><span class="s">&quot;none&quot;</span><span class="p">)</span>
+        <span class="c1"># rotate egg between -90 and 90 degrees</span>
+        <span class="n">eggRotation</span> <span class="o">&lt;-</span> <span class="nf">runif</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">-90</span><span class="p">,</span><span class="m">90</span><span class="p">)</span>
+        <span class="n">egg</span> <span class="o">&lt;-</span> <span class="nf">image_rotate</span><span class="p">(</span><span class="n">egg</span><span class="p">,</span><span class="n">eggRotation</span><span class="p">)</span>
+        <span class="c1">#set x and y position (as specified in list or else random)</span>
+        <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">missing</span><span class="p">(</span><span class="n">eggPositions</span><span class="p">)){</span>
+            <span class="n">xpos</span> <span class="o">&lt;-</span> <span class="n">eggPositions[[eggn]][1]</span><span class="o">*</span><span class="n">sceneWidth</span>
+        <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+            <span class="n">xpos</span> <span class="o">&lt;-</span> <span class="nf">runif</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="n">sceneWidth</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">missing</span><span class="p">(</span><span class="n">eggPositions</span><span class="p">)){</span>
+            <span class="n">ypos</span> <span class="o">&lt;-</span> <span class="n">eggPositions[[eggn]][2]</span><span class="o">*</span><span class="n">sceneHeight</span>
+        <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+            <span class="n">ypos</span> <span class="o">&lt;-</span> <span class="nf">runif</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="n">sceneHeight</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="c1">#add egg to canvas</span>
+        <span class="n">easterSceneEggs</span> <span class="o">&lt;-</span> <span class="nf">image_composite</span><span class="p">(</span><span class="n">easterSceneEggs</span><span class="p">,</span> <span class="n">egg</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;+&quot;</span><span class="p">,</span><span class="n">xpos</span><span class="p">,</span><span class="s">&quot;+&quot;</span><span class="p">,</span><span class="n">ypos</span><span class="p">))</span>
+    <span class="p">}</span>
+    <span class="nf">return</span><span class="p">(</span><span class="n">easterSceneEggs</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Yeah, we've hidden 5 eggs near these happy easter bunnies. Can you spot them in a few seconds??</p>
+<div class="highlight"><pre><span></span><span class="c1"># let&#39;s hide 5 eggs among our easter bunnies</span>
+<span class="nf">hideEggs</span><span class="p">(</span><span class="n">sceneUrl</span> <span class="o">=</span> <span class="n">easterScenes[2]</span><span class="p">,</span><span class="n">nEggs</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
+<span class="c1">## Error in hideEggs(sceneUrl = easterScenes[2], nEggs = 5): could not find function &quot;image_read&quot;</span>
+</pre></div>
+
+
+<p>These guys also seem to enjoy our little game. Finally, let's make a somewhat more challenging version, you can share it with your relatives, wishing them a nice easter holiday.</p>
+<div class="highlight"><pre><span></span><span class="c1"># think where to hide...</span>
+<span class="n">eggPositions</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span><span class="m">0.95</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">0.03</span><span class="p">,</span><span class="m">0.6</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">0.4</span><span class="p">,</span><span class="m">0.65</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">0.5</span><span class="p">,</span><span class="m">0.67</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">0.465</span><span class="p">,</span><span class="m">0.31</span><span class="p">),</span>
+                    <span class="nf">c</span><span class="p">(</span><span class="m">0.6</span><span class="p">,</span><span class="m">0.4</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">0.7</span><span class="p">,</span><span class="m">0.7</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">0.6</span><span class="p">,</span><span class="m">0.66</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">0.8</span><span class="p">,</span><span class="m">0.94</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">0.97</span><span class="p">,</span><span class="m">0.71</span><span class="p">))</span>
+
+<span class="c1">#... and hide! we&#39;ll use smaller eggs to make it a bit more challenging.</span>
+<span class="n">easterCard</span> <span class="o">&lt;-</span> <span class="nf">hideEggs</span><span class="p">(</span><span class="n">sceneUrl</span> <span class="o">=</span> <span class="n">easterScenes[1]</span><span class="p">,</span><span class="n">nEggs</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">eggPositions</span><span class="p">),</span>
+         <span class="n">eggPositions</span> <span class="o">=</span> <span class="n">eggPositions</span><span class="p">,</span>
+         <span class="n">eggSize</span> <span class="o">=</span> <span class="m">0.02</span><span class="p">)</span>
+<span class="c1">## Error in hideEggs(sceneUrl = easterScenes[1], nEggs = length(eggPositions), : could not find function &quot;image_read&quot;</span>
+
+<span class="c1"># let&#39;s add some wishes to our easter card...</span>
+
+<span class="n">easterCard</span> <span class="o">%&gt;%</span> 
+    <span class="nf">image_annotate</span><span class="p">(</span><span class="s">&quot;Happy Easter!!!&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">36</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;yellow&quot;</span><span class="p">,</span>  <span class="n">location</span> <span class="o">=</span> <span class="s">&quot;+270+16&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">image_annotate</span><span class="p">(</span><span class="s">&quot;Can you spot the 10 hidden eggs?&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">18</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;white&quot;</span><span class="p">,</span>  <span class="n">location</span> <span class="o">=</span> <span class="s">&quot;+250+60&quot;</span><span class="p">)</span>
+<span class="c1">## Error in eval(expr, envir, enclos): could not find function &quot;%&gt;%&quot;</span>
+</pre></div>
+
+
+<p>In case your audience can't figure out where you hid the eggs, magick lets you animate your pictures, so:</p>
+<div class="highlight"><pre><span></span><span class="c1"># specify easterScene with and without the eggs and specify number of frames</span>
+<span class="n">frames</span> <span class="o">&lt;-</span> <span class="nf">image_morph</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">easterCard</span><span class="p">,</span> <span class="nf">image_scale</span><span class="p">(</span><span class="nf">image_read</span><span class="p">(</span><span class="n">easterScenes[1]</span><span class="p">),</span><span class="s">&quot;800x&quot;</span><span class="p">)),</span> <span class="n">frames</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
+<span class="c1">## Error in eval(expr, envir, enclos): could not find function &quot;image_morph&quot;</span>
+<span class="nf">image_animate</span><span class="p">(</span><span class="n">frames</span><span class="p">)</span>
+<span class="c1">## Error in eval(expr, envir, enclos): could not find function &quot;image_animate&quot;</span>
+</pre></div>
+
+
+<p>For much more you can do with magick, see the <a href="https://cran.r-project.org/web/packages/magick/vignettes/intro.html">vignette</a>. </p>
+<p>That's it, have yourself a merry little easter egg!</p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Happy EasteR! Let's find some eggs...&amp;url=https://modelplot.github.io/HappyEasteR.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://modelplot.github.io/HappyEasteR.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=https://modelplot.github.io/HappyEasteR.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="https://modelplot.github.io/tag/r.html">R</a><a href="https://modelplot.github.io/tag/blog.html">blog</a><a href="https://modelplot.github.io/tag/magick.html">magick</a><a href="https://modelplot.github.io/tag/fun.html">fun</a><a href="https://modelplot.github.io/tag/easter.html">easter</a>                </aside>
+
+                <div class="clear"></div>
+
+                <aside class="post-author">
+
+
+                        <figure class="post-author-avatar">
+                            <img src="https://media.licdn.com/dms/image/C4E03AQEkbNQx4H8qfA/profile-displayphoto-shrink_200_200/0?e=1542844800&v=beta&t=wJxvZesyGOLOtC5b0YZJKH_WqfjSVNnyu7inLX9Q5vs" alt="Jurriaan Nagelkerke" />
+                        </figure>
+                    <div class="post-author-bio">
+                        <h4 class="post-author-name"><a href="https://modelplot.github.io/author/jurriaan-nagelkerke.html">Jurriaan Nagelkerke</a></h4>
+                            <p class="post-author-about">Data Science and Advanced Analytics professional @ Cmotions</p>
+                            <span class="post-author-location"><i class="ic ic-location"></i> Amsterdam</span>
+                        <!-- Social linkes in alphabet order. -->
+                            <span class="post-author-linkedin"><a target="_blank" href="https://www.linkedin.com/in/https://www.linkedin.com/in/jnagelkerke/"><i class="ic ic-link"></i> LinkedIn</a></span>
+                    </div>
+                    <div class="clear"></div>
+                </aside>
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script type="text/javascript" src="https://modelplot.github.io/theme/js/script.js"></script>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-126290731-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</body>
+</html>
