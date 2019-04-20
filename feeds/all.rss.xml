@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0"><channel><title>Modelplot[R/py] introduction</title><link>https://modelplot.github.io/</link><description>Plots to evaluate the business value of predictive models in python and R</description><lastBuildDate>Sat, 20 Apr 2019 00:00:00 +0200</lastBuildDate><item><title>Happy EasteR! Let's find some eggs...</title><link>https://modelplot.github.io/HappyEasteR.html</link><description>&lt;h2&gt;It's Easter Time! Let's find some eggs...&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;## Error in library(magick): there is no package called &amp;#39;magick&amp;#39;
+## Error in library(dplyr): there is no package called &amp;#39;dplyr&amp;#39;
 ## Error in eval(expr, envir, enclos): could not find function &amp;quot;%&amp;gt;%&amp;quot;
 ## Error in eval(expr, envir, enclos): could not find function &amp;quot;image_info&amp;quot;
 ## Error in eval(expr, envir, enclos): could not find function &amp;quot;image_info&amp;quot;

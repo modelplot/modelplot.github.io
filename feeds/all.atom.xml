@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Modelplot[R/py] introduction</title><link href="https://modelplot.github.io/" rel="alternate"></link><link href="https://modelplot.github.io/feeds/all.atom.xml" rel="self"></link><id>https://modelplot.github.io/</id><updated>2019-04-20T00:00:00+02:00</updated><entry><title>Happy EasteR! Let's find some eggs...</title><link href="https://modelplot.github.io/HappyEasteR.html" rel="alternate"></link><published>2019-04-20T00:00:00+02:00</published><updated>2019-04-20T00:00:00+02:00</updated><author><name>Jurriaan Nagelkerke</name></author><id>tag:modelplot.github.io,2019-04-20:HappyEasteR.html</id><summary type="html">&lt;h2&gt;It's Easter Time! Let's find some eggs...&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;## Error in library(magick): there is no package called &amp;#39;magick&amp;#39;
+## Error in library(dplyr): there is no package called &amp;#39;dplyr&amp;#39;
 ## Error in eval(expr, envir, enclos): could not find function &amp;quot;%&amp;gt;%&amp;quot;
 ## Error in eval(expr, envir, enclos): could not find function &amp;quot;image_info&amp;quot;
 ## Error in eval(expr, envir, enclos): could not find function &amp;quot;image_info&amp;quot;
