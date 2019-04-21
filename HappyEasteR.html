@@ -153,22 +153,7 @@
         <div class="inner">
             <section class="post-content">
                 <h2>It's Easter Time! Let's find some eggs...</h2>
-<div class="highlight"><pre><span></span>## Error in library(magick): there is no package called &#39;magick&#39;
-## Error in library(dplyr): there is no package called &#39;dplyr&#39;
-## Error in eval(expr, envir, enclos): could not find function &quot;%&gt;%&quot;
-## Error in eval(expr, envir, enclos): could not find function &quot;image_info&quot;
-## Error in eval(expr, envir, enclos): could not find function &quot;image_info&quot;
-## Error in eval(expr, envir, enclos): could not find function &quot;%&gt;%&quot;
-## Error in eval(expr, envir, enclos): could not find function &quot;%&gt;%&quot;
-## Error in eval(expr, envir, enclos): could not find function &quot;%&gt;%&quot;
-## Error in eval(expr, envir, enclos): could not find function &quot;%&gt;%&quot;
-## Error in eval(expr, envir, enclos): could not find function &quot;%&gt;%&quot;
-## Error in eval(expr, envir, enclos): could not find function &quot;%&gt;%&quot;
-## Error in eval(expr, envir, enclos): could not find function &quot;image_morph&quot;
-## Error in eval(expr, envir, enclos): could not find function &quot;image_animate&quot;
-</pre></div>
-
-
+<p><img src="https://modelplot.github.io/img/HappyEasteR-bunniesneggs-1.gif" title="plot of chunk bunniesneggs" alt="plot of chunk bunniesneggs" width="100%" /></p>
 <p>Hi there! Yes, <em>it's the most Easterful time of the year</em> again. For some of us a sacret time, for others mainly an egg-eating period and some just enjoy the extra day of spare time. In case you have some time available for some good egg searching business, but no-one seems willing to hide them for you this year, here's an alteRnative. Hide them yourself and have a nice easteR holyday! As you go, you also get to know the very nice image processing package:  <a href="https://cran.r-project.org/web/packages/magick/vignettes/intro.html">magick</a>. </p>
 <h2>Get some easter scenes, collect some eggs...</h2>
 <p>Before we can start hiding eggs, we need some scenes...</p>
@@ -179,17 +164,15 @@
     <span class="p">)</span>
 
 <span class="nf">library</span><span class="p">(</span><span class="n">magick</span><span class="p">)</span>
-<span class="c1">## Error in library(magick): there is no package called &#39;magick&#39;</span>
 
 <span class="c1"># read images and put in a vector</span>
 <span class="n">images</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">image_read</span><span class="p">(</span><span class="n">easterScenes[1]</span><span class="p">),</span><span class="nf">image_read</span><span class="p">(</span><span class="n">easterScenes[2]</span><span class="p">),</span><span class="nf">image_read</span><span class="p">(</span><span class="n">easterScenes[3]</span><span class="p">))</span>
-<span class="c1">## Error in eval(expr, envir, enclos): could not find function &quot;image_read&quot;</span>
 <span class="c1">#show all images, next to eachother</span>
 <span class="nf">image_append</span><span class="p">(</span><span class="nf">image_scale</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s">&quot;x200&quot;</span><span class="p">))</span>
-<span class="c1">## Error in eval(expr, envir, enclos): could not find function &quot;image_append&quot;</span>
 </pre></div>
 
 
+<p><img src="https://modelplot.github.io/img/HappyEasteR-scenes-1.png" title="plot of chunk scenes" alt="plot of chunk scenes" width="100%" /></p>
 <p>...and - obviously - we need some eggs to hide!</p>
 <div class="highlight"><pre><span></span><span class="n">easterEggs</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span>
     <span class="s">&#39;https://cdn.pixabay.com/photo/2017/02/04/20/28/easter-2038263_960_720.png&#39;</span><span class="p">,</span>
@@ -203,19 +186,16 @@
 <span class="n">images</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">image_trim</span><span class="p">(</span><span class="nf">image_read</span><span class="p">(</span><span class="n">easterEggs[1]</span><span class="p">)),</span><span class="nf">image_trim</span><span class="p">(</span><span class="nf">image_read</span><span class="p">(</span><span class="n">easterEggs[2]</span><span class="p">)),</span>
            <span class="nf">image_trim</span><span class="p">(</span><span class="nf">image_read</span><span class="p">(</span><span class="n">easterEggs[3]</span><span class="p">)),</span>
            <span class="nf">image_trim</span><span class="p">(</span><span class="nf">image_read</span><span class="p">(</span><span class="n">easterEggs[4]</span><span class="p">)),</span><span class="nf">image_trim</span><span class="p">(</span><span class="nf">image_read</span><span class="p">(</span><span class="n">easterEggs[5]</span><span class="p">)))</span>
-<span class="c1">## Error in eval(expr, envir, enclos): could not find function &quot;image_trim&quot;</span>
 <span class="c1">#show all images, next to eachother</span>
 <span class="nf">image_append</span><span class="p">(</span><span class="nf">image_scale</span><span class="p">(</span><span class="n">images</span><span class="p">,</span><span class="s">&quot;x100&quot;</span><span class="p">))</span>
-<span class="c1">## Error in eval(expr, envir, enclos): could not find function &quot;image_append&quot;</span>
 </pre></div>
 
 
+<p><img src="https://modelplot.github.io/img/HappyEasteR-eggs-1.png" title="plot of chunk eggs" alt="plot of chunk eggs" width="50%" /></p>
 <h2>Hiding Eggs function</h2>
 <p>Excellent, we have some scenes and some eggs, let's create a function to make hiding our eggs easy. We'll take advantage of some other functions from the great image processing package <strong>magick</strong>.  </p>
 <div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">magick</span><span class="p">)</span>
-<span class="c1">## Error in library(magick): there is no package called &#39;magick&#39;</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
-<span class="c1">## Error in library(dplyr): there is no package called &#39;dplyr&#39;</span>
 
 <span class="n">hideEggs</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">sceneUrl</span><span class="p">,</span><span class="n">nEggs</span><span class="o">=</span><span class="n">nEggs</span><span class="p">,</span><span class="n">eggPositions</span><span class="p">,</span><span class="n">eggSize</span><span class="o">=</span><span class="m">0.04</span><span class="p">){</span>
     <span class="c1"># read scene</span>
@@ -263,10 +243,10 @@
 <p>Yeah, we've hidden 5 eggs near these happy easter bunnies. Can you spot them in a few seconds??</p>
 <div class="highlight"><pre><span></span><span class="c1"># let&#39;s hide 5 eggs among our easter bunnies</span>
 <span class="nf">hideEggs</span><span class="p">(</span><span class="n">sceneUrl</span> <span class="o">=</span> <span class="n">easterScenes[2]</span><span class="p">,</span><span class="n">nEggs</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
-<span class="c1">## Error in hideEggs(sceneUrl = easterScenes[2], nEggs = 5): could not find function &quot;image_read&quot;</span>
 </pre></div>
 
 
+<p><img src="https://modelplot.github.io/img/HappyEasteR-hideEggs-1.png" title="plot of chunk hideEggs" alt="plot of chunk hideEggs" width="100%" /></p>
 <p>These guys also seem to enjoy our little game. Finally, let's make a somewhat more challenging version, you can share it with your relatives, wishing them a nice easter holiday.</p>
 <div class="highlight"><pre><span></span><span class="c1"># think where to hide...</span>
 <span class="n">eggPositions</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span><span class="m">0.95</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">0.03</span><span class="p">,</span><span class="m">0.6</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">0.4</span><span class="p">,</span><span class="m">0.65</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">0.5</span><span class="p">,</span><span class="m">0.67</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">0.465</span><span class="p">,</span><span class="m">0.31</span><span class="p">),</span>
@@ -276,26 +256,24 @@
 <span class="n">easterCard</span> <span class="o">&lt;-</span> <span class="nf">hideEggs</span><span class="p">(</span><span class="n">sceneUrl</span> <span class="o">=</span> <span class="n">easterScenes[1]</span><span class="p">,</span><span class="n">nEggs</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">eggPositions</span><span class="p">),</span>
          <span class="n">eggPositions</span> <span class="o">=</span> <span class="n">eggPositions</span><span class="p">,</span>
          <span class="n">eggSize</span> <span class="o">=</span> <span class="m">0.02</span><span class="p">)</span>
-<span class="c1">## Error in hideEggs(sceneUrl = easterScenes[1], nEggs = length(eggPositions), : could not find function &quot;image_read&quot;</span>
 
 <span class="c1"># let&#39;s add some wishes to our easter card...</span>
 
 <span class="n">easterCard</span> <span class="o">%&gt;%</span> 
     <span class="nf">image_annotate</span><span class="p">(</span><span class="s">&quot;Happy Easter!!!&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">36</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;yellow&quot;</span><span class="p">,</span>  <span class="n">location</span> <span class="o">=</span> <span class="s">&quot;+270+16&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
     <span class="nf">image_annotate</span><span class="p">(</span><span class="s">&quot;Can you spot the 10 hidden eggs?&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">18</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;white&quot;</span><span class="p">,</span>  <span class="n">location</span> <span class="o">=</span> <span class="s">&quot;+250+60&quot;</span><span class="p">)</span>
-<span class="c1">## Error in eval(expr, envir, enclos): could not find function &quot;%&gt;%&quot;</span>
 </pre></div>
 
 
+<p><img src="https://modelplot.github.io/img/HappyEasteR-hideEggs2-1.png" title="plot of chunk hideEggs2" alt="plot of chunk hideEggs2" width="100%" /></p>
 <p>In case your audience can't figure out where you hid the eggs, magick lets you animate your pictures, so:</p>
 <div class="highlight"><pre><span></span><span class="c1"># specify easterScene with and without the eggs and specify number of frames</span>
 <span class="n">frames</span> <span class="o">&lt;-</span> <span class="nf">image_morph</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">easterCard</span><span class="p">,</span> <span class="nf">image_scale</span><span class="p">(</span><span class="nf">image_read</span><span class="p">(</span><span class="n">easterScenes[1]</span><span class="p">),</span><span class="s">&quot;800x&quot;</span><span class="p">)),</span> <span class="n">frames</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
-<span class="c1">## Error in eval(expr, envir, enclos): could not find function &quot;image_morph&quot;</span>
 <span class="nf">image_animate</span><span class="p">(</span><span class="n">frames</span><span class="p">)</span>
-<span class="c1">## Error in eval(expr, envir, enclos): could not find function &quot;image_animate&quot;</span>
 </pre></div>
 
 
+<p><img src="https://modelplot.github.io/img/HappyEasteR-showEggs-1.gif" title="plot of chunk showEggs" alt="plot of chunk showEggs" width="100%" /></p>
 <p>For much more you can do with magick, see the <a href="https://cran.r-project.org/web/packages/magick/vignettes/intro.html">vignette</a>. </p>
 <p>That's it, have yourself a merry little easter egg!</p>
             </section>

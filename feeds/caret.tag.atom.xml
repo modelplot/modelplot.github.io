@@ -17,7 +17,6 @@
 &lt;p&gt;Before we start exploring the plots, let's install our &lt;strong&gt;modelplotr&lt;/strong&gt; package. Since it is available on github, it can easily be installed using &lt;strong&gt;devtools&lt;/strong&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nf"&gt;library&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;devtools&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="nf"&gt;install_github&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;modelplot/modelplotr&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in utils::download.file(url, path, method = download_method(), quiet = quiet, : cannot download all files&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -73,36 +72,26 @@
 &lt;span class="c1"&gt;# estimate some models with caret...&lt;/span&gt;
 &lt;span class="c1"&gt;# setting caret cross validation, here tuned for speed (not accuracy!)&lt;/span&gt;
 &lt;span class="n"&gt;fitControl&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="n"&gt;caret&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nf"&gt;trainControl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;cv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;classProbs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;TRUE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in loadNamespace(name): there is no package called &amp;#39;caret&amp;#39;&lt;/span&gt;
 &lt;span class="c1"&gt;# mnl model using glmnet package&lt;/span&gt;
 &lt;span class="n"&gt;mnl&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;caret&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nf"&gt;train&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="n"&gt;.,data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;method&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;glmnet&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;trControl&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fitControl&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in loadNamespace(name): there is no package called &amp;#39;caret&amp;#39;&lt;/span&gt;
 &lt;span class="c1"&gt;# random forest using ranger package, here tuned for speed (not accuracy!)&lt;/span&gt;
 &lt;span class="n"&gt;rf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;caret&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nf"&gt;train&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="n"&gt;.,data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;method&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;ranger&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;trControl&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fitControl&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
   &lt;span class="n"&gt;tuneGrid&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;expand.grid&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;.mtry&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;.splitrule&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;gini&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;.min.node.size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in loadNamespace(name): there is no package called &amp;#39;caret&amp;#39;&lt;/span&gt;
 
 &lt;span class="c1"&gt;# ... and estimate some models with mlr&lt;/span&gt;
 &lt;span class="n"&gt;mlr&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nf"&gt;configureMlr&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;# this line is needed when using mlr without loading it (mlr::)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in loadNamespace(name): there is no package called &amp;#39;mlr&amp;#39;&lt;/span&gt;
 &lt;span class="n"&gt;task&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mlr&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nf"&gt;makeClassifTask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;target&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;y&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in loadNamespace(name): there is no package called &amp;#39;mlr&amp;#39;&lt;/span&gt;
 &lt;span class="c1"&gt;# discriminant model &lt;/span&gt;
 &lt;span class="n"&gt;lrn&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mlr&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nf"&gt;makeLearner&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;classif.lda&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;predict.type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;prob&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in loadNamespace(name): there is no package called &amp;#39;mlr&amp;#39;&lt;/span&gt;
 &lt;span class="n"&gt;lda&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mlr&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nf"&gt;train&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lrn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;task&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in loadNamespace(name): there is no package called &amp;#39;mlr&amp;#39;&lt;/span&gt;
 &lt;span class="c1"&gt;#xgboost model&lt;/span&gt;
 &lt;span class="n"&gt;lrn&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mlr&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nf"&gt;makeLearner&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;classif.xgboost&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;predict.type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;prob&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in loadNamespace(name): there is no package called &amp;#39;mlr&amp;#39;&lt;/span&gt;
 &lt;span class="n"&gt;xgb&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mlr&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nf"&gt;train&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lrn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;task&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in loadNamespace(name): there is no package called &amp;#39;mlr&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Ok, we’ve generated some predictive models. Now, let’s prepare the data for plotting! We will focus on explaining to our marketing colleagues how good our predictive model works and how it can help them select customers for their term deposit campaign.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nf"&gt;library&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;modelplotr&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in library(modelplotr): there is no package called &amp;#39;modelplotr&amp;#39;&lt;/span&gt;
 
 &lt;span class="c1"&gt;# transform datasets and model objects into scored data and calculate deciles &lt;/span&gt;
 &lt;span class="nf"&gt;prepare_scores_and_deciles&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;datasets&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nf"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;train&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;test&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
@@ -110,11 +99,28 @@
   &lt;span class="n"&gt;models&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;rf&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mnl&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;xgb&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;lda&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
   &lt;span class="n"&gt;model_labels&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;random forest&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;multinomial logit&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;XGBoost&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Discriminant&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
   &lt;span class="n"&gt;target_column&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;y&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in eval(expr, envir, enclos): could not find function &amp;quot;prepare_scores_and_deciles&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;## ... scoring caret model &amp;quot;rf&amp;quot; on dataset &amp;quot;train&amp;quot;.&lt;/span&gt;
+&lt;span class="c1"&gt;## ... scoring caret model &amp;quot;mnl&amp;quot; on dataset &amp;quot;train&amp;quot;.&lt;/span&gt;
+&lt;span class="c1"&gt;## ... scoring mlr model &amp;quot;xgb&amp;quot; on dataset &amp;quot;train&amp;quot;.&lt;/span&gt;
+&lt;span class="c1"&gt;## ... scoring mlr model &amp;quot;lda&amp;quot; on dataset &amp;quot;train&amp;quot;.&lt;/span&gt;
+&lt;span class="c1"&gt;## ... scoring caret model &amp;quot;rf&amp;quot; on dataset &amp;quot;test&amp;quot;.&lt;/span&gt;
+&lt;span class="c1"&gt;## ... scoring caret model &amp;quot;mnl&amp;quot; on dataset &amp;quot;test&amp;quot;.&lt;/span&gt;
+&lt;span class="c1"&gt;## ... scoring mlr model &amp;quot;xgb&amp;quot; on dataset &amp;quot;test&amp;quot;.&lt;/span&gt;
+&lt;span class="c1"&gt;## ... scoring mlr model &amp;quot;lda&amp;quot; on dataset &amp;quot;test&amp;quot;.&lt;/span&gt;
+&lt;span class="c1"&gt;## [1] &amp;quot;Data preparation step 1 succeeded! Dataframe &amp;#39;scores_and_deciles&amp;#39; created.&amp;quot;&lt;/span&gt;
 
 &lt;span class="c1"&gt;# transform data generated with prepare_scores_and_deciles into aggregated data for chosen plotting scope &lt;/span&gt;
 &lt;span class="nf"&gt;plotting_scope&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;select_model_label&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;XGBoost&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;select_dataset_label&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;test data&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in eval(expr, envir, enclos): could not find function &amp;quot;plotting_scope&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;## Data preparation step 3 succeeded! Dataframe &amp;#39;plot_input&amp;#39; created.&lt;/span&gt;
+&lt;span class="c1"&gt;## &lt;/span&gt;
+&lt;span class="c1"&gt;## No comparison specified, default values are used. &lt;/span&gt;
+&lt;span class="c1"&gt;## &lt;/span&gt;
+&lt;span class="c1"&gt;## Single evaluation line will be plotted: Target value &amp;quot;term.deposit&amp;quot; plotted for dataset &amp;quot;test data&amp;quot; and model &amp;quot;XGBoost.&lt;/span&gt;
+&lt;span class="c1"&gt;## &amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;## -&amp;gt; To compare models, specify: scope = &amp;quot;compare_models&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;## -&amp;gt; To compare datasets, specify: scope = &amp;quot;compare_datasets&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;## -&amp;gt; To compare target classes, specify: scope = &amp;quot;compare_targetclasses&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;## -&amp;gt; To plot one line, do not specify scope or specify scope = &amp;quot;no_comparison&amp;quot;.&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -147,17 +153,22 @@
 &lt;p&gt;Back to our business example. How many of the term deposit buyers can we select with the top-20% of our predictive models? Let's find out! To generate the cumulate gains plot, we can simply call the function &lt;strong&gt;plot_cumgains()&lt;/strong&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# plot the cumulative gains plot&lt;/span&gt;
 &lt;span class="nf"&gt;plot_cumgains&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in eval(expr, envir, enclos): could not find function &amp;quot;plot_cumgains&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;&lt;img alt="plot of chunk gainsplot" src="https://modelplot.github.io/img/modelplotr_caret_mlr-gainsplot-1.png" /&gt;&lt;/p&gt;
 &lt;p&gt;We don't need to specify any parameters, since the default input is &lt;strong&gt;plot_input&lt;/strong&gt;, which is generated with the &lt;strong&gt;plotting_scope()&lt;/strong&gt; function we ran previously. There are several parameters available to customize the plot, though. If we want to emphasize the model performance at a given point, we can add both highlighting to the plot and add some explanatory text below the plot. Both are optional, though:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# plot the cumulative gains plot and annotate the plot at decile = 2&lt;/span&gt;
 &lt;span class="nf"&gt;plot_cumgains&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;highlight_decile&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in eval(expr, envir, enclos): could not find function &amp;quot;plot_cumgains&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;##  &lt;/span&gt;
+&lt;span class="c1"&gt;## Plot annotation:&lt;/span&gt;
+&lt;span class="c1"&gt;## - When we select 20% with the highest probability according to XGBoost, this selection holds 83% of all term.deposit cases in test data.&lt;/span&gt;
+&lt;span class="c1"&gt;##  &lt;/span&gt;
+&lt;span class="c1"&gt;## &lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;&lt;img alt="plot of chunk gainsplotannotated" src="https://modelplot.github.io/img/modelplotr_caret_mlr-gainsplotannotated-1.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Our 'highlight_decile' parameter adds some guiding elements to the plot at decile 2 as well as a text box below the graph with the interpretation of the plot at decile 2 in words. This interpretation is also printed to the console. Our simple model - only 6 pedictors were used - seems to do a nice job selecting the customers interested in buying term deposites. &lt;em&gt;When we select 20% with the highest probability according to XGBoost, this selection holds 82% of all term deposit cases in test data.&lt;/em&gt; With a perfect model, we would have selected 100%, since less than 20% of all customers in the test set buy term deposits. A random pick would only hold 20% of the customers with term deposits. How much better than random we do, brings us to plot number 2! &lt;/p&gt;
 &lt;h4&gt;2. Cumulative lift plot&lt;/h4&gt;
 &lt;p&gt;The cumulative lift plot, often referred to as lift plot or index plot, helps you answer the question:&lt;/p&gt;
@@ -168,10 +179,15 @@
 &lt;p&gt;To generate the cumulative lift plot for our XGBoost model predicting term deposit buying, we call the function &lt;strong&gt;plot_cumlift()&lt;/strong&gt;. Let's add some highlighting to see how much better a selection based on our model containing deciles 1 and 2 would be, compared to a random selection of 20% of all customers:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# plot the cumulative lift plot and annotate the plot at decile = 2&lt;/span&gt;
 &lt;span class="nf"&gt;plot_cumlift&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;highlight_decile&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in eval(expr, envir, enclos): could not find function &amp;quot;plot_cumlift&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;##  &lt;/span&gt;
+&lt;span class="c1"&gt;## Plot annotation:&lt;/span&gt;
+&lt;span class="c1"&gt;## - When we select 20% with the highest probability according to model XGBoost in test data, this selection for term.deposit cases is 4.1 times better than selecting without a model.&lt;/span&gt;
+&lt;span class="c1"&gt;##  &lt;/span&gt;
+&lt;span class="c1"&gt;## &lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;&lt;img alt="plot of chunk liftplot" src="https://modelplot.github.io/img/modelplotr_caret_mlr-liftplot-1.png" /&gt;&lt;/p&gt;
 &lt;p&gt;A term deposit campaign targeted at a selection of 20% of all customers based on our XGBoost model can be expected to have a 4 times higher response (411%) compared to a random sample of customers. Not bad, right? The cumulative lift really helps in getting a positive return on marketing investments. It should be noted, though, that since the cumulative lift plot is relative, it doesn't tell us how high the actual reponse will be on our campaign...   &lt;/p&gt;
 &lt;h4&gt;3. Response plot&lt;/h4&gt;
 &lt;p&gt;One of the easiest to explain evaluation plots is the response plot. It simply plots the percentage of target class observations per decile. It can be used to answer the following business question:&lt;/p&gt;
@@ -182,10 +198,15 @@
 &lt;p&gt;To generate the response plot for our term deposit model, we can simply call the function &lt;strong&gt;plot_response()&lt;/strong&gt;. Let's immediately highlight the plot to have the interpretation of the response plot at decile 1 added to the plot:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# plot the response plot and annotate the plot at decile = 1&lt;/span&gt;
 &lt;span class="nf"&gt;plot_response&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;highlight_decile&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in eval(expr, envir, enclos): could not find function &amp;quot;plot_response&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;##  &lt;/span&gt;
+&lt;span class="c1"&gt;## Plot annotation:&lt;/span&gt;
+&lt;span class="c1"&gt;## - When we select decile 1 according to model XGBoost in dataset test data the % of term.deposit cases in the selection is 61%.&lt;/span&gt;
+&lt;span class="c1"&gt;##  &lt;/span&gt;
+&lt;span class="c1"&gt;## &lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;&lt;img alt="plot of chunk responseplot" src="https://modelplot.github.io/img/modelplotr_caret_mlr-responseplot-1.png" /&gt;&lt;/p&gt;
 &lt;p&gt;As the plot shows and the text below the plot states: &lt;em&gt;When we select decile 1 according to model XGBoost in dataset test data the % of term deposit cases in the selection is 61%.&lt;/em&gt;. This is quite good, especially when compared to the overall likelihood of 11%. The response in the second decile is much lower, about 28%. From decile 3 onwards, the expected response will be lower than the overall likelihood of 10.4%. However, most of the time, our model will be used to select the highest decile &lt;em&gt;up until&lt;/em&gt; some decile. That makes it even more relevant to have a look at the cumulative version of the response plot. And guess what, that's our final plot!   &lt;/p&gt;
 &lt;h4&gt;4. Cumulative response plot&lt;/h4&gt;
 &lt;p&gt;Finally, one of the most used plots: The cumulative response plot. It answers the question burning on each business reps lips:&lt;/p&gt;
@@ -196,34 +217,50 @@
 &lt;p&gt;Back to our banking business case. To generate the cumulative response plot, we call the function &lt;strong&gt;plot_cumresponse()&lt;/strong&gt;. Let's highlight it at decile 3 to see what the overall expected response will be if we select prospects for a term deposit offer based on our XGBoost model:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# plot the cumulative response plot and annotate the plot at decile = 3&lt;/span&gt;
 &lt;span class="nf"&gt;plot_cumresponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;highlight_decile&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in eval(expr, envir, enclos): could not find function &amp;quot;plot_cumresponse&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;##  &lt;/span&gt;
+&lt;span class="c1"&gt;## Plot annotation:&lt;/span&gt;
+&lt;span class="c1"&gt;## - When we select deciles 1 until 3 according to model XGBoost in dataset test data the % of term.deposit cases in the selection is 33%.&lt;/span&gt;
+&lt;span class="c1"&gt;##  &lt;/span&gt;
+&lt;span class="c1"&gt;## &lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;&lt;img alt="plot of chunk cumresponseplot" src="https://modelplot.github.io/img/modelplotr_caret_mlr-cumresponseplot-1.png" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;When we select deciles 1 until 3 according to model XGBoost in dataset test data the % of term deposit cases in the selection is 33%.&lt;/em&gt; Since the test data is an independent set, not used to train the model, we can expect the response on the term deposit campaign to be 33%. &lt;/p&gt;
 &lt;p&gt;The cumulative response percentage at a given decile is a number your business colleagues can really work with: Is that response big enough to have a successfull campaign, given costs and other expectations? Will the absolute number of sold term deposits meet the targets? Or do we lose too much of all potential term deposit buyers by only selecting the top 30%? To answer that question, we can go back to the cumulative gains plot. And that's why there's no absolute winner among these plots and we advice to use them all. To make that happen, there's also a function to easily combine all four plots. &lt;/p&gt;
 &lt;h4&gt;All four plots together&lt;/h4&gt;
 &lt;p&gt;With the function call &lt;strong&gt;plot_all&lt;/strong&gt; we get all four plots on one grid. We can easily save it to a file to include it in a presentation or share it with colleagues.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# plot all four evaluation plots and save to file&lt;/span&gt;
 &lt;span class="nf"&gt;plot_all&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;save_fig&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;TRUE&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;save_fig_filename&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Selection model Term Deposits&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in eval(expr, envir, enclos): could not find function &amp;quot;plot_all&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;## Plot is saved as: c:/TEMP/jupyter-blog/content/Selection model Term Deposits.png&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;&lt;img alt="plot of chunk allplots" src="https://modelplot.github.io/img/modelplotr_caret_mlr-allplots-1.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Neat! With these plots, we are able to talk with business colleagues about the actual value of our predictive model, without having to bore them with technicalities any nitty gritty details. We've translated our model in business terms and visualised it to simplify interpretation and communication. Hopefully, this helps many of you in discussing how to optimally take advantage of your predictive model building efforts.   &lt;/p&gt;
 &lt;h3&gt;Get more out of modelplotr: using different scopes.&lt;/h3&gt;
 &lt;p&gt;As we mentioned earlier, the modelplotr package also enables to make interesting comparisons, using the &lt;strong&gt;scope&lt;/strong&gt; parameter. Comparisons between different models, between different datasets and (in case of a multiclass target) between different target classes. Curious? Please have a look at the package documentation or read our other posts on modelplotr. &lt;/p&gt;
 &lt;p&gt;However, to give one example, we could compare whether XGBoost was indeed the best choice to select the top-30% customers for a term deposit offer:  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# set plotting scope to model comparison&lt;/span&gt;
 &lt;span class="nf"&gt;plotting_scope&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;scope&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;compare_models&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in eval(expr, envir, enclos): could not find function &amp;quot;plotting_scope&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;## Data preparation step 3 succeeded! Dataframe &amp;#39;plot_input&amp;#39; created.&lt;/span&gt;
+&lt;span class="c1"&gt;## &lt;/span&gt;
+&lt;span class="c1"&gt;## Models &amp;quot;random forest&amp;quot;, &amp;quot;multinomial logit&amp;quot;, &amp;quot;XGBoost&amp;quot;, &amp;quot;Discriminant&amp;quot; compared for dataset &amp;quot;test data&amp;quot; and target value &amp;quot;term.deposit&amp;quot;.&lt;/span&gt;
 
 &lt;span class="c1"&gt;# plot the cumulative response plot and annotate the plot at decile = 3&lt;/span&gt;
 &lt;span class="nf"&gt;plot_cumresponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;highlight_decile&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;## Error in eval(expr, envir, enclos): could not find function &amp;quot;plot_cumresponse&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;##  &lt;/span&gt;
+&lt;span class="c1"&gt;## Plot annotation:&lt;/span&gt;
+&lt;span class="c1"&gt;## - When we select deciles 1 until 3 according to model random forest in dataset test data the % of term.deposit cases in the selection is 35%.&lt;/span&gt;
+&lt;span class="c1"&gt;## - When we select deciles 1 until 3 according to model multinomial logit in dataset test data the % of term.deposit cases in the selection is 32%.&lt;/span&gt;
+&lt;span class="c1"&gt;## - When we select deciles 1 until 3 according to model XGBoost in dataset test data the % of term.deposit cases in the selection is 33%.&lt;/span&gt;
+&lt;span class="c1"&gt;## - When we select deciles 1 until 3 according to model Discriminant in dataset test data the % of term.deposit cases in the selection is 33%.&lt;/span&gt;
+&lt;span class="c1"&gt;##  &lt;/span&gt;
+&lt;span class="c1"&gt;## &lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;&lt;img alt="plot of chunk comparemodels" src="https://modelplot.github.io/img/modelplotr_caret_mlr-comparemodels-1.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Seems like the algorithm used will not make a big difference in this case. Hopefully you agree by now that using these plots really can make a difference in explaining the business value of your predictive models! &lt;/p&gt;
 &lt;p&gt;In case you experience issues when using modelplotr, please let us know via the &lt;a href="https://github.com/jurrr/modelplotr/issues" target="_blank"&gt;issues section on Github&lt;/a&gt;. Any other feedback or suggestions, please let us know via &lt;a href="mailto:jurriaan.nagelkerke@gmail.com"&gt;jurriaan.nagelkerke@gmail.com&lt;/a&gt; or &lt;a href="mailto:pb.marcus@hotmail.com"&gt;pb.marcus@hotmail.com&lt;/a&gt;. Happy modelplotting!&lt;/p&gt;
 &lt;p&gt;&lt;img alt=" " src="img/cartoon2d.jpg" /&gt;&lt;/p&gt;</summary><category term="modelplot"></category><category term="R"></category><category term="modelplotr"></category><category term="blog"></category><category term="caret"></category><category term="mlr"></category></entry></feed>
